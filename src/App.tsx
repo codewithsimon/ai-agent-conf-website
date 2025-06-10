@@ -637,7 +637,7 @@ function App() {
                 </div>
                 <div className="flex items-center space-x-2 text-gray-400">
                   <Globe className="w-4 h-4" />
-                  <span>www.aiagentconference.com</span>
+                  <span>www.aiagentconference.live</span>
                 </div>
               </div>
             </div>
