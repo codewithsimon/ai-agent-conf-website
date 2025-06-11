@@ -95,7 +95,7 @@ function App() {
               <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
                 <Users className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold text-xl text-gray-900">AI Agent Conference</span>
+              <span className="font-bold text-xl text-gray-900">AI Agents Conference</span>
             </div>
             
             {/* Desktop Navigation */}
@@ -180,7 +180,7 @@ function App() {
               
               {/* Enhanced Main Heading */}
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                AI Agent
+                AI Agents
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 animate-gradient-x">
                   Conference 2025
                 </span>
@@ -296,7 +296,7 @@ function App() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Why Attend AI Agent Conference?
+                Why Attend AI Agents Conference?
               </h3>
               <div className="space-y-6">
                 {[
@@ -588,7 +588,7 @@ function App() {
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
                   <Users className="w-5 h-5 text-white" />
                 </div>
-                <span className="font-bold text-xl">AI Agent Conference</span>
+                <span className="font-bold text-xl">AI Agents Conference</span>
               </div>
               <p className="text-gray-400 mb-6 max-w-md">
                 The premier virtual event for AI agent technology, bringing together innovators, 
@@ -637,14 +637,14 @@ function App() {
                 </div>
                 <div className="flex items-center space-x-2 text-gray-400">
                   <Globe className="w-4 h-4" />
-                  <span>www.aiagentconference.live</span>
+                  <span>www.aiagentsconference.live</span>
                 </div>
               </div>
             </div>
           </div>
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 AI Agent Conference. All rights reserved.</p>
+            <p>&copy; 2025 AI Agents Conference. All rights reserved.</p>
           </div>
         </div>
       </footer>
