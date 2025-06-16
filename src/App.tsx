@@ -22,7 +22,12 @@ import {
   TrendingUp,
   ChevronDown,
   Award,
-  Target
+  Target,
+  Bot,
+  Workflow,
+  Database,
+  Settings,
+  Layers
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -82,6 +87,54 @@ function App() {
       image: "/Stephen SIMON.jpg",
       linkedin: "https://www.linkedin.com/in/codewithsimon/",
       twitter: "https://x.com/codewithsimon"
+    }
+  ];
+
+  const aiTools = [
+    {
+      name: "Crew AI",
+      description: "Autonomous AI Agent Orchestration",
+      icon: <Bot className="w-8 h-8" />,
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-50",
+      iconBg: "bg-blue-100",
+      textColor: "text-blue-600"
+    },
+    {
+      name: "Azure AI Foundry",
+      description: "Enterprise AI Development Suite",
+      icon: <Database className="w-8 h-8" />,
+      color: "from-indigo-500 to-purple-500",
+      bgColor: "bg-indigo-50",
+      iconBg: "bg-indigo-100",
+      textColor: "text-indigo-600"
+    },
+    {
+      name: "Google Agent Development Kit",
+      description: "AI Agent Creation Framework",
+      icon: <Settings className="w-8 h-8" />,
+      color: "from-green-500 to-emerald-500",
+      bgColor: "bg-green-50",
+      iconBg: "bg-green-100",
+      textColor: "text-green-600"
+    },
+    {
+      name: "n8n",
+      description: "Workflow Automation Platform",
+      icon: <Workflow className="w-8 h-8" />,
+      color: "from-orange-500 to-red-500",
+      bgColor: "bg-orange-50",
+      iconBg: "bg-orange-100",
+      textColor: "text-orange-600"
+    },
+    {
+      name: "LangChain",
+      description: "Large Language Model Application Framework",
+      icon: <Layers className="w-8 h-8" />,
+      color: "from-purple-500 to-pink-500",
+      bgColor: "bg-purple-50",
+      iconBg: "bg-purple-100",
+      textColor: "text-purple-600"
     }
   ];
 
@@ -355,8 +408,68 @@ function App() {
         </div>
       </section>
 
+      {/* AI Tools Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-teal-500 rounded-2xl mb-6">
+              <Zap className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              Learn Essential AI Development Tools
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+              Master these cutting-edge AI development platforms and automation tools:
+            </p>
+          </div>
+
+          {/* Tools Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {aiTools.map((tool, index) => (
+              <div key={index} className="group">
+                <div className={`${tool.bgColor} rounded-2xl p-8 border border-white/50 shadow-sm hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 h-full`}>
+                  <div className="text-center">
+                    <div className={`w-16 h-16 ${tool.iconBg} rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={tool.textColor}>
+                        {tool.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {tool.name}
+                    </h3>
+                    <p className={`${tool.textColor} font-medium text-sm`}>
+                      {tool.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Ready to Master These Tools?
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Join us to explore hands-on tutorials and real-world applications of these powerful AI development platforms.
+              </p>
+              <button
+                onClick={() => scrollToSection('registration')}
+                className="group bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
+              >
+                <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                <span>Join the Conference</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Simplified Speakers Section */}
-      <section id="speakers" className="py-20 bg-gray-50">
+      <section id="speakers" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
@@ -370,7 +483,7 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {speakers.map((speaker, index) => (
               <div key={index} className="group">
-                <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform group-hover:-translate-y-1 border border-gray-100">
+                <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform group-hover:-translate-y-1 border border-gray-100">
                   <div className="text-center">
                     {/* Larger Square Speaker Image */}
                     <div className="w-48 h-48 mx-auto mb-6 rounded-xl overflow-hidden shadow-lg">
@@ -415,9 +528,9 @@ function App() {
       </section>
 
       {/* Apply to Speak Section - Improved Design */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-50 rounded-3xl shadow-xl overflow-hidden">
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Left Content */}
               <div className="p-12 lg:p-16">
