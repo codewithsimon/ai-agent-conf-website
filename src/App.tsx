@@ -509,7 +509,7 @@ function App() {
           <div className="bg-white rounded-2xl p-8 shadow-xl">
             <div className="mb-8">
               <div className="text-4xl font-bold text-gray-900 mb-2">
-                Free Registration
+                Secure Your Spot
               </div>
               <p className="text-gray-600">
                 Limited seats available • All sessions included
