@@ -32,7 +32,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'speakers'];
+      const sections = ['hero', 'about'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -61,27 +61,51 @@ function App() {
     setIsMenuOpen(false);
   };
 
-  const speakers = [
+  const aiTools = [
     {
-      name: "Mahesh Chand",
-      title: "Founder and CEO CSharp Inc.",
-      image: "/Mahesh Chand.jpg",
-      linkedin: "https://www.linkedin.com/in/mchand/",
-      twitter: "https://x.com/mcbeniwal"
+      name: "Crew AI",
+      description: "Autonomous AI Agent Orchestration",
+      logo: "/Crew AI.png",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200",
+      textColor: "text-blue-600"
     },
     {
-      name: "Allen O'Neill",
-      title: "CTO @ SocialVoice.ai | Microsoft RD and MVP in AI",
-      image: "/allen-oneill.jpg",
-      linkedin: "https://www.linkedin.com/in/allenoneill/",
-      twitter: "https://x.com/DataBytesAI"
+      name: "Azure AI Foundry",
+      description: "Enterprise AI Development Suite",
+      logo: "/azure-ai-foundry.png",
+      color: "from-indigo-500 to-purple-500",
+      bgColor: "bg-indigo-50",
+      borderColor: "border-indigo-200",
+      textColor: "text-indigo-600"
     },
     {
-      name: "Stephen SIMON",
-      title: "Cloud & AI Advocate",
-      image: "/Stephen SIMON.jpg",
-      linkedin: "https://www.linkedin.com/in/codewithsimon/",
-      twitter: "https://x.com/codewithsimon"
+      name: "Google Agent Development Kit",
+      description: "AI Agent Creation Framework",
+      logo: "/agent-development-kit.png",
+      color: "from-green-500 to-emerald-500",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
+      textColor: "text-green-600"
+    },
+    {
+      name: "n8n",
+      description: "Workflow Automation Platform",
+      logo: "/N8n-logo-new.svg.png",
+      color: "from-pink-500 to-red-500",
+      bgColor: "bg-pink-50",
+      borderColor: "border-pink-200",
+      textColor: "text-pink-600"
+    },
+    {
+      name: "LangChain",
+      description: "Large Language Model Application Framework",
+      logo: "/LangChain-logo.png",
+      color: "from-green-600 to-teal-600",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
+      textColor: "text-green-600"
     }
   ];
 
@@ -100,19 +124,16 @@ function App() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {['About', 'Speakers'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-sm font-medium transition-colors duration-200 ${
-                    activeSection === item.toLowerCase()
-                      ? 'text-blue-600'
-                      : 'text-gray-600 hover:text-gray-900'
-                  }`}
-                >
-                  {item}
-                </button>
-              ))}
+              <button
+                onClick={() => scrollToSection('about')}
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  activeSection === 'about'
+                    ? 'text-blue-600'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                About
+              </button>
               <button
                 onClick={() => scrollToSection('registration')}
                 className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
@@ -135,15 +156,12 @@ function App() {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-100">
             <div className="px-4 py-4 space-y-4">
-              {['About', 'Speakers'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className="block w-full text-left text-gray-600 hover:text-gray-900 font-medium"
-                >
-                  {item}
-                </button>
-              ))}
+              <button
+                onClick={() => scrollToSection('about')}
+                className="block w-full text-left text-gray-600 hover:text-gray-900 font-medium"
+              >
+                About
+              </button>
               <button
                 onClick={() => scrollToSection('registration')}
                 className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
@@ -179,7 +197,7 @@ function App() {
               </div>
               
               {/* Enhanced Main Heading */}
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                 AI Agents
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 animate-gradient-x">
                   Conference 2025
@@ -187,7 +205,7 @@ function App() {
               </h1>
               
               {/* Enhanced Subtitle */}
-              <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
                 Join <span className="text-blue-600 font-semibold">industry leaders</span>, 
                 <span className="text-teal-600 font-semibold"> researchers</span>, and 
                 <span className="text-purple-600 font-semibold"> innovators</span> as we explore the cutting-edge of AI agent technology. 
@@ -196,55 +214,55 @@ function App() {
             </div>
 
             {/* Enhanced Event Details Cards */}
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-12">
-              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-xl shadow-lg border border-white/20">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <Calendar className="w-5 h-5 text-blue-600" />
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-8 mb-12">
+              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-4 lg:px-6 py-3 rounded-xl shadow-lg border border-white/20">
+                <div className="w-8 lg:w-10 h-8 lg:h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <Calendar className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-900">August 22, 2025</div>
-                  <div className="text-sm text-gray-600">Save the date</div>
+                  <div className="font-semibold text-gray-900 text-sm lg:text-base">August 22, 2025</div>
+                  <div className="text-xs lg:text-sm text-gray-600">Save the date</div>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-xl shadow-lg border border-white/20">
-                <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-teal-600" />
+              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-4 lg:px-6 py-3 rounded-xl shadow-lg border border-white/20">
+                <div className="w-8 lg:w-10 h-8 lg:h-10 bg-teal-100 rounded-lg flex items-center justify-center">
+                  <Clock className="w-4 lg:w-5 h-4 lg:h-5 text-teal-600" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-900">9:00 AM - 3:00 PM EST</div>
-                  <div className="text-sm text-gray-600">6 hours of content</div>
+                  <div className="font-semibold text-gray-900 text-sm lg:text-base">9:00 AM - 3:00 PM EST</div>
+                  <div className="text-xs lg:text-sm text-gray-600">6 hours of content</div>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-xl shadow-lg border border-white/20">
-                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <Globe className="w-5 h-5 text-purple-600" />
+              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-4 lg:px-6 py-3 rounded-xl shadow-lg border border-white/20">
+                <div className="w-8 lg:w-10 h-8 lg:h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <Globe className="w-4 lg:w-5 h-4 lg:h-5 text-purple-600" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-900">Virtual Event</div>
-                  <div className="text-sm text-gray-600">Join from anywhere</div>
+                  <div className="font-semibold text-gray-900 text-sm lg:text-base">Virtual Event</div>
+                  <div className="text-xs lg:text-sm text-gray-600">Join from anywhere</div>
                 </div>
               </div>
             </div>
 
             {/* Stats Section */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-2xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 mb-12 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">10+</div>
-                <div className="text-sm text-gray-600">Expert Speakers</div>
+                <div className="text-2xl lg:text-3xl font-bold text-blue-600">10+</div>
+                <div className="text-xs lg:text-sm text-gray-600">Expert Speakers</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-teal-600">500+</div>
-                <div className="text-sm text-gray-600">Attendees</div>
+                <div className="text-2xl lg:text-3xl font-bold text-teal-600">500+</div>
+                <div className="text-xs lg:text-sm text-gray-600">Attendees</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600">15</div>
-                <div className="text-sm text-gray-600">Sessions</div>
+                <div className="text-2xl lg:text-3xl font-bold text-purple-600">15</div>
+                <div className="text-xs lg:text-sm text-gray-600">Sessions</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600">Free</div>
-                <div className="text-sm text-gray-600">Registration</div>
+                <div className="text-2xl lg:text-3xl font-bold text-orange-600">Claim</div>
+                <div className="text-xs lg:text-sm text-gray-600">Your Spot</div>
               </div>
             </div>
 
@@ -252,18 +270,18 @@ function App() {
             <div className="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center mb-16">
               <button
                 onClick={() => scrollToSection('registration')}
-                className="group relative w-full sm:w-auto bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl overflow-hidden"
+                className="group relative w-full sm:w-auto bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 <span className="relative">Register Now</span>
-                <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1 transition-transform duration-200" />
+                <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 relative group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               
               <button
                 onClick={() => scrollToSection('about')}
-                className="w-full sm:w-auto bg-white/80 backdrop-blur-sm border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white hover:border-gray-300 hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
+                className="w-full sm:w-auto bg-white/80 backdrop-blur-sm border-2 border-gray-200 text-gray-700 px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:bg-white hover:border-gray-300 hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
               >
-                <Play className="w-5 h-5" />
+                <Play className="w-4 lg:w-5 h-4 lg:h-5" />
                 <span>Learn More</span>
               </button>
             </div>
@@ -282,57 +300,57 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               About the Conference
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
               The premier virtual event bringing together the brightest minds in AI agent development
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
                 Why Attend AI Agents Conference?
               </h3>
               <div className="space-y-6">
                 {[
                   {
-                    icon: <Users className="w-6 h-6 text-blue-600" />,
+                    icon: <Users className="w-5 lg:w-6 h-5 lg:h-6 text-blue-600" />,
                     title: "World-Class Speakers",
                     description: "Learn from leading AI researchers, engineers, and entrepreneurs who are shaping the future"
                   },
                   {
-                    icon: <Globe className="w-6 h-6 text-blue-600" />,
+                    icon: <Globe className="w-5 lg:w-6 h-5 lg:h-6 text-blue-600" />,
                     title: "Global Community",
                     description: "Connect with professionals from around the world in our interactive virtual environment"
                   },
                   {
-                    icon: <Star className="w-6 h-6 text-blue-600" />,
+                    icon: <Star className="w-5 lg:w-6 h-5 lg:h-6 text-blue-600" />,
                     title: "Cutting-Edge Insights",
                     description: "Discover the latest breakthroughs in AI agent technology and practical applications"
                   }
                 ].map((feature, index) => (
                   <div key={index} className="flex space-x-4">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
+                      <div className="w-10 lg:w-12 h-10 lg:h-12 bg-blue-50 rounded-lg flex items-center justify-center">
                         {feature.icon}
                       </div>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-2">{feature.title}</h4>
-                      <p className="text-gray-600">{feature.description}</p>
+                      <p className="text-gray-600 text-sm lg:text-base">{feature.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-teal-50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <div className="bg-gradient-to-br from-blue-50 to-teal-50 p-6 lg:p-8 rounded-2xl">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
                 What You'll Learn
               </h3>
               <div className="space-y-4">
@@ -345,8 +363,8 @@ function App() {
                   "Best practices for AI safety and reliability"
                 ].map((item, index) => (
                   <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
+                    <CheckCircle className="w-4 lg:w-5 h-4 lg:h-5 text-teal-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm lg:text-base">{item}</span>
                   </div>
                 ))}
               </div>
@@ -355,80 +373,84 @@ function App() {
         </div>
       </section>
 
-      {/* Simplified Speakers Section */}
-      <section id="speakers" className="py-20 bg-gray-50">
+      {/* AI Tools Section */}
+      <section className="py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Speakers 2025
+          <div className="text-center mb-12 lg:mb-16">
+            <div className="inline-flex items-center justify-center w-12 lg:w-16 h-12 lg:h-16 bg-gradient-to-br from-blue-500 to-teal-500 rounded-2xl mb-6">
+              <Zap className="w-6 lg:w-8 h-6 lg:h-8 text-white" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              Learn Essential AI Development Tools
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Learn from industry pioneers who are defining the future of AI agents. Adding more speakers regularly. 
+            <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+              Master these cutting-edge AI development platforms and automation tools:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {speakers.map((speaker, index) => (
+          {/* Tools Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8 mb-12">
+            {aiTools.map((tool, index) => (
               <div key={index} className="group">
-                <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform group-hover:-translate-y-1 border border-gray-100">
+                <div className={`${tool.bgColor} rounded-2xl p-6 lg:p-8 border ${tool.borderColor} shadow-sm hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 h-full`}>
                   <div className="text-center">
-                    {/* Larger Square Speaker Image */}
-                    <div className="w-48 h-48 mx-auto mb-6 rounded-xl overflow-hidden shadow-lg">
+                    {/* Logo Container */}
+                    <div className="w-16 lg:w-20 h-16 lg:h-20 mx-auto mb-4 lg:mb-6 rounded-xl bg-white shadow-sm flex items-center justify-center p-2 lg:p-3 group-hover:scale-110 transition-transform duration-300">
                       <img
-                        src={speaker.image}
-                        alt={speaker.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        src={tool.logo}
+                        alt={`${tool.name} logo`}
+                        className="w-full h-full object-contain"
                       />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      {speaker.name}
+                    <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2 lg:mb-3">
+                      {tool.name}
                     </h3>
-                    <p className="text-blue-600 font-medium mb-6">
-                      {speaker.title}
+                    <p className={`${tool.textColor} font-medium text-xs lg:text-sm leading-relaxed`}>
+                      {tool.description}
                     </p>
-                    
-                    {/* Social Media Links */}
-                    <div className="flex justify-center space-x-3">
-                      <a
-                        href={speaker.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-blue-50 hover:bg-blue-100 rounded-lg flex items-center justify-center transition-colors duration-200 group/social"
-                      >
-                        <Linkedin className="w-5 h-5 text-blue-600 group-hover/social:scale-110 transition-transform duration-200" />
-                      </a>
-                      <a
-                        href={speaker.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-50 hover:bg-gray-100 rounded-lg flex items-center justify-center transition-colors duration-200 group/social"
-                      >
-                        <X className="w-5 h-5 text-gray-700 group-hover/social:scale-110 transition-transform duration-200" />
-                      </a>
-                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
+                Ready to Master These Tools?
+              </h3>
+              <p className="text-gray-600 mb-6 text-sm lg:text-base">
+                Join us to explore hands-on tutorials and real-world applications of these powerful AI development platforms.
+              </p>
+              <button
+                onClick={() => scrollToSection('registration')}
+                className="group bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
+              >
+                <Sparkles className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
+                <span>Join the Conference</span>
+                <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Apply to Speak Section - Improved Design */}
-      <section className="py-20 bg-white">
+      <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gray-50 rounded-3xl shadow-xl overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Left Content */}
-              <div className="p-12 lg:p-16">
+              <div className="p-8 lg:p-16">
                 <div className="mb-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-6">
-                    <Mic className="w-8 h-8 text-blue-600" />
+                  <div className="inline-flex items-center justify-center w-12 lg:w-16 h-12 lg:h-16 bg-blue-100 rounded-2xl mb-6">
+                    <Mic className="w-6 lg:w-8 h-6 lg:h-8 text-blue-600" />
                   </div>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                     Share Your Expertise
                   </h2>
-                  <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                  <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
                     Join our lineup of distinguished speakers and share your insights with the global AI community. 
                     We're looking for innovative thinkers and practitioners.
                   </p>
@@ -438,23 +460,23 @@ function App() {
                 <div className="space-y-4 mb-8">
                   {[
                     {
-                      icon: <Award className="w-5 h-5 text-blue-600" />,
+                      icon: <Award className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />,
                       text: "Showcase your expertise to 500+ AI professionals"
                     },
                     {
-                      icon: <Target className="w-5 h-5 text-blue-600" />,
+                      icon: <Target className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />,
                       text: "Build your personal brand in the AI community"
                     },
                     {
-                      icon: <Users className="w-5 h-5 text-blue-600" />,
+                      icon: <Users className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />,
                       text: "Network with industry leaders and researchers"
                     }
                   ].map((benefit, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <div className="flex-shrink-0 w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
+                      <div className="flex-shrink-0 w-6 lg:w-8 h-6 lg:h-8 bg-blue-50 rounded-lg flex items-center justify-center">
                         {benefit.icon}
                       </div>
-                      <span className="text-gray-700">{benefit.text}</span>
+                      <span className="text-gray-700 text-sm lg:text-base">{benefit.text}</span>
                     </div>
                   ))}
                 </div>
@@ -463,29 +485,29 @@ function App() {
                   href="https://forms.office.com/r/4Xmg7AzHSU"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
+                  className="group bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
                 >
-                  <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <Sparkles className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
                   <span>Apply to Speak</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
               </div>
 
               {/* Right Visual */}
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-12 lg:p-16 flex items-center justify-center">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 lg:p-16 flex items-center justify-center">
                 <div className="text-center">
                   <div className="relative">
-                    <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl">
-                      <Mic className="w-16 h-16 text-white" />
+                    <div className="w-24 lg:w-32 h-24 lg:h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl">
+                      <Mic className="w-12 lg:w-16 h-12 lg:h-16 text-white" />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-                      <Sparkles className="w-4 h-4 text-yellow-800" />
+                    <div className="absolute -top-2 -right-2 w-6 lg:w-8 h-6 lg:h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                      <Sparkles className="w-3 lg:w-4 h-3 lg:h-4 text-yellow-800" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
                     Your Voice Matters
                   </h3>
-                  <p className="text-gray-600 max-w-sm">
+                  <p className="text-gray-600 max-w-sm text-sm lg:text-base">
                     Share your unique perspective and help shape the future of AI agent technology
                   </p>
                 </div>
@@ -496,19 +518,19 @@ function App() {
       </section>
 
       {/* Registration Section */}
-      <section id="registration" className="py-20 bg-gradient-to-br from-blue-600 to-teal-600">
+      <section id="registration" className="py-16 lg:py-20 bg-gradient-to-br from-blue-600 to-teal-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to Join Us?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Don't miss this opportunity to be part of the AI agent revolution. 
             Register now and secure your spot at this exclusive virtual event.
           </p>
           
-          <div className="bg-white rounded-2xl p-8 shadow-xl">
+          <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl">
             <div className="mb-8">
-              <div className="text-4xl font-bold text-gray-900 mb-2">
+              <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
                 Secure Your Spot
               </div>
               <p className="text-gray-600">
@@ -525,23 +547,23 @@ function App() {
                 "Exclusive resources and materials"
               ].map((benefit, index) => (
                 <div key={index} className="flex items-center justify-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-teal-600" />
-                  <span className="text-gray-700">{benefit}</span>
+                  <CheckCircle className="w-4 lg:w-5 h-4 lg:h-5 text-teal-600" />
+                  <span className="text-gray-700 text-sm lg:text-base">{benefit}</span>
                 </div>
               ))}
             </div>
             
             <a
-              href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025"
+              href="https://www.townscript.com/e/ai-agents-conference-032034"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center space-x-2"
+              className="w-full bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center space-x-2"
             >
-              <span>Register Now - It's Free!</span>
-              <ArrowRight className="w-5 h-5" />
+              <span>Register Now - $9</span>
+              <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5" />
             </a>
             
-            <p className="text-sm text-gray-500 mt-4">
+            <p className="text-xs lg:text-sm text-gray-500 mt-4">
               By registering, you agree to receive conference updates and materials.
             </p>
           </div>
@@ -549,48 +571,48 @@ function App() {
       </section>
 
       {/* Conference Organizer Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8">
-            <Code className="w-16 h-16 text-blue-600 mx-auto mb-6" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            <Code className="w-12 lg:w-16 h-12 lg:h-16 text-blue-600 mx-auto mb-6" />
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Join C# Corner - Your Premier AI-Powered Learning Community
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg lg:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               C# Corner is a leading upskilling and growth platform that empowers developers through AI-driven learning experiences.
             </p>
           </div>
           
           <div className="mb-8">
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-base lg:text-lg text-gray-700 mb-6">
               Ready to accelerate your development journey?
             </p>
             <a
               href="https://www.csharp.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              <TrendingUp className="w-5 h-5" />
+              <TrendingUp className="w-4 lg:w-5 h-4 lg:h-5" />
               <span>Join Now</span>
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5" />
             </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-gray-900 text-white py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="md:col-span-2">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="sm:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
                   <Users className="w-5 h-5 text-white" />
                 </div>
                 <span className="font-bold text-xl">AI Agents Conference</span>
               </div>
-              <p className="text-gray-400 mb-6 max-w-md">
+              <p className="text-gray-400 mb-6 max-w-md text-sm lg:text-base">
                 The premier virtual event for AI agent technology, bringing together innovators, 
                 researchers, and practitioners from around the world.
               </p>
@@ -610,18 +632,21 @@ function App() {
             <div>
               <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
               <div className="space-y-2">
-                {['About', 'Speakers', 'Registration'].map((link) => (
-                  <button
-                    key={link}
-                    onClick={() => scrollToSection(link.toLowerCase())}
-                    className="block text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    {link}
-                  </button>
-                ))}
+                <button
+                  onClick={() => scrollToSection('about')}
+                  className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
+                >
+                  About
+                </button>
+                <button
+                  onClick={() => scrollToSection('registration')}
+                  className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
+                >
+                  Registration
+                </button>
                 <Link
                   to="/code-of-conduct"
-                  className="block text-gray-400 hover:text-white transition-colors duration-200"
+                  className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
                 >
                   Code of Conduct
                 </Link>
@@ -631,11 +656,11 @@ function App() {
             <div>
               <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
               <div className="space-y-3">
-                <div className="flex items-center space-x-2 text-gray-400">
+                <div className="flex items-center space-x-2 text-gray-400 text-sm lg:text-base">
                   <Mail className="w-4 h-4" />
                   <span>stephen.simon@csharp.com</span>
                 </div>
-                <div className="flex items-center space-x-2 text-gray-400">
+                <div className="flex items-center space-x-2 text-gray-400 text-sm lg:text-base">
                   <Globe className="w-4 h-4" />
                   <span>www.aiagentsconference.live</span>
                 </div>
