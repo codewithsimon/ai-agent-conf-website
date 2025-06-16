@@ -554,7 +554,7 @@ function App() {
             </div>
             
             <a
-              href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025"
+              href="https://www.townscript.com/e/ai-agents-conference-032034"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center space-x-2"
