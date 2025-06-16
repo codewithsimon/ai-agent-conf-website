@@ -559,7 +559,7 @@ function App() {
               rel="noopener noreferrer"
               className="w-full bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center space-x-2"
             >
-              <span>Register Now - $9.99</span>
+              <span>Register Now - $9</span>
               <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5" />
             </a>
             
