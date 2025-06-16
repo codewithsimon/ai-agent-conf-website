@@ -32,7 +32,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'speakers'];
+      const sections = ['hero', 'about'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -60,30 +60,6 @@ function App() {
     }
     setIsMenuOpen(false);
   };
-
-  const speakers = [
-    {
-      name: "Mahesh Chand",
-      title: "Founder and CEO CSharp Inc.",
-      image: "/Mahesh Chand.jpg",
-      linkedin: "https://www.linkedin.com/in/mchand/",
-      twitter: "https://x.com/mcbeniwal"
-    },
-    {
-      name: "Allen O'Neill",
-      title: "CTO @ SocialVoice.ai | Microsoft RD and MVP in AI",
-      image: "/allen-oneill.jpg",
-      linkedin: "https://www.linkedin.com/in/allenoneill/",
-      twitter: "https://x.com/DataBytesAI"
-    },
-    {
-      name: "Stephen SIMON",
-      title: "Cloud & AI Advocate",
-      image: "/Stephen SIMON.jpg",
-      linkedin: "https://www.linkedin.com/in/codewithsimon/",
-      twitter: "https://x.com/codewithsimon"
-    }
-  ];
 
   const aiTools = [
     {
@@ -148,19 +124,16 @@ function App() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {['About', 'Speakers'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-sm font-medium transition-colors duration-200 ${
-                    activeSection === item.toLowerCase()
-                      ? 'text-blue-600'
-                      : 'text-gray-600 hover:text-gray-900'
-                  }`}
-                >
-                  {item}
-                </button>
-              ))}
+              <button
+                onClick={() => scrollToSection('about')}
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  activeSection === 'about'
+                    ? 'text-blue-600'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                About
+              </button>
               <button
                 onClick={() => scrollToSection('registration')}
                 className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
@@ -183,15 +156,12 @@ function App() {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-100">
             <div className="px-4 py-4 space-y-4">
-              {['About', 'Speakers'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className="block w-full text-left text-gray-600 hover:text-gray-900 font-medium"
-                >
-                  {item}
-                </button>
-              ))}
+              <button
+                onClick={() => scrollToSection('about')}
+                className="block w-full text-left text-gray-600 hover:text-gray-900 font-medium"
+              >
+                About
+              </button>
               <button
                 onClick={() => scrollToSection('registration')}
                 className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
@@ -466,69 +436,10 @@ function App() {
         </div>
       </section>
 
-      {/* Simplified Speakers Section */}
-      <section id="speakers" className="py-16 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Speakers 2025
-            </h2>
-            <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-              Learn from industry pioneers who are defining the future of AI agents. Adding more speakers regularly. 
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {speakers.map((speaker, index) => (
-              <div key={index} className="group">
-                <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform group-hover:-translate-y-1 border border-gray-100">
-                  <div className="text-center">
-                    {/* Larger Square Speaker Image */}
-                    <div className="w-40 lg:w-48 h-40 lg:h-48 mx-auto mb-6 rounded-xl overflow-hidden shadow-lg">
-                      <img
-                        src={speaker.image}
-                        alt={speaker.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2">
-                      {speaker.name}
-                    </h3>
-                    <p className="text-blue-600 font-medium mb-6 text-sm lg:text-base">
-                      {speaker.title}
-                    </p>
-                    
-                    {/* Social Media Links */}
-                    <div className="flex justify-center space-x-3">
-                      <a
-                        href={speaker.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-blue-50 hover:bg-blue-100 rounded-lg flex items-center justify-center transition-colors duration-200 group/social"
-                      >
-                        <Linkedin className="w-5 h-5 text-blue-600 group-hover/social:scale-110 transition-transform duration-200" />
-                      </a>
-                      <a
-                        href={speaker.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-50 hover:bg-gray-100 rounded-lg flex items-center justify-center transition-colors duration-200 group/social"
-                      >
-                        <X className="w-5 h-5 text-gray-700 group-hover/social:scale-110 transition-transform duration-200" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Apply to Speak Section - Improved Design */}
-      <section className="py-16 lg:py-20 bg-gray-50">
+      <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+          <div className="bg-gray-50 rounded-3xl shadow-xl overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Left Content */}
               <div className="p-8 lg:p-16">
@@ -721,15 +632,18 @@ function App() {
             <div>
               <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
               <div className="space-y-2">
-                {['About', 'Speakers', 'Registration'].map((link) => (
-                  <button
-                    key={link}
-                    onClick={() => scrollToSection(link.toLowerCase())}
-                    className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
-                  >
-                    {link}
-                  </button>
-                ))}
+                <button
+                  onClick={() => scrollToSection('about')}
+                  className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
+                >
+                  About
+                </button>
+                <button
+                  onClick={() => scrollToSection('registration')}
+                  className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
+                >
+                  Registration
+                </button>
                 <Link
                   to="/code-of-conduct"
                   className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
