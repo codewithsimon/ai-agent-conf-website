@@ -114,7 +114,7 @@ function App() {
     {
       name: "Microsoft Copilot",
       description: "AI-Powered Development Assistant",
-      logo: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=400",
+      logo: "/Microsoft Copilot Logo.png",
       color: "from-blue-600 to-purple-600",
       bgColor: "bg-blue-50",
       borderColor: "border-blue-200",
