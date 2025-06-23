@@ -128,6 +128,15 @@ function App() {
       bgColor: "bg-gray-50",
       borderColor: "border-gray-200",
       textColor: "text-gray-600"
+    },
+    {
+      name: "ElevenLabs",
+      description: "AI Voice Generation & Speech Synthesis",
+      logo: "/Eleven Labs Symbol Logo.png",
+      color: "from-orange-500 to-red-500",
+      bgColor: "bg-orange-50",
+      borderColor: "border-orange-200",
+      textColor: "text-orange-600"
     }
   ];
 
