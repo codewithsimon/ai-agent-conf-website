@@ -123,7 +123,7 @@ function App() {
     {
       name: "Cursor IDE",
       description: "AI-First Code Editor",
-      logo: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=400",
+      logo: "/Cursor IDE Logo.png",
       color: "from-gray-600 to-black",
       bgColor: "bg-gray-50",
       borderColor: "border-gray-200",
