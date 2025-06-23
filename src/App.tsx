@@ -280,15 +280,15 @@ function App() {
             {/* Stats Section */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 mb-12 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-blue-600">10+</div>
+                <div className="text-2xl lg:text-3xl font-bold text-blue-600">30+</div>
                 <div className="text-xs lg:text-sm text-gray-600">Expert Speakers</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-teal-600">1500+</div>
+                <div className="text-2xl lg:text-3xl font-bold text-teal-600">8,000 +</div>
                 <div className="text-xs lg:text-sm text-gray-600">Attendees</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-purple-600">15</div>
+                <div className="text-2xl lg:text-3xl font-bold text-purple-600">40+</div>
                 <div className="text-xs lg:text-sm text-gray-600">Sessions</div>
               </div>
               <div className="text-center">
