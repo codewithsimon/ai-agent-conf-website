@@ -106,6 +106,24 @@ function App() {
       bgColor: "bg-green-50",
       borderColor: "border-green-200",
       textColor: "text-green-600"
+    },
+    {
+      name: "Microsoft Copilot",
+      description: "AI-Powered Development Assistant",
+      logo: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=400",
+      color: "from-blue-600 to-purple-600",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200",
+      textColor: "text-blue-600"
+    },
+    {
+      name: "Cursor IDE",
+      description: "AI-First Code Editor",
+      logo: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=400",
+      color: "from-gray-600 to-black",
+      bgColor: "bg-gray-50",
+      borderColor: "border-gray-200",
+      textColor: "text-gray-600"
     }
   ];
 
@@ -389,13 +407,13 @@ function App() {
           </div>
 
           {/* Tools Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mb-12">
             {aiTools.map((tool, index) => (
               <div key={index} className="group">
                 <div className={`${tool.bgColor} rounded-2xl p-6 lg:p-8 border ${tool.borderColor} shadow-sm hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 h-full`}>
                   <div className="text-center">
-                    {/* Logo Container */}
-                    <div className="w-16 lg:w-20 h-16 lg:h-20 mx-auto mb-4 lg:mb-6 rounded-xl bg-white shadow-sm flex items-center justify-center p-2 lg:p-3 group-hover:scale-110 transition-transform duration-300">
+                    {/* Logo Container - Increased Size */}
+                    <div className="w-24 lg:w-32 h-24 lg:h-32 mx-auto mb-4 lg:mb-6 rounded-xl bg-white shadow-sm flex items-center justify-center p-3 lg:p-4 group-hover:scale-110 transition-transform duration-300">
                       <img
                         src={tool.logo}
                         alt={`${tool.name} logo`}
@@ -461,7 +479,7 @@ function App() {
                   {[
                     {
                       icon: <Award className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />,
-                      text: "Showcase your expertise to 500+ AI professionals"
+                      text: "Showcase your expertise to 1500+ AI professionals"
                     },
                     {
                       icon: <Target className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />,
@@ -554,7 +572,7 @@ function App() {
             </div>
             
             <a
-              href="https://www.townscript.com/e/ai-agents-conference-032034"
+              href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center space-x-2"
