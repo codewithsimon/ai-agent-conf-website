@@ -22,7 +22,11 @@ import {
   TrendingUp,
   ChevronDown,
   Award,
-  Target
+  Target,
+  Building2,
+  Handshake,
+  Eye,
+  Network
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -454,10 +458,135 @@ function App() {
         </div>
       </section>
 
-      {/* Apply to Speak Section - Improved Design */}
+      {/* Sponsors Section */}
       <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <div className="inline-flex items-center justify-center w-12 lg:w-16 h-12 lg:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mb-6">
+              <Handshake className="w-6 lg:w-8 h-6 lg:h-8 text-white" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              Partner With Us
+            </h2>
+            <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+              Join leading companies in supporting the future of AI agent technology and connect with the next generation of innovators.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
+            {/* Left Content */}
+            <div>
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+                Why Sponsor AI Agents Conference?
+              </h3>
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: <Eye className="w-5 lg:w-6 h-5 lg:h-6 text-purple-600" />,
+                    title: "Brand Visibility",
+                    description: "Showcase your brand to 1500+ AI professionals, developers, and decision-makers"
+                  },
+                  {
+                    icon: <Network className="w-5 lg:w-6 h-5 lg:h-6 text-purple-600" />,
+                    title: "Thought Leadership",
+                    description: "Position your company as a leader in the AI and automation space"
+                  },
+                  {
+                    icon: <Target className="w-5 lg:w-6 h-5 lg:h-6 text-purple-600" />,
+                    title: "Targeted Audience",
+                    description: "Connect directly with your ideal customers and potential partners"
+                  },
+                  {
+                    icon: <Building2 className="w-5 lg:w-6 h-5 lg:h-6 text-purple-600" />,
+                    title: "Community Impact",
+                    description: "Support the growth of the AI development community and innovation"
+                  }
+                ].map((benefit, index) => (
+                  <div key={index} className="flex space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 lg:w-12 h-10 lg:h-12 bg-purple-50 rounded-lg flex items-center justify-center">
+                        {benefit.icon}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">{benefit.title}</h4>
+                      <p className="text-gray-600 text-sm lg:text-base">{benefit.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Content - Sponsorship Tiers */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 lg:p-8 rounded-2xl">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+                Sponsorship Opportunities
+              </h3>
+              <div className="space-y-4">
+                {[
+                  {
+                    tier: "Platinum Sponsor",
+                    features: ["Logo on all conference materials", "Speaking opportunity", "Virtual booth space", "Attendee contact list"],
+                    highlight: true
+                  },
+                  {
+                    tier: "Gold Sponsor",
+                    features: ["Logo on website and emails", "Social media mentions", "Virtual booth space", "Conference recordings"],
+                    highlight: false
+                  },
+                  {
+                    tier: "Silver Sponsor",
+                    features: ["Logo on website", "Social media mention", "Conference access", "Networking opportunities"],
+                    highlight: false
+                  }
+                ].map((package_, index) => (
+                  <div key={index} className={`p-4 lg:p-6 rounded-xl border-2 ${package_.highlight ? 'border-purple-200 bg-white shadow-lg' : 'border-purple-100 bg-white/50'}`}>
+                    <h4 className={`font-bold mb-3 ${package_.highlight ? 'text-purple-700 text-lg' : 'text-gray-900'}`}>
+                      {package_.tier}
+                    </h4>
+                    <ul className="space-y-2">
+                      {package_.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start space-x-2 text-sm lg:text-base">
+                          <CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 lg:p-12 text-white">
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+                Ready to Partner With Us?
+              </h3>
+              <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+                Join us in shaping the future of AI agent technology. Let's discuss how we can create a customized sponsorship package that meets your goals.
+              </p>
+              <a
+                href="mailto:stephen.simon@csharp.com?subject=AI%20Agents%20Conference%20Sponsorship%20Inquiry&body=Hi%2C%0A%0AI'm%20interested%20in%20sponsoring%20the%20AI%20Agents%20Conference%202025.%20Please%20send%20me%20more%20information%20about%20sponsorship%20packages%20and%20opportunities.%0A%0AThank%20you%21"
+                className="group inline-flex items-center space-x-3 bg-white text-purple-600 px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:bg-purple-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <Mail className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
+                <span>Apply for Sponsorship</span>
+                <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </a>
+              <p className="text-sm text-purple-200 mt-4">
+                Contact us at stephen.simon@csharp.com for custom sponsorship packages
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Apply to Speak Section - Improved Design */}
+      <section className="py-16 lg:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-50 rounded-3xl shadow-xl overflow-hidden">
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Left Content */}
               <div className="p-8 lg:p-16">
