@@ -68,7 +68,6 @@ function App() {
   const aiTools = [
     {
       name: "Crew AI",
-      description: "Autonomous AI Agent Orchestration",
       logo: "/Crew AI.png",
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-50",
@@ -77,7 +76,6 @@ function App() {
     },
     {
       name: "Azure AI Foundry",
-      description: "Enterprise AI Development Suite",
       logo: "/azure-ai-foundry.png",
       color: "from-indigo-500 to-purple-500",
       bgColor: "bg-indigo-50",
@@ -86,7 +84,6 @@ function App() {
     },
     {
       name: "Google Agent Development Kit",
-      description: "AI Agent Creation Framework",
       logo: "/agent-development-kit.png",
       color: "from-green-500 to-emerald-500",
       bgColor: "bg-green-50",
@@ -95,7 +92,6 @@ function App() {
     },
     {
       name: "n8n",
-      description: "Workflow Automation Platform",
       logo: "/N8n-logo-new.svg.png",
       color: "from-pink-500 to-red-500",
       bgColor: "bg-pink-50",
@@ -104,7 +100,6 @@ function App() {
     },
     {
       name: "LangChain",
-      description: "Large Language Model Application Framework",
       logo: "/LangChain-logo.png",
       color: "from-green-600 to-teal-600",
       bgColor: "bg-green-50",
@@ -113,7 +108,6 @@ function App() {
     },
     {
       name: "Microsoft Copilot",
-      description: "AI-Powered Development Assistant",
       logo: "/Microsoft Copilot Logo.png",
       color: "from-blue-600 to-purple-600",
       bgColor: "bg-blue-50",
@@ -122,7 +116,6 @@ function App() {
     },
     {
       name: "Cursor IDE",
-      description: "AI-First Code Editor",
       logo: "/Cursor IDE Logo.png",
       color: "from-gray-600 to-black",
       bgColor: "bg-gray-50",
@@ -131,7 +124,6 @@ function App() {
     },
     {
       name: "ElevenLabs",
-      description: "AI Voice Generation & Speech Synthesis",
       logo: "/Eleven Labs Symbol Logo.png",
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50",
@@ -280,15 +272,15 @@ function App() {
             {/* Stats Section */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 mb-12 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-blue-600">10+</div>
+                <div className="text-2xl lg:text-3xl font-bold text-blue-600">30+</div>
                 <div className="text-xs lg:text-sm text-gray-600">Expert Speakers</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-teal-600">1500+</div>
+                <div className="text-2xl lg:text-3xl font-bold text-teal-600">8,000 +</div>
                 <div className="text-xs lg:text-sm text-gray-600">Attendees</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-purple-600">15</div>
+                <div className="text-2xl lg:text-3xl font-bold text-purple-600">40+</div>
                 <div className="text-xs lg:text-sm text-gray-600">Sessions</div>
               </div>
               <div className="text-center">
@@ -425,20 +417,17 @@ function App() {
               <div key={index} className="group">
                 <div className={`${tool.bgColor} rounded-2xl p-6 lg:p-8 border ${tool.borderColor} shadow-sm hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 h-full`}>
                   <div className="text-center">
-                    {/* Logo Container - Increased Size */}
-                    <div className="w-24 lg:w-32 h-24 lg:h-32 mx-auto mb-4 lg:mb-6 rounded-xl bg-white shadow-sm flex items-center justify-center p-3 lg:p-4 group-hover:scale-110 transition-transform duration-300">
+                    {/* Logo Container - Significantly Increased Size */}
+                    <div className="w-32 lg:w-40 h-32 lg:h-40 mx-auto mb-4 lg:mb-6 rounded-xl bg-white shadow-sm flex items-center justify-center p-4 lg:p-6 group-hover:scale-110 transition-transform duration-300">
                       <img
                         src={tool.logo}
                         alt={`${tool.name} logo`}
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-2 lg:mb-3">
+                    <h3 className="text-lg lg:text-xl font-bold text-gray-900">
                       {tool.name}
                     </h3>
-                    <p className={`${tool.textColor} font-medium text-xs lg:text-sm leading-relaxed`}>
-                      {tool.description}
-                    </p>
                   </div>
                 </div>
               </div>
