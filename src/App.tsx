@@ -26,7 +26,12 @@ import {
   Building2,
   Handshake,
   Eye,
-  Network
+  Network,
+  Crown,
+  Shield,
+  Heart,
+  Check,
+  Minus
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -129,6 +134,57 @@ function App() {
       bgColor: "bg-orange-50",
       borderColor: "border-orange-200",
       textColor: "text-orange-600"
+    }
+  ];
+
+  const sponsorshipTiers = [
+    {
+      name: "Title Sponsor",
+      icon: <Crown className="w-6 h-6 text-yellow-600" />,
+      bgColor: "bg-gradient-to-br from-yellow-50 to-orange-50",
+      borderColor: "border-yellow-200",
+      accentColor: "text-yellow-600",
+      features: [
+        { name: "Logo on Website", included: true, detail: "Top Placement", highlight: true },
+        { name: "Speaking Slot", included: true, detail: "Keynote or Panel", highlight: true },
+        { name: "Social Media Mentions", included: true, detail: "All time Mention", highlight: true },
+        { name: "Featured in Newsletter", included: true, detail: "", highlight: false },
+        { name: "Event Day Recognition", included: true, detail: "", highlight: false },
+        { name: "Attendee List Access*", included: true, detail: "Opt-in Only", highlight: true }
+      ],
+      premium: true
+    },
+    {
+      name: "Partner Sponsor",
+      icon: <Shield className="w-6 h-6 text-blue-600" />,
+      bgColor: "bg-gradient-to-br from-blue-50 to-indigo-50",
+      borderColor: "border-blue-200",
+      accentColor: "text-blue-600",
+      features: [
+        { name: "Logo on Website", included: true, detail: "Mid Placement", highlight: false },
+        { name: "Speaking Slot", included: true, detail: "Breakout Talk", highlight: true },
+        { name: "Social Media Mentions", included: true, detail: "6 Mentions", highlight: false },
+        { name: "Featured in Newsletter", included: true, detail: "", highlight: false },
+        { name: "Event Day Recognition", included: true, detail: "", highlight: false },
+        { name: "Attendee List Access*", included: false, detail: "", highlight: false }
+      ],
+      premium: false
+    },
+    {
+      name: "Community Sponsor",
+      icon: <Heart className="w-6 h-6 text-purple-600" />,
+      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
+      borderColor: "border-purple-200",
+      accentColor: "text-purple-600",
+      features: [
+        { name: "Logo on Website", included: true, detail: "Footer", highlight: false },
+        { name: "Speaking Slot", included: false, detail: "", highlight: false },
+        { name: "Social Media Mentions", included: true, detail: "3 Mentions", highlight: false },
+        { name: "Featured in Newsletter", included: false, detail: "", highlight: false },
+        { name: "Event Day Recognition", included: true, detail: "", highlight: false },
+        { name: "Attendee List Access*", included: false, detail: "", highlight: false }
+      ],
+      premium: false
     }
   ];
 
@@ -456,7 +512,7 @@ function App() {
         </div>
       </section>
 
-      {/* Sponsors Section */}
+      {/* Enhanced Sponsors Section */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
@@ -471,7 +527,7 @@ function App() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-16">
             {/* Left Content */}
             <div>
               <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
@@ -482,7 +538,7 @@ function App() {
                   {
                     icon: <Eye className="w-5 lg:w-6 h-5 lg:h-6 text-purple-600" />,
                     title: "Brand Visibility",
-                    description: "Showcase your brand to 1500+ AI professionals, developers, and decision-makers"
+                    description: "Showcase your brand to 8,000+ AI professionals, developers, and decision-makers"
                   },
                   {
                     icon: <Network className="w-5 lg:w-6 h-5 lg:h-6 text-purple-600" />,
@@ -516,42 +572,72 @@ function App() {
             </div>
 
             {/* Right Content - Sponsorship Tiers */}
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 lg:p-8 rounded-2xl">
+            <div>
               <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
-                Sponsorship Opportunities
+                Sponsorship Packages
               </h3>
-              <div className="space-y-4">
-                {[
-                  {
-                    tier: "Platinum Sponsor",
-                    features: ["Logo on all conference materials", "Speaking opportunity", "Virtual booth space", "Attendee contact list"],
-                    highlight: true
-                  },
-                  {
-                    tier: "Gold Sponsor",
-                    features: ["Logo on website and emails", "Social media mentions", "Virtual booth space", "Conference recordings"],
-                    highlight: false
-                  },
-                  {
-                    tier: "Silver Sponsor",
-                    features: ["Logo on website", "Social media mention", "Conference access", "Networking opportunities"],
-                    highlight: false
-                  }
-                ].map((package_, index) => (
-                  <div key={index} className={`p-4 lg:p-6 rounded-xl border-2 ${package_.highlight ? 'border-purple-200 bg-white shadow-lg' : 'border-purple-100 bg-white/50'}`}>
-                    <h4 className={`font-bold mb-3 ${package_.highlight ? 'text-purple-700 text-lg' : 'text-gray-900'}`}>
-                      {package_.tier}
-                    </h4>
-                    <ul className="space-y-2">
-                      {package_.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start space-x-2 text-sm lg:text-base">
-                          <CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+              
+              {/* Comparison Table */}
+              <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+                {/* Header */}
+                <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4">
+                  <div className="grid grid-cols-4 gap-4 items-center">
+                    <div className="text-sm font-semibold">Features</div>
+                    {sponsorshipTiers.map((tier, index) => (
+                      <div key={index} className="text-center">
+                        <div className="flex items-center justify-center space-x-2 mb-1">
+                          <div className="w-6 h-6 bg-white/20 rounded-lg flex items-center justify-center">
+                            {React.cloneElement(tier.icon, { className: "w-4 h-4 text-white" })}
+                          </div>
+                        </div>
+                        <div className="text-xs font-bold">{tier.name}</div>
+                        {tier.premium && (
+                          <div className="text-xs bg-yellow-400 text-yellow-900 px-2 py-0.5 rounded-full mt-1 inline-block">
+                            PREMIUM
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+
+                {/* Features Comparison */}
+                <div className="divide-y divide-gray-100">
+                  {sponsorshipTiers[0].features.map((_, featureIndex) => (
+                    <div key={featureIndex} className="grid grid-cols-4 gap-4 items-center p-4 hover:bg-gray-50 transition-colors duration-200">
+                      <div className="text-sm font-medium text-gray-900">
+                        {sponsorshipTiers[0].features[featureIndex].name}
+                      </div>
+                      {sponsorshipTiers.map((tier, tierIndex) => (
+                        <div key={tierIndex} className="text-center">
+                          <div className="flex items-center justify-center space-x-2">
+                            {tier.features[featureIndex].included ? (
+                              <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                                <Check className="w-4 h-4 text-green-600" />
+                              </div>
+                            ) : (
+                              <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
+                                <Minus className="w-4 h-4 text-gray-400" />
+                              </div>
+                            )}
+                          </div>
+                          {tier.features[featureIndex].detail && (
+                            <div className="text-xs text-gray-500 mt-1">
+                              {tier.features[featureIndex].detail}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Disclaimer */}
+              <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <p className="text-xs text-gray-600">
+                  <strong>*Attendee List Access:</strong> Only available for Title Sponsors and strictly limited to opt-in participants who have explicitly consented to share their contact information with sponsors.
+                </p>
               </div>
             </div>
           </div>
@@ -606,7 +692,7 @@ function App() {
                   {[
                     {
                       icon: <Award className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />,
-                      text: "Showcase your expertise to 1500+ AI professionals"
+                      text: "Showcase your expertise to 8,000+ AI professionals"
                     },
                     {
                       icon: <Target className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />,
@@ -719,7 +805,13 @@ function App() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8">
-            <Code className="w-12 lg:w-16 h-12 lg:h-16 text-blue-600 mx-auto mb-6" />
+            <div className="w-48 lg:w-64 h-20 lg:h-28 mx-auto mb-8 flex items-center justify-center">
+              <img
+                src="/logo 3.png"
+                alt="C# Corner logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Join C# Corner - Your Premier AI-Powered Learning Community
             </h2>
