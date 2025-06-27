@@ -26,7 +26,10 @@ import {
   Building2,
   Handshake,
   Eye,
-  Network
+  Network,
+  Crown,
+  Shield,
+  Heart
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -129,6 +132,57 @@ function App() {
       bgColor: "bg-orange-50",
       borderColor: "border-orange-200",
       textColor: "text-orange-600"
+    }
+  ];
+
+  const sponsorshipTiers = [
+    {
+      name: "Title Sponsor",
+      icon: <Crown className="w-6 h-6 text-yellow-600" />,
+      bgColor: "bg-gradient-to-br from-yellow-50 to-orange-50",
+      borderColor: "border-yellow-200",
+      accentColor: "text-yellow-600",
+      features: [
+        { name: "Logo on Website", value: "✅ (Top Placement)", highlight: true },
+        { name: "Speaking Slot", value: "✅ (Keynote or Panel)", highlight: true },
+        { name: "Social Media Mentions", value: "✅ (All time Mention)", highlight: true },
+        { name: "Featured in Newsletter", value: "✅", highlight: false },
+        { name: "Event Day Recognition", value: "✅", highlight: false },
+        { name: "Attendee List Access*", value: "✅ (Opt-in Only)", highlight: true }
+      ],
+      premium: true
+    },
+    {
+      name: "Partner Sponsor",
+      icon: <Shield className="w-6 h-6 text-blue-600" />,
+      bgColor: "bg-gradient-to-br from-blue-50 to-indigo-50",
+      borderColor: "border-blue-200",
+      accentColor: "text-blue-600",
+      features: [
+        { name: "Logo on Website", value: "✅ (Mid Placement)", highlight: false },
+        { name: "Speaking Slot", value: "✅ (Breakout Talk)", highlight: true },
+        { name: "Social Media Mentions", value: "✅ (6 Mentions)", highlight: false },
+        { name: "Featured in Newsletter", value: "✅", highlight: false },
+        { name: "Event Day Recognition", value: "✅", highlight: false },
+        { name: "Attendee List Access*", value: "❌", highlight: false }
+      ],
+      premium: false
+    },
+    {
+      name: "Community Sponsor",
+      icon: <Heart className="w-6 h-6 text-purple-600" />,
+      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
+      borderColor: "border-purple-200",
+      accentColor: "text-purple-600",
+      features: [
+        { name: "Logo on Website", value: "✅ (Footer)", highlight: false },
+        { name: "Speaking Slot", value: "❌", highlight: false },
+        { name: "Social Media Mentions", value: "✅ (3 Mentions)", highlight: false },
+        { name: "Featured in Newsletter", value: "❌", highlight: false },
+        { name: "Event Day Recognition", value: "✅", highlight: false },
+        { name: "Attendee List Access*", value: "❌", highlight: false }
+      ],
+      premium: false
     }
   ];
 
@@ -456,7 +510,7 @@ function App() {
         </div>
       </section>
 
-      {/* Sponsors Section */}
+      {/* Enhanced Sponsors Section */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
@@ -471,7 +525,7 @@ function App() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-16">
             {/* Left Content */}
             <div>
               <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
@@ -482,7 +536,7 @@ function App() {
                   {
                     icon: <Eye className="w-5 lg:w-6 h-5 lg:h-6 text-purple-600" />,
                     title: "Brand Visibility",
-                    description: "Showcase your brand to 1500+ AI professionals, developers, and decision-makers"
+                    description: "Showcase your brand to 8,000+ AI professionals, developers, and decision-makers"
                   },
                   {
                     icon: <Network className="w-5 lg:w-6 h-5 lg:h-6 text-purple-600" />,
@@ -516,42 +570,53 @@ function App() {
             </div>
 
             {/* Right Content - Sponsorship Tiers */}
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 lg:p-8 rounded-2xl">
+            <div>
               <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
-                Sponsorship Opportunities
+                Sponsorship Packages
               </h3>
-              <div className="space-y-4">
-                {[
-                  {
-                    tier: "Platinum Sponsor",
-                    features: ["Logo on all conference materials", "Speaking opportunity", "Virtual booth space", "Attendee contact list"],
-                    highlight: true
-                  },
-                  {
-                    tier: "Gold Sponsor",
-                    features: ["Logo on website and emails", "Social media mentions", "Virtual booth space", "Conference recordings"],
-                    highlight: false
-                  },
-                  {
-                    tier: "Silver Sponsor",
-                    features: ["Logo on website", "Social media mention", "Conference access", "Networking opportunities"],
-                    highlight: false
-                  }
-                ].map((package_, index) => (
-                  <div key={index} className={`p-4 lg:p-6 rounded-xl border-2 ${package_.highlight ? 'border-purple-200 bg-white shadow-lg' : 'border-purple-100 bg-white/50'}`}>
-                    <h4 className={`font-bold mb-3 ${package_.highlight ? 'text-purple-700 text-lg' : 'text-gray-900'}`}>
-                      {package_.tier}
-                    </h4>
-                    <ul className="space-y-2">
-                      {package_.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start space-x-2 text-sm lg:text-base">
-                          <CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
-                        </li>
+              <div className="space-y-6">
+                {sponsorshipTiers.map((tier, index) => (
+                  <div key={index} className={`${tier.bgColor} rounded-2xl p-6 border-2 ${tier.borderColor} ${tier.premium ? 'shadow-xl ring-2 ring-yellow-200' : 'shadow-lg'} relative overflow-hidden`}>
+                    {tier.premium && (
+                      <div className="absolute top-0 right-0 bg-gradient-to-l from-yellow-400 to-orange-400 text-white px-3 py-1 text-xs font-bold rounded-bl-lg">
+                        PREMIUM
+                      </div>
+                    )}
+                    
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className={`w-10 h-10 ${tier.bgColor} rounded-lg flex items-center justify-center border ${tier.borderColor}`}>
+                        {tier.icon}
+                      </div>
+                      <h4 className={`text-lg lg:text-xl font-bold ${tier.accentColor}`}>
+                        {tier.name}
+                      </h4>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      {tier.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+                          <span className="text-gray-700 text-sm lg:text-base font-medium">
+                            {feature.name}
+                          </span>
+                          <span className={`text-sm lg:text-base font-semibold ${
+                            feature.value.includes('✅') ? 'text-green-600' : 
+                            feature.value.includes('❌') ? 'text-red-500' : 
+                            'text-gray-600'
+                          } ${feature.highlight ? 'bg-white px-2 py-1 rounded-md shadow-sm' : ''}`}>
+                            {feature.value}
+                          </span>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 ))}
+              </div>
+              
+              {/* Disclaimer */}
+              <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <p className="text-xs text-gray-600">
+                  <strong>*Attendee List Access:</strong> Only available for Title Sponsors and strictly limited to opt-in participants who have explicitly consented to share their contact information with sponsors.
+                </p>
               </div>
             </div>
           </div>
@@ -606,7 +671,7 @@ function App() {
                   {[
                     {
                       icon: <Award className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />,
-                      text: "Showcase your expertise to 1500+ AI professionals"
+                      text: "Showcase your expertise to 8,000+ AI professionals"
                     },
                     {
                       icon: <Target className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />,
