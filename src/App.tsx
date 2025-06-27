@@ -719,7 +719,13 @@ function App() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8">
-            <Code className="w-12 lg:w-16 h-12 lg:h-16 text-blue-600 mx-auto mb-6" />
+            <div className="w-24 lg:w-32 h-12 lg:h-16 mx-auto mb-6 flex items-center justify-center">
+              <img
+                src="/logo 3.png"
+                alt="C# Corner logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Join C# Corner - Your Premier AI-Powered Learning Community
             </h2>
