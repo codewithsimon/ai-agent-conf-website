@@ -310,7 +310,7 @@ function App() {
                 </div>
                 <div className="text-left">
                   <div className="font-semibold text-gray-900 text-sm lg:text-base">9:00 AM - 3:00 PM EST</div>
-                  <div className="text-xs lg:text-sm text-gray-600">6 hours of content</div>
+                  <div className="text-xs lg:text-sm text-gray-600">24 hours of content</div>
                 </div>
               </div>
               
