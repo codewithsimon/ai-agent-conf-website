@@ -535,7 +535,25 @@ function App() {
             </p>
           </div>
 
-         
+          {/* Title Sponsorship Section */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-3xl p-8 lg:p-12 border-2 border-yellow-200 shadow-xl">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 lg:w-20 h-16 lg:h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl mb-6">
+                  <Crown className="w-8 lg:w-10 h-8 lg:h-10 text-white" />
+                </div>
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                  Title Sponsorship - Exclusive Opportunity
+                </h3>
+                <div className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600 mb-4">
+                  $5,000
+                </div>
+                <div className="inline-flex items-center space-x-2 bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-medium border border-yellow-300">
+                  <Star className="w-4 h-4" />
+                  <span>Limited to One Sponsor Only</span>
+                </div>
+              </div>
+
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
                   {/* Left: Exclusive Benefits */}
                   <div>
@@ -635,7 +653,7 @@ function App() {
                   </p>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
         </div>
       </section>
