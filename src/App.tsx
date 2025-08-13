@@ -31,7 +31,8 @@ import {
   Shield,
   Heart,
   Check,
-  Minus
+  Minus,
+  Share2
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -710,59 +711,258 @@ function App() {
               </h3>
               
               {/* Comparison Table */}
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-                {/* Header */}
-                <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4">
-                  <div className="grid grid-cols-4 gap-4 items-center">
-                    <div className="text-sm font-semibold">Features</div>
-                    {sponsorshipTiers.map((tier, index) => (
-                      <div key={index} className="text-center">
-                        <div className="flex items-center justify-center space-x-2 mb-1">
-                          <div className="w-6 h-6 bg-white/20 rounded-lg flex items-center justify-center">
-                            {React.cloneElement(tier.icon, { className: "w-4 h-4 text-white" })}
-                          </div>
-                        </div>
-                        <div className="text-xs font-bold">{tier.name}</div>
-                        <div className="text-xs font-semibold text-purple-200">{tier.price}</div>
-                        {tier.premium && (
-                          <div className="text-xs bg-yellow-400 text-yellow-900 px-2 py-0.5 rounded-full mt-1 inline-block">
-                            PREMIUM
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Features Comparison */}
-                <div className="divide-y divide-gray-100">
-                  {sponsorshipTiers[0].features.map((_, featureIndex) => (
-                    <div key={featureIndex} className="grid grid-cols-4 gap-4 items-center p-4 hover:bg-gray-50 transition-colors duration-200">
-                      <div className="text-sm font-medium text-gray-900">
-                        {sponsorshipTiers[0].features[featureIndex].name}
-                      </div>
-                      {sponsorshipTiers.map((tier, tierIndex) => (
-                        <div key={tierIndex} className="text-center">
-                          <div className="flex items-center justify-center space-x-2">
-                            {tier.features[featureIndex].included ? (
-                              <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                                <Check className="w-4 h-4 text-green-600" />
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-gray-50">
+                        <th className="px-6 py-4 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                          Features
+                        </th>
+                        <th className="px-6 py-4 text-center bg-gradient-to-br from-yellow-50 to-orange-50 border-l border-yellow-200">
+                          <div className="flex flex-col items-center space-y-2">
+                            <div className="flex items-center space-x-2">
+                              <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                                <Crown className="w-4 h-4 text-white" />
                               </div>
-                            ) : (
-                              <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                                <Minus className="w-4 h-4 text-gray-400" />
+                              <div>
+                                <div className="text-lg font-bold text-gray-900">Title</div>
+                                <div className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">EXCLUSIVE</div>
                               </div>
-                            )}
-                          </div>
-                          {tier.features[featureIndex].detail && (
-                            <div className="text-xs text-gray-500 mt-1">
-                              {tier.features[featureIndex].detail}
                             </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  ))}
+                            <div className="text-2xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+                              $5,000
+                            </div>
+                          </div>
+                        </th>
+                        <th className="px-6 py-4 text-center bg-gradient-to-br from-purple-50 to-blue-50 border-l border-purple-200">
+                          <div className="flex flex-col items-center space-y-2">
+                            <div className="flex items-center space-x-2">
+                              <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center">
+                                <Award className="w-4 h-4 text-white" />
+                              </div>
+                              <div>
+                                <div className="text-lg font-bold text-gray-900">Platinum</div>
+                              </div>
+                            </div>
+                            <div className="text-2xl font-bold text-purple-600">$1,500</div>
+                          </div>
+                        </th>
+                        <th className="px-6 py-4 text-center bg-gradient-to-br from-yellow-50 to-orange-50 border-l border-yellow-200">
+                          <div className="flex flex-col items-center space-y-2">
+                            <div className="flex items-center space-x-2">
+                              <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                                <Star className="w-4 h-4 text-white" />
+                              </div>
+                              <div>
+                                <div className="text-lg font-bold text-gray-900">Gold</div>
+                              </div>
+                            </div>
+                            <div className="text-2xl font-bold text-yellow-600">$1,000</div>
+                          </div>
+                        </th>
+                        <th className="px-6 py-4 text-center bg-gradient-to-br from-gray-50 to-slate-50 border-l border-gray-200">
+                          <div className="flex flex-col items-center space-y-2">
+                            <div className="flex items-center space-x-2">
+                              <div className="w-8 h-8 bg-gradient-to-br from-gray-400 to-slate-500 rounded-full flex items-center justify-center">
+                                <Users className="w-4 h-4 text-white" />
+                              </div>
+                              <div>
+                                <div className="text-lg font-bold text-gray-900">Silver</div>
+                              </div>
+                            </div>
+                            <div className="text-2xl font-bold text-gray-600">$500</div>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Logo on Website</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                          <div className="flex items-center justify-center space-x-1">
+                            <Crown className="w-4 h-4 text-yellow-600" />
+                            <span className="font-medium">Top + Exclusive Banner</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
+                          <div className="flex items-center justify-center space-x-1">
+                            <MapPin className="w-4 h-4 text-purple-600" />
+                            <span className="font-medium">Top Placement</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                          <div className="flex items-center justify-center space-x-1">
+                            <MapPin className="w-4 h-4 text-yellow-600" />
+                            <span className="font-medium">Mid Placement</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
+                          <div className="flex items-center justify-center space-x-1">
+                            <MapPin className="w-4 h-4 text-gray-600" />
+                            <span className="font-medium">Footer</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="bg-gray-50">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Speaking Slot</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                          <div className="flex items-center justify-center space-x-1">
+                            <Mic className="w-4 h-4 text-yellow-600" />
+                            <span className="font-medium">Keynote or Panel</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
+                          <div className="flex items-center justify-center space-x-1">
+                            <Mic className="w-4 h-4 text-purple-600" />
+                            <span className="font-medium">Keynote or Panel</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                          <div className="flex items-center justify-center space-x-1">
+                            <Mic className="w-4 h-4 text-yellow-600" />
+                            <span className="font-medium">Breakout Talk</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
+                          <div className="flex items-center justify-center space-x-1">
+                            <Mic className="w-4 h-4 text-gray-600" />
+                            <span className="font-medium">Panel</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Social Media Mentions</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                          <div className="flex items-center justify-center space-x-1">
+                            <Share2 className="w-4 h-4 text-yellow-600" />
+                            <span className="font-medium">Weekly</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
+                          <div className="flex items-center justify-center space-x-1">
+                            <Share2 className="w-4 h-4 text-purple-600" />
+                            <span className="font-medium">Weekly</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                          <div className="flex items-center justify-center space-x-1">
+                            <Share2 className="w-4 h-4 text-yellow-600" />
+                            <span className="font-medium">2-times a month</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
+                          <div className="flex items-center justify-center space-x-1">
+                            <Share2 className="w-4 h-4 text-gray-600" />
+                            <span className="font-medium">Monthly</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="bg-gray-50">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Event Day Recognition</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                          <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
+                          <CheckCircle className="w-5 h-5 text-purple-600 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                          <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
+                          <CheckCircle className="w-5 h-5 text-gray-600 mx-auto" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Webinar/Demo</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                          <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
+                          <CheckCircle className="w-5 h-5 text-purple-600 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                          <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
+                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                        </td>
+                      </tr>
+                      <tr className="bg-gray-50">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Recorded Session</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                          <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
+                          <CheckCircle className="w-5 h-5 text-purple-600 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                          <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
+                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                        </td>
+                      </tr>
+                      
+                      {/* Title Sponsorship Exclusive Features */}
+                      <tr className="bg-yellow-100">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">C# Corner Newsletter</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                          <div className="flex items-center justify-center space-x-1">
+                            <Mail className="w-4 h-4 text-yellow-600" />
+                            <span className="font-medium">765K Subscribers</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100">
+                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-yellow-100">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">C# Corner Social Media</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                          <div className="flex items-center justify-center space-x-1">
+                            <Share2 className="w-4 h-4 text-yellow-600" />
+                            <span className="font-medium">Weekly (2M+ Reach)</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100">
+                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                        </td>
+                      </tr>
+                      
+                      <tr className="bg-yellow-100">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Pre & Post Conference Promotions</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                          <div className="flex items-center justify-center space-x-1">
+                            <Calendar className="w-4 h-4 text-yellow-600" />
+                            <span className="font-medium">Extended Campaign</span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100">
+                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
               
