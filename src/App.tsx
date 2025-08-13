@@ -299,7 +299,7 @@ function App() {
                   <Calendar className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-900 text-sm lg:text-base">October 6 -9, 2025</div>
+                  <div className="font-semibold text-gray-900 text-sm lg:text-base">October 1- 3, 2025</div>
                   <div className="text-xs lg:text-sm text-gray-600">Save the date</div>
                 </div>
               </div>
@@ -328,7 +328,7 @@ function App() {
             {/* Stats Section */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 mb-12 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-blue-600">30+</div>
+                <div className="text-2xl lg:text-3xl font-bold text-blue-600">20+</div>
                 <div className="text-xs lg:text-sm text-gray-600">Expert Speakers</div>
               </div>
               <div className="text-center">
@@ -336,7 +336,7 @@ function App() {
                 <div className="text-xs lg:text-sm text-gray-600">Attendees</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-purple-600">40+</div>
+                <div className="text-2xl lg:text-3xl font-bold text-purple-600">25+</div>
                 <div className="text-xs lg:text-sm text-gray-600">Sessions</div>
               </div>
               <div className="text-center">
@@ -785,7 +785,7 @@ function App() {
             </div>
             
             <a
-              href="https://www.townscript.com/e/ai-agents-conference-032034"
+              href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center space-x-2"
