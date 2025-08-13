@@ -535,29 +535,7 @@ function App() {
             </p>
           </div>
 
-          {/* Title Sponsorship - Exclusive Section */}
-          <div className="mb-16">
-            <div className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-3xl p-1 shadow-2xl">
-              <div className="bg-white rounded-3xl p-8 lg:p-12">
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center justify-center w-16 lg:w-20 h-16 lg:h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl mb-6 shadow-lg">
-                    <Crown className="w-8 lg:w-10 h-8 lg:h-10 text-white" />
-                  </div>
-                  <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-yellow-100 to-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-bold mb-4">
-                    <Sparkles className="w-4 h-4" />
-                    <span>EXCLUSIVE OPPORTUNITY</span>
-                  </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                    Title Sponsorship
-                  </h3>
-                  <div className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600 mb-6">
-                    $5,000
-                  </div>
-                  <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-                    Become the exclusive title sponsor and maximize your brand exposure to our massive global audience
-                  </p>
-                </div>
-
+         
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
                   {/* Left: Exclusive Benefits */}
                   <div>
