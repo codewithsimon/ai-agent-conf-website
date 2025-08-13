@@ -139,50 +139,53 @@ function App() {
 
   const sponsorshipTiers = [
     {
-      name: "Title Sponsor",
-      icon: <Crown className="w-6 h-6 text-yellow-600" />,
-      bgColor: "bg-gradient-to-br from-yellow-50 to-orange-50",
-      borderColor: "border-yellow-200",
-      accentColor: "text-yellow-600",
+      name: "Platinum",
+      price: "$1,500",
+      icon: <Crown className="w-6 h-6 text-purple-600" />,
+      bgColor: "bg-gradient-to-br from-purple-50 to-indigo-50",
+      borderColor: "border-purple-200",
+      accentColor: "text-purple-600",
       features: [
         { name: "Logo on Website", included: true, detail: "Top Placement", highlight: true },
         { name: "Speaking Slot", included: true, detail: "Keynote or Panel", highlight: true },
-        { name: "Social Media Mentions", included: true, detail: "All time Mention", highlight: true },
-        { name: "Featured in Newsletter", included: true, detail: "", highlight: false },
+        { name: "Social Media Mentions", included: true, detail: "Weekly", highlight: true },
         { name: "Event Day Recognition", included: true, detail: "", highlight: false },
-        { name: "Attendee List Access*", included: true, detail: "Opt-in Only", highlight: true }
+        { name: "Webinar/Demo", included: true, detail: "", highlight: false },
+        { name: "Recorded Session", included: true, detail: "", highlight: false }
       ],
       premium: true
     },
     {
-      name: "Partner Sponsor",
-      icon: <Shield className="w-6 h-6 text-blue-600" />,
-      bgColor: "bg-gradient-to-br from-blue-50 to-indigo-50",
-      borderColor: "border-blue-200",
-      accentColor: "text-blue-600",
+      name: "Gold",
+      price: "$1,000",
+      icon: <Award className="w-6 h-6 text-yellow-600" />,
+      bgColor: "bg-gradient-to-br from-yellow-50 to-orange-50",
+      borderColor: "border-yellow-200",
+      accentColor: "text-yellow-600",
       features: [
         { name: "Logo on Website", included: true, detail: "Mid Placement", highlight: false },
         { name: "Speaking Slot", included: true, detail: "Breakout Talk", highlight: true },
-        { name: "Social Media Mentions", included: true, detail: "6 Mentions", highlight: false },
-        { name: "Featured in Newsletter", included: true, detail: "", highlight: false },
+        { name: "Social Media Mentions", included: true, detail: "2-times a month", highlight: false },
         { name: "Event Day Recognition", included: true, detail: "", highlight: false },
-        { name: "Attendee List Access*", included: false, detail: "", highlight: false }
+        { name: "Webinar/Demo", included: true, detail: "", highlight: false },
+        { name: "Recorded Session", included: true, detail: "", highlight: false }
       ],
       premium: false
     },
     {
-      name: "Community Sponsor",
-      icon: <Heart className="w-6 h-6 text-purple-600" />,
-      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
-      borderColor: "border-purple-200",
-      accentColor: "text-purple-600",
+      name: "Silver",
+      price: "$500",
+      icon: <Shield className="w-6 h-6 text-gray-600" />,
+      bgColor: "bg-gradient-to-br from-gray-50 to-slate-50",
+      borderColor: "border-gray-200",
+      accentColor: "text-gray-600",
       features: [
         { name: "Logo on Website", included: true, detail: "Footer", highlight: false },
-        { name: "Speaking Slot", included: false, detail: "", highlight: false },
-        { name: "Social Media Mentions", included: true, detail: "3 Mentions", highlight: false },
-        { name: "Featured in Newsletter", included: false, detail: "", highlight: false },
+        { name: "Speaking Slot", included: true, detail: "Panel", highlight: false },
+        { name: "Social Media Mentions", included: true, detail: "Monthly", highlight: false },
         { name: "Event Day Recognition", included: true, detail: "", highlight: false },
-        { name: "Attendee List Access*", included: false, detail: "", highlight: false }
+        { name: "Webinar/Demo", included: false, detail: "", highlight: false },
+        { name: "Recorded Session", included: false, detail: "", highlight: false }
       ],
       premium: false
     }
@@ -595,6 +598,7 @@ function App() {
                           </div>
                         </div>
                         <div className="text-xs font-bold">{tier.name}</div>
+                        <div className="text-xs font-semibold text-purple-200">{tier.price}</div>
                         {tier.premium && (
                           <div className="text-xs bg-yellow-400 text-yellow-900 px-2 py-0.5 rounded-full mt-1 inline-block">
                             PREMIUM
@@ -638,9 +642,9 @@ function App() {
               </div>
               
               {/* Disclaimer */}
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <p className="text-xs text-gray-600">
-                  <strong>*Attendee List Access:</strong> Only available for Title Sponsors and strictly limited to opt-in participants who have explicitly consented to share their contact information with sponsors.
+                  <strong>Note:</strong> All sponsorship packages include logo placement, event day recognition, and networking opportunities. Webinar/Demo slots are 30-45 minutes and recorded sessions are available for 90 days post-event.
                 </p>
               </div>
             </div>
