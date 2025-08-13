@@ -644,7 +644,7 @@ function App() {
               {/* Disclaimer */}
               <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <p className="text-xs text-gray-600">
-                  <strong>Note:</strong> All sponsorship packages include logo placement, event day recognition, and networking opportunities. Webinar/Demo slots are 30-45 minutes and recorded sessions are available for 90 days post-event.
+                  <strong>Note:</strong> All sponsorship packages include logo placement, event day recognition, and networking opportunities.
                 </p>
               </div>
             </div>
