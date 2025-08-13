@@ -582,7 +582,8 @@ function App() {
                           title: "Extended Campaign",
                           description: "Pre and post conference promotional campaigns"
                         }
-                      ].map((benefit, index) => (
+            <div className="overflow-x-auto pb-4">
+              <div className="inline-block min-w-full">
                         <div key={index} className="flex space-x-4 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border border-yellow-200">
                           <div className="flex-shrink-0">
                             <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
@@ -730,7 +731,7 @@ function App() {
                                 <div className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">EXCLUSIVE</div>
                               </div>
                             </div>
-                            <div className="text-2xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+                            <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600 mt-2">
                               $5,000
                             </div>
                           </div>
@@ -741,7 +742,7 @@ function App() {
                               <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center">
                                 <Award className="w-4 h-4 text-white" />
                               </div>
-                              <div>
+                            <div className="text-3xl font-bold text-purple-600 mt-2">$1,500</div>
                                 <div className="text-lg font-bold text-gray-900">Platinum</div>
                               </div>
                             </div>
@@ -838,7 +839,7 @@ function App() {
                             <Share2 className="w-4 h-4 text-yellow-600" />
                             <span className="font-medium">Weekly</span>
                           </div>
-                        </td>
+                            <div className="text-3xl font-bold text-yellow-600 mt-2">$1,000</div>
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
                           <div className="flex items-center justify-center space-x-1">
                             <Share2 className="w-4 h-4 text-purple-600" />
@@ -847,7 +848,7 @@ function App() {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
                           <div className="flex items-center justify-center space-x-1">
-                            <Share2 className="w-4 h-4 text-yellow-600" />
+                            <div className="text-3xl font-bold text-gray-600 mt-2">$500</div>
                             <span className="font-medium">2-times a month</span>
                           </div>
                         </td>
@@ -855,142 +856,258 @@ function App() {
                           <div className="flex items-center justify-center space-x-1">
                             <Share2 className="w-4 h-4 text-gray-600" />
                             <span className="font-medium">Monthly</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr className="bg-gray-50">
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Event Day Recognition</td>
+                      <td className="p-6 font-semibold text-gray-900 bg-gradient-to-r from-gray-50 to-gray-100 border-r border-gray-200">
+                        <div className="flex items-center space-x-2">
+                          <Globe className="w-5 h-5 text-gray-600" />
+                          <span>Logo on Website</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-yellow-800 bg-gradient-to-r from-yellow-50 to-orange-50 border-r border-yellow-100">
+                        <div className="flex items-center space-x-2">
+                          <Crown className="w-4 h-4 text-yellow-600" />
+                          <span className="font-medium">Top + Exclusive Banner</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-purple-800 bg-gradient-to-r from-purple-50 to-purple-100 border-r border-purple-100">
+                        <div className="flex items-center space-x-2">
+                          <Award className="w-4 h-4 text-purple-600" />
+                          <span className="font-medium">Top Placement</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-yellow-800 bg-gradient-to-r from-yellow-50 to-yellow-100 border-r border-yellow-100">
+                        <div className="flex items-center space-x-2">
+                          <Star className="w-4 h-4 text-yellow-600" />
+                          <span className="font-medium">Mid Placement</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-gray-800 bg-gradient-to-r from-gray-50 to-gray-100">
+                        <div className="flex items-center space-x-2">
+                          <Users className="w-4 h-4 text-gray-600" />
+                          <span className="font-medium">Footer</span>
+                        </div>
+                      </td>
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
                           <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
-                          <CheckCircle className="w-5 h-5 text-purple-600 mx-auto" />
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                      <td className="p-6 font-semibold text-gray-900 bg-gradient-to-r from-gray-50 to-gray-100 border-r border-gray-200">
+                        <div className="flex items-center space-x-2">
+                          <Mic className="w-5 h-5 text-gray-600" />
+                          <span>Speaking Slot</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-yellow-800 bg-gradient-to-r from-yellow-50 to-orange-50 border-r border-yellow-100">
+                        <div className="flex items-center space-x-2">
+                          <Crown className="w-4 h-4 text-yellow-600" />
+                          <span className="font-medium">Keynote or Panel</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-purple-800 bg-gradient-to-r from-purple-50 to-purple-100 border-r border-purple-100">
+                        <div className="flex items-center space-x-2">
+                          <Award className="w-4 h-4 text-purple-600" />
+                          <span className="font-medium">Keynote or Panel</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-yellow-800 bg-gradient-to-r from-yellow-50 to-yellow-100 border-r border-yellow-100">
+                        <div className="flex items-center space-x-2">
+                          <Star className="w-4 h-4 text-yellow-600" />
+                          <span className="font-medium">Breakout Talk</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-gray-800 bg-gradient-to-r from-gray-50 to-gray-100">
+                        <div className="flex items-center space-x-2">
+                          <Users className="w-4 h-4 text-gray-600" />
+                          <span className="font-medium">Panel</span>
+                        </div>
+                      </td>
                           <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
-                          <CheckCircle className="w-5 h-5 text-gray-600 mx-auto" />
-                        </td>
-                      </tr>
-                      <tr>
+                      <td className="p-6 font-semibold text-gray-900 bg-gradient-to-r from-gray-50 to-gray-100 border-r border-gray-200">
+                        <div className="flex items-center space-x-2">
+                          <Share2 className="w-5 h-5 text-gray-600" />
+                          <span>Social Media Mentions</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-yellow-800 bg-gradient-to-r from-yellow-50 to-orange-50 border-r border-yellow-100">
+                        <div className="flex items-center space-x-2">
+                          <Crown className="w-4 h-4 text-yellow-600" />
+                          <span className="font-medium">Weekly</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-purple-800 bg-gradient-to-r from-purple-50 to-purple-100 border-r border-purple-100">
+                        <div className="flex items-center space-x-2">
+                          <Award className="w-4 h-4 text-purple-600" />
+                          <span className="font-medium">Weekly</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-yellow-800 bg-gradient-to-r from-yellow-50 to-yellow-100 border-r border-yellow-100">
+                        <div className="flex items-center space-x-2">
+                          <Star className="w-4 h-4 text-yellow-600" />
+                          <span className="font-medium">2-times a month</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-gray-800 bg-gradient-to-r from-gray-50 to-gray-100">
+                        <div className="flex items-center space-x-2">
+                          <Users className="w-4 h-4 text-gray-600" />
+                          <span className="font-medium">Monthly</span>
+                        </div>
+                      </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Webinar/Demo</td>
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
-                          <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
-                        </td>
+                      <td className="p-6 font-semibold text-gray-900 bg-gradient-to-r from-gray-50 to-gray-100 border-r border-gray-200">
+                        <div className="flex items-center space-x-2">
+                          <Trophy className="w-5 h-5 text-gray-600" />
+                          <span>Event Day Recognition</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-center bg-gradient-to-r from-yellow-50 to-orange-50 border-r border-yellow-100">
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
                           <CheckCircle className="w-5 h-5 text-purple-600 mx-auto" />
-                        </td>
+                      <td className="p-6 text-center bg-gradient-to-r from-purple-50 to-purple-100 border-r border-purple-100">
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
                           <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
-                        </td>
+                      <td className="p-6 text-center bg-gradient-to-r from-yellow-50 to-yellow-100 border-r border-yellow-100">
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
                           <X className="w-5 h-5 text-gray-400 mx-auto" />
-                        </td>
+                      <td className="p-6 text-center bg-gradient-to-r from-gray-50 to-gray-100">
                       </tr>
                       <tr className="bg-gray-50">
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Recorded Session</td>
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
-                          <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
-                        </td>
+                      <td className="p-6 font-semibold text-gray-900 bg-gradient-to-r from-gray-50 to-gray-100 border-r border-gray-200">
+                        <div className="flex items-center space-x-2">
+                          <Video className="w-5 h-5 text-gray-600" />
+                          <span>Webinar/Demo</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-center bg-gradient-to-r from-yellow-50 to-orange-50 border-r border-yellow-100">
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
                           <CheckCircle className="w-5 h-5 text-purple-600 mx-auto" />
-                        </td>
+                      <td className="p-6 text-center bg-gradient-to-r from-purple-50 to-purple-100 border-r border-purple-100">
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
                           <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
-                        </td>
+                      <td className="p-6 text-center bg-gradient-to-r from-yellow-50 to-yellow-100 border-r border-yellow-100">
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
                           <X className="w-5 h-5 text-gray-400 mx-auto" />
-                        </td>
+                      <td className="p-6 text-center bg-gradient-to-r from-gray-50 to-gray-100">
                       </tr>
                       
                       {/* Title Sponsorship Exclusive Features */}
                       <tr className="bg-yellow-100">
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">C# Corner Newsletter</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                      <td className="p-6 font-semibold text-gray-900 bg-gradient-to-r from-gray-50 to-gray-100 border-r border-gray-200">
+                        <div className="flex items-center space-x-2">
+                          <Play className="w-5 h-5 text-gray-600" />
+                          <span>Recorded Session</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-center bg-gradient-to-r from-yellow-50 to-orange-50 border-r border-yellow-100">
                           <div className="flex items-center justify-center space-x-1">
                             <Mail className="w-4 h-4 text-yellow-600" />
-                            <span className="font-medium">765K Subscribers</span>
+                      <td className="p-6 text-center bg-gradient-to-r from-purple-50 to-purple-100 border-r border-purple-100">
                           </div>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                      <td className="p-6 text-center bg-gradient-to-r from-yellow-50 to-yellow-100 border-r border-yellow-100">
                           <X className="w-5 h-5 text-gray-400 mx-auto" />
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                      <td className="p-6 text-center bg-gradient-to-r from-gray-50 to-gray-100">
                           <X className="w-5 h-5 text-gray-400 mx-auto" />
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100">
                           <X className="w-5 h-5 text-gray-400 mx-auto" />
                         </td>
-                      </tr>
-                      
-                      <tr className="bg-yellow-100">
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">C# Corner Social Media</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                    <tr className="border-b border-yellow-200 bg-gradient-to-r from-yellow-100 to-orange-100 hover:from-yellow-200 hover:to-orange-200 transition-all duration-200">
+                      <td className="p-6 font-semibold text-gray-900 bg-gradient-to-r from-yellow-200 to-orange-200 border-r border-yellow-300">
+                        <div className="flex items-center space-x-2">
+                          <Mail className="w-5 h-5 text-yellow-700" />
+                          <span>C# Corner Newsletter</span>
+                          <span className="px-2 py-1 bg-yellow-300 text-yellow-800 text-xs font-medium rounded-full ml-2">
+                            EXCLUSIVE
+                          </span>
                           <div className="flex items-center justify-center space-x-1">
                             <Share2 className="w-4 h-4 text-yellow-600" />
-                            <span className="font-medium">Weekly (2M+ Reach)</span>
-                          </div>
+                      <td className="p-6 text-yellow-900 bg-gradient-to-r from-yellow-100 to-orange-100 font-semibold border-r border-yellow-200">
+                        <div className="flex items-center space-x-2">
+                          <Crown className="w-4 h-4 text-yellow-600" />
+                          <span>765K Subscribers</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-center bg-gradient-to-r from-gray-100 to-gray-200 border-r border-gray-200">
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
-                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                      <td className="p-6 text-center bg-gradient-to-r from-gray-100 to-gray-200 border-r border-gray-200">
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
-                          <X className="w-5 h-5 text-gray-400 mx-auto" />
+                      <td className="p-6 text-center bg-gradient-to-r from-gray-100 to-gray-200">
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100">
                           <X className="w-5 h-5 text-gray-400 mx-auto" />
-                        </td>
-                      </tr>
+                    <tr className="border-b border-yellow-200 bg-gradient-to-r from-yellow-100 to-orange-100 hover:from-yellow-200 hover:to-orange-200 transition-all duration-200">
+                      <td className="p-6 font-semibold text-gray-900 bg-gradient-to-r from-yellow-200 to-orange-200 border-r border-yellow-300">
                       
-                      <tr className="bg-yellow-100">
+                          <Share2 className="w-5 h-5 text-yellow-700" />
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Pre & Post Conference Promotions</td>
+                          <span className="px-2 py-1 bg-yellow-300 text-yellow-800 text-xs font-medium rounded-full ml-2">
+                            EXCLUSIVE
+                          </span>
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
                           <div className="flex items-center justify-center space-x-1">
-                            <Calendar className="w-4 h-4 text-yellow-600" />
-                            <span className="font-medium">Extended Campaign</span>
+                      <td className="p-6 text-yellow-900 bg-gradient-to-r from-yellow-100 to-orange-100 font-semibold border-r border-yellow-200">
+                        <div className="flex items-center space-x-2">
+                          <Crown className="w-4 h-4 text-yellow-600" />
+                          <span>Weekly (2M+ Reach)</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-center bg-gradient-to-r from-gray-100 to-gray-200 border-r border-gray-200">
                           </div>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                      <td className="p-6 text-center bg-gradient-to-r from-gray-100 to-gray-200 border-r border-gray-200">
                           <X className="w-5 h-5 text-gray-400 mx-auto" />
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                      <td className="p-6 text-center bg-gradient-to-r from-gray-100 to-gray-200">
                           <X className="w-5 h-5 text-gray-400 mx-auto" />
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100">
-                          <X className="w-5 h-5 text-gray-400 mx-auto" />
-                        </td>
+                    <tr className="bg-gradient-to-r from-yellow-100 to-orange-100 hover:from-yellow-200 hover:to-orange-200 transition-all duration-200">
+                      <td className="p-6 font-semibold text-gray-900 bg-gradient-to-r from-yellow-200 to-orange-200 rounded-bl-2xl border-r border-yellow-300">
                       </tr>
-                    </tbody>
+                          <Calendar className="w-5 h-5 text-yellow-700" />
                   </table>
+                          <span className="px-2 py-1 bg-yellow-300 text-yellow-800 text-xs font-medium rounded-full ml-2">
+                            EXCLUSIVE
+                          </span>
                 </div>
               </div>
-              
-              {/* Disclaimer */}
+                      <td className="p-6 text-yellow-900 bg-gradient-to-r from-yellow-100 to-orange-100 font-semibold border-r border-yellow-200">
+                        <div className="flex items-center space-x-2">
+                          <Crown className="w-4 h-4 text-yellow-600" />
+                          <span>Extended Campaign</span>
+                        </div>
+                      </td>
+                      <td className="p-6 text-center bg-gradient-to-r from-gray-100 to-gray-200 border-r border-gray-200">
               <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <p className="text-xs text-gray-600">
-                  <strong>Note:</strong> All sponsorship packages include logo placement, event day recognition, and networking opportunities.
+                      <td className="p-6 text-center bg-gradient-to-r from-gray-100 to-gray-200 border-r border-gray-200">
                 </p>
               </div>
-            </div>
+                      <td className="p-6 text-center bg-gradient-to-r from-gray-100 to-gray-200 rounded-br-2xl">
           </div>
 
           {/* CTA Section */}
           <div className="text-center">
             <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 lg:p-12 text-white">
+              </div>
               <h3 className="text-2xl lg:text-3xl font-bold mb-4">
                 Ready to Partner With Us?
               </h3>
               <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                Join us in shaping the future of AI agent technology. Let's discuss how we can create a customized sponsorship package that meets your goals.
+                * Title Sponsorship is limited to one sponsor only and includes exclusive C# Corner benefits. All packages include event day recognition and networking opportunities.
               </p>
               <a
                 href="mailto:stephen.simon@csharp.com?subject=AI%20Agents%20Conference%20Sponsorship%20Inquiry&body=Hi%2C%0A%0AI'm%20interested%20in%20sponsoring%20the%20AI%20Agents%20Conference%202025.%20Please%20send%20me%20more%20information%20about%20sponsorship%20packages%20and%20opportunities.%0A%0AThank%20you%21"
-                className="group inline-flex items-center space-x-3 bg-white text-purple-600 px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:bg-purple-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:from-blue-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
               >
                 <Mail className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
-                <span>Apply for Sponsorship</span>
+                <Mail className="w-6 h-6" />
                 <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="w-5 h-5" />
               </a>
               <p className="text-sm text-purple-200 mt-4">
                 Contact us at stephen.simon@csharp.com for custom sponsorship packages
