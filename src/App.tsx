@@ -294,33 +294,37 @@ function App() {
 
             {/* Enhanced Event Details Cards */}
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-8 mb-12">
-              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-4 lg:px-6 py-3 rounded-xl shadow-lg border border-white/20">
-                <div className="w-8 lg:w-10 h-8 lg:h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+              <div className="flex items-center space-x-3 px-2 lg:px-4 py-2">
+                <div className="w-6 lg:w-8 h-6 lg:h-8 bg-blue-500/10 rounded-full flex items-center justify-center">
                   <Calendar className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-900 text-sm lg:text-base">October 1- 3, 2025</div>
-                  <div className="text-xs lg:text-sm text-gray-600">Save the date</div>
+                  <div className="font-semibold text-gray-800 text-sm lg:text-base">October 1-3, 2025</div>
+                  <div className="text-xs lg:text-sm text-gray-500">Save the date</div>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-4 lg:px-6 py-3 rounded-xl shadow-lg border border-white/20">
-                <div className="w-8 lg:w-10 h-8 lg:h-10 bg-teal-100 rounded-lg flex items-center justify-center">
+              <div className="hidden sm:block w-px h-8 bg-gray-300/50"></div>
+              
+              <div className="flex items-center space-x-3 px-2 lg:px-4 py-2">
+                <div className="w-6 lg:w-8 h-6 lg:h-8 bg-teal-500/10 rounded-full flex items-center justify-center">
                   <Clock className="w-4 lg:w-5 h-4 lg:h-5 text-teal-600" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-900 text-sm lg:text-base">9:00 AM - 3:00 PM EST</div>
-                  <div className="text-xs lg:text-sm text-gray-600">24 hours of content</div>
+                  <div className="font-semibold text-gray-800 text-sm lg:text-base">9:00 AM - 3:00 PM EST</div>
+                  <div className="text-xs lg:text-sm text-gray-500">3 days of content</div>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-4 lg:px-6 py-3 rounded-xl shadow-lg border border-white/20">
-                <div className="w-8 lg:w-10 h-8 lg:h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+              <div className="hidden sm:block w-px h-8 bg-gray-300/50"></div>
+              
+              <div className="flex items-center space-x-3 px-2 lg:px-4 py-2">
+                <div className="w-6 lg:w-8 h-6 lg:h-8 bg-purple-500/10 rounded-full flex items-center justify-center">
                   <Globe className="w-4 lg:w-5 h-4 lg:h-5 text-purple-600" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-900 text-sm lg:text-base">Virtual Event</div>
-                  <div className="text-xs lg:text-sm text-gray-600">Join from anywhere</div>
+                  <div className="font-semibold text-gray-800 text-sm lg:text-base">Virtual Event</div>
+                  <div className="text-xs lg:text-sm text-gray-500">Join from anywhere</div>
                 </div>
               </div>
             </div>
