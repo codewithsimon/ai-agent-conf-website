@@ -1,920 +1,1045 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
-  Users, 
   Calendar, 
   Clock, 
+  Users, 
   Globe, 
   ArrowRight, 
-  Star, 
-  Award, 
-  Shield, 
-  Crown,
-  Check, 
-  Minus,
-  Mail,
-  ExternalLink,
-  ChevronDown,
-  ChevronUp,
-  Play,
+  CheckCircle, 
+  Mail, 
+  Twitter, 
+  Linkedin, 
+  Youtube,
+  Menu,
+  X,
   MapPin,
-  Linkedin,
-  Twitter,
-  Facebook
+  Star,
+  Mic,
+  Code,
+  Zap,
+  Play,
+  Sparkles,
+  TrendingUp,
+  ChevronDown,
+  Award,
+  Target,
+  Building2,
+  Handshake,
+  Eye,
+  Network,
+  Crown,
+  Shield,
+  Heart,
+  Check,
+  Minus
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 function App() {
-  const [expandedSpeaker, setExpandedSpeaker] = useState<number | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
-  const speakers = [
-    {
-      name: "Mahesh Chand",
-      title: "Founder, C# Corner",
-      company: "C# Corner",
-      image: "/Mahesh Chand.jpg",
-      bio: "Mahesh Chand is the founder of C# Corner, one of the world's largest developer communities. With over 20 years of experience in software development and community building, Mahesh has been instrumental in shaping the careers of millions of developers worldwide. He's a Microsoft MVP, published author, and passionate advocate for AI and emerging technologies.",
-      topic: "The Future of AI Agents in Enterprise Development"
-    },
-    {
-      name: "Stephen Simon",
-      title: "VP of Developer Relations",
-      company: "C# Corner",
-      image: "/Stephen SIMON.jpg",
-      bio: "Stephen Simon is the VP of Developer Relations at C# Corner, where he leads initiatives to connect developers with cutting-edge technologies. With extensive experience in AI, machine learning, and developer advocacy, Stephen has been at the forefront of the AI agent revolution, helping organizations implement intelligent automation solutions.",
-      topic: "Building Production-Ready AI Agents: Best Practices and Pitfalls"
-    },
-    {
-      name: "Allen O'Neill",
-      title: "Senior AI Solutions Architect",
-      company: "Microsoft",
-      image: "/allen-oneill.jpg",
-      bio: "Allen O'Neill is a Senior AI Solutions Architect at Microsoft, specializing in enterprise AI implementations and agent-based systems. With over 15 years of experience in cloud computing and AI, Allen has helped numerous Fortune 500 companies transform their operations through intelligent automation and AI agents.",
-      topic: "Scaling AI Agents in the Cloud: Azure AI Platform Deep Dive"
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['hero', 'about'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-  ];
-
-  const sponsors = [
-    { name: "Microsoft Copilot", logo: "/Microsoft Copilot Logo.png", tier: "title" },
-    { name: "CrewAI", logo: "/Crew AI.png", tier: "platinum" },
-    { name: "LangChain", logo: "/LangChain-logo.png", tier: "gold" },
-    { name: "Cursor IDE", logo: "/Cursor IDE Logo.png", tier: "gold" },
-    { name: "N8n", logo: "/N8n-logo-new.svg.png", tier: "silver" },
-    { name: "Azure AI Foundry", logo: "/azure-ai-foundry.png", tier: "silver" },
-    { name: "Agent Development Kit", logo: "/agent-development-kit.png", tier: "silver" },
-    { name: "Eleven Labs", logo: "/Eleven Labs Symbol Logo.png", tier: "silver" }
-  ];
-
-  const agenda = [
-    {
-      time: "9:00 AM - 9:30 AM",
-      title: "Opening Keynote: The AI Agent Revolution",
-      speaker: "Mahesh Chand",
-      type: "keynote"
-    },
-    {
-      time: "9:30 AM - 10:15 AM",
-      title: "Building Production-Ready AI Agents",
-      speaker: "Stephen Simon",
-      type: "talk"
-    },
-    {
-      time: "10:15 AM - 10:30 AM",
-      title: "Coffee Break & Networking",
-      speaker: "",
-      type: "break"
-    },
-    {
-      time: "10:30 AM - 11:15 AM",
-      title: "Azure AI Platform for Enterprise Agents",
-      speaker: "Allen O'Neill",
-      type: "talk"
-    },
-    {
-      time: "11:15 AM - 12:00 PM",
-      title: "Panel: The Future of Autonomous Systems",
-      speaker: "All Speakers",
-      type: "panel"
-    },
-    {
-      time: "12:00 PM - 1:00 PM",
-      title: "Lunch Break",
-      speaker: "",
-      type: "break"
-    },
-    {
-      time: "1:00 PM - 1:45 PM",
-      title: "Hands-on Workshop: Building Your First AI Agent",
-      speaker: "Workshop Leaders",
-      type: "workshop"
-    },
-    {
-      time: "1:45 PM - 2:30 PM",
-      title: "AI Agents in Real-World Applications",
-      speaker: "Industry Experts",
-      type: "talk"
-    },
-    {
-      time: "2:30 PM - 3:00 PM",
-      title: "Closing Remarks & Next Steps",
-      speaker: "Organizing Committee",
-      type: "closing"
-    }
-  ];
-
-  const toggleSpeaker = (index: number) => {
-    setExpandedSpeaker(expandedSpeaker === index ? null : index);
+    setIsMenuOpen(false);
   };
+
+  const aiTools = [
+    {
+      name: "Crew AI",
+      logo: "/Crew AI.png",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200",
+      textColor: "text-blue-600"
+    },
+    {
+      name: "Azure AI Foundry",
+      logo: "/azure-ai-foundry.png",
+      color: "from-indigo-500 to-purple-500",
+      bgColor: "bg-indigo-50",
+      borderColor: "border-indigo-200",
+      textColor: "text-indigo-600"
+    },
+    {
+      name: "Google Agent Development Kit",
+      logo: "/agent-development-kit.png",
+      color: "from-green-500 to-emerald-500",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
+      textColor: "text-green-600"
+    },
+    {
+      name: "n8n",
+      logo: "/N8n-logo-new.svg.png",
+      color: "from-pink-500 to-red-500",
+      bgColor: "bg-pink-50",
+      borderColor: "border-pink-200",
+      textColor: "text-pink-600"
+    },
+    {
+      name: "LangChain",
+      logo: "/LangChain-logo.png",
+      color: "from-green-600 to-teal-600",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
+      textColor: "text-green-600"
+    },
+    {
+      name: "Microsoft Copilot",
+      logo: "/Microsoft Copilot Logo.png",
+      color: "from-blue-600 to-purple-600",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200",
+      textColor: "text-blue-600"
+    },
+    {
+      name: "Cursor IDE",
+      logo: "/Cursor IDE Logo.png",
+      color: "from-gray-600 to-black",
+      bgColor: "bg-gray-50",
+      borderColor: "border-gray-200",
+      textColor: "text-gray-600"
+    },
+    {
+      name: "ElevenLabs",
+      logo: "/Eleven Labs Symbol Logo.png",
+      color: "from-orange-500 to-red-500",
+      bgColor: "bg-orange-50",
+      borderColor: "border-orange-200",
+      textColor: "text-orange-600"
+    }
+  ];
+
+  const sponsorshipTiers = [
+    {
+      name: "Platinum",
+      price: "$1,500",
+      icon: <Crown className="w-6 h-6 text-purple-600" />,
+      bgColor: "bg-gradient-to-br from-purple-50 to-indigo-50",
+      borderColor: "border-purple-200",
+      accentColor: "text-purple-600",
+      features: [
+        { name: "Logo on Website", included: true, detail: "Top Placement", highlight: true },
+        { name: "Speaking Slot", included: true, detail: "Keynote or Panel", highlight: true },
+        { name: "Social Media Mentions", included: true, detail: "Weekly", highlight: true },
+        { name: "Event Day Recognition", included: true, detail: "", highlight: false },
+        { name: "Webinar/Demo", included: true, detail: "", highlight: false },
+        { name: "Recorded Session", included: true, detail: "", highlight: false }
+      ],
+      premium: true
+    },
+    {
+      name: "Gold",
+      price: "$1,000",
+      icon: <Award className="w-6 h-6 text-yellow-600" />,
+      bgColor: "bg-gradient-to-br from-yellow-50 to-orange-50",
+      borderColor: "border-yellow-200",
+      accentColor: "text-yellow-600",
+      features: [
+        { name: "Logo on Website", included: true, detail: "Mid Placement", highlight: false },
+        { name: "Speaking Slot", included: true, detail: "Breakout Talk", highlight: true },
+        { name: "Social Media Mentions", included: true, detail: "2-times a month", highlight: false },
+        { name: "Event Day Recognition", included: true, detail: "", highlight: false },
+        { name: "Webinar/Demo", included: true, detail: "", highlight: false },
+        { name: "Recorded Session", included: true, detail: "", highlight: false }
+      ],
+      premium: false
+    },
+    {
+      name: "Silver",
+      price: "$500",
+      icon: <Shield className="w-6 h-6 text-gray-600" />,
+      bgColor: "bg-gradient-to-br from-gray-50 to-slate-50",
+      borderColor: "border-gray-200",
+      accentColor: "text-gray-600",
+      features: [
+        { name: "Logo on Website", included: true, detail: "Footer", highlight: false },
+        { name: "Speaking Slot", included: true, detail: "Panel", highlight: false },
+        { name: "Social Media Mentions", included: true, detail: "Monthly", highlight: false },
+        { name: "Event Day Recognition", included: true, detail: "", highlight: false },
+        { name: "Webinar/Demo", included: false, detail: "", highlight: false },
+        { name: "Recorded Session", included: false, detail: "", highlight: false }
+      ],
+      premium: false
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+      <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
                 <Users className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold text-xl text-gray-900">AI Agent Conference</span>
+              <span className="font-bold text-xl text-gray-900">AI Agents Conference</span>
             </div>
             
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#speakers" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">Speakers</a>
-              <a href="#agenda" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">Agenda</a>
-              <a href="#sponsors" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">Sponsors</a>
-              <Link to="/code-of-conduct" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">Code of Conduct</Link>
+              <button
+                onClick={() => scrollToSection('about')}
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  activeSection === 'about'
+                    ? 'text-blue-600'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                About
+              </button>
+              <button
+                onClick={() => scrollToSection('registration')}
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
+              >
+                Register Now
+              </button>
             </div>
-            
-            <button className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-2 rounded-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-200 transform hover:scale-105">
-              Register Now
+
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100">
+            <div className="px-4 py-4 space-y-4">
+              <button
+                onClick={() => scrollToSection('about')}
+                className="block w-full text-left text-gray-600 hover:text-gray-900 font-medium"
+              >
+                About
+              </button>
+              <button
+                onClick={() => scrollToSection('registration')}
+                className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
+              >
+                Register Now
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative pt-20 pb-20 bg-gradient-to-br from-blue-50 via-white to-teal-50 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-400/5 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
+      {/* Enhanced Hero Section */}
+      <section id="hero" className="relative pt-16 min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50 flex items-center overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Floating blur circles */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-40 right-20 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-purple-400/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+          
+          {/* Dot grid pattern */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.15)_1px,transparent_0)] bg-[length:24px_24px]"></div>
         </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-8">
-            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Star className="w-4 h-4 mr-2" />
-              Virtual Conference 2025
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center">
+            <div className="mb-8">
+              {/* Enhanced Badge */}
+              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-100 to-blue-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-green-200/50 backdrop-blur-sm">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <Sparkles className="w-4 h-4" />
+                <span>Live Virtual Conference</span>
+              </div>
+              
+              {/* Enhanced Main Heading */}
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+                AI Agents
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 animate-gradient-x">
+                  Conference 2025
+                </span>
+              </h1>
+              
+              {/* Enhanced Subtitle */}
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Join <span className="text-blue-600 font-semibold">industry leaders</span>, 
+                <span className="text-teal-600 font-semibold"> researchers</span>, and 
+                <span className="text-purple-600 font-semibold"> innovators</span> as we explore the cutting-edge of AI agent technology. 
+                Discover the future of autonomous systems and intelligent automation.
+              </p>
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              AI Agent
-              <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent animate-gradient-x">
-                Conference
-              </span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Join industry leaders and innovators as we explore the cutting-edge of AI agent technology. 
-              Learn, network, and shape the future of autonomous systems.
+
+            {/* Enhanced Event Details Cards */}
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-8 mb-12">
+              <div className="flex items-center space-x-3 px-2 lg:px-4 py-2">
+                <div className="w-6 lg:w-8 h-6 lg:h-8 bg-blue-500/10 rounded-full flex items-center justify-center">
+                  <Calendar className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />
+                </div>
+                <div className="text-left">
+                  <div className="font-semibold text-gray-800 text-sm lg:text-base">October 1-3, 2025</div>
+                  <div className="text-xs lg:text-sm text-gray-500">Save the date</div>
+                </div>
+              </div>
+              
+              <div className="hidden sm:block w-px h-8 bg-gray-300/50"></div>
+              
+              <div className="flex items-center space-x-3 px-2 lg:px-4 py-2">
+                <div className="w-6 lg:w-8 h-6 lg:h-8 bg-teal-500/10 rounded-full flex items-center justify-center">
+                  <Clock className="w-4 lg:w-5 h-4 lg:h-5 text-teal-600" />
+                </div>
+                <div className="text-left">
+                  <div className="font-semibold text-gray-800 text-sm lg:text-base">9:00 AM - 3:00 PM EST</div>
+                  <div className="text-xs lg:text-sm text-gray-500">3 days of content</div>
+                </div>
+              </div>
+              
+              <div className="hidden sm:block w-px h-8 bg-gray-300/50"></div>
+              
+              <div className="flex items-center space-x-3 px-2 lg:px-4 py-2">
+                <div className="w-6 lg:w-8 h-6 lg:h-8 bg-purple-500/10 rounded-full flex items-center justify-center">
+                  <Globe className="w-4 lg:w-5 h-4 lg:h-5 text-purple-600" />
+                </div>
+                <div className="text-left">
+                  <div className="font-semibold text-gray-800 text-sm lg:text-base">Virtual Event</div>
+                  <div className="text-xs lg:text-sm text-gray-500">Join from anywhere</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Stats Section */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 mb-12 max-w-2xl mx-auto">
+              <div className="text-center">
+                <div className="text-2xl lg:text-3xl font-bold text-blue-600">20+</div>
+                <div className="text-xs lg:text-sm text-gray-600">Expert Speakers</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl lg:text-3xl font-bold text-teal-600">8,000 +</div>
+                <div className="text-xs lg:text-sm text-gray-600">Attendees</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl lg:text-3xl font-bold text-purple-600">25+</div>
+                <div className="text-xs lg:text-sm text-gray-600">Sessions</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl lg:text-3xl font-bold text-orange-600">Claim</div>
+                <div className="text-xs lg:text-sm text-gray-600">Your Spot</div>
+              </div>
+            </div>
+
+            {/* Enhanced CTA Buttons */}
+            <div className="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center mb-16">
+              <button
+                onClick={() => scrollToSection('registration')}
+                className="group relative w-full sm:w-auto bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <span className="relative">Register Now</span>
+                <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 relative group-hover:translate-x-1 transition-transform duration-200" />
+              </button>
+              
+              <button
+                onClick={() => scrollToSection('about')}
+                className="w-full sm:w-auto bg-white/80 backdrop-blur-sm border-2 border-gray-200 text-gray-700 px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:bg-white hover:border-gray-300 hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
+              >
+                <Play className="w-4 lg:w-5 h-4 lg:h-5" />
+                <span>Learn More</span>
+              </button>
+            </div>
+
+            {/* Scroll Indicator */}
+            <div className="animate-bounce">
+              <button
+                onClick={() => scrollToSection('about')}
+                className="text-gray-400 hover:text-gray-600 transition-colors duration-200"
+              >
+                <ChevronDown className="w-6 h-6 mx-auto" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              About the Conference
+            </h2>
+            <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+              The premier virtual event bringing together the brightest minds in AI agent development
             </p>
           </div>
 
-          {/* Event Details */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-12 mb-12">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-blue-600/10 rounded-full flex items-center justify-center">
-                <Calendar className="w-5 h-5 text-blue-600" />
-              </div>
-              <div className="text-left">
-                <p className="text-sm text-gray-500">Date</p>
-                <p className="font-semibold text-gray-800">August 22, 2025</p>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+                Why Attend AI Agents Conference?
+              </h3>
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: <Users className="w-5 lg:w-6 h-5 lg:h-6 text-blue-600" />,
+                    title: "World-Class Speakers",
+                    description: "Learn from leading AI researchers, engineers, and entrepreneurs who are shaping the future"
+                  },
+                  {
+                    icon: <Globe className="w-5 lg:w-6 h-5 lg:h-6 text-blue-600" />,
+                    title: "Global Community",
+                    description: "Connect with professionals from around the world in our interactive virtual environment"
+                  },
+                  {
+                    icon: <Star className="w-5 lg:w-6 h-5 lg:h-6 text-blue-600" />,
+                    title: "Cutting-Edge Insights",
+                    description: "Discover the latest breakthroughs in AI agent technology and practical applications"
+                  }
+                ].map((feature, index) => (
+                  <div key={index} className="flex space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 lg:w-12 h-10 lg:h-12 bg-blue-50 rounded-lg flex items-center justify-center">
+                        {feature.icon}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">{feature.title}</h4>
+                      <p className="text-gray-600 text-sm lg:text-base">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-            
-            <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
-            
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-teal-600/10 rounded-full flex items-center justify-center">
-                <Clock className="w-5 h-5 text-teal-600" />
-              </div>
-              <div className="text-left">
-                <p className="text-sm text-gray-500">Time</p>
-                <p className="font-semibold text-gray-800">9:00 AM - 3:00 PM EST</p>
-              </div>
-            </div>
-            
-            <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
-            
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-purple-600/10 rounded-full flex items-center justify-center">
-                <Globe className="w-5 h-5 text-purple-600" />
-              </div>
-              <div className="text-left">
-                <p className="text-sm text-gray-500">Format</p>
-                <p className="font-semibold text-gray-800">Virtual Event</p>
-              </div>
-            </div>
-          </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <button className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2">
-              <span>Register for Free</span>
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 flex items-center space-x-2">
-              <Play className="w-5 h-5" />
-              <span>Watch Trailer</span>
-            </button>
-          </div>
-
-          <div className="mt-12 text-center">
-            <p className="text-gray-500 mb-4">Join 8,000+ developers and AI enthusiasts</p>
-            <div className="flex items-center justify-center space-x-8 text-sm text-gray-400">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span>Live Sessions</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span>Interactive Workshops</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                <span>Networking Opportunities</span>
+            <div className="bg-gradient-to-br from-blue-50 to-teal-50 p-6 lg:p-8 rounded-2xl">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+                What You'll Learn
+              </h3>
+              <div className="space-y-4">
+                {[
+                  "Advanced AI agent architectures and design patterns",
+                  "Scalable deployment strategies for production systems",
+                  "Ethical considerations in AI agent development",
+                  "Real-world case studies and success stories",
+                  "Future trends and emerging technologies",
+                  "Best practices for AI safety and reliability"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 lg:w-5 h-4 lg:h-5 text-teal-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm lg:text-base">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Speakers Section */}
-      <section id="speakers" className="py-20 bg-white">
+      {/* AI Tools Section */}
+      <section className="py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Speakers</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Learn from industry pioneers who are shaping the future of AI agents and autonomous systems
+          <div className="text-center mb-12 lg:mb-16">
+            <div className="inline-flex items-center justify-center w-12 lg:w-16 h-12 lg:h-16 bg-gradient-to-br from-blue-500 to-teal-500 rounded-2xl mb-6">
+              <Zap className="w-6 lg:w-8 h-6 lg:h-8 text-white" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              Learn Essential AI Development Tools
+            </h2>
+            <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+              Master these cutting-edge AI development platforms and automation tools:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {speakers.map((speaker, index) => (
+          {/* Tools Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mb-12">
+            {aiTools.map((tool, index) => (
               <div key={index} className="group">
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
-                  <div className="aspect-w-3 aspect-h-4 relative overflow-hidden">
-                    <img 
-                      src={speaker.image} 
-                      alt={speaker.name}
-                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                  
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">{speaker.name}</h3>
-                    <p className="text-blue-600 font-medium mb-2">{speaker.title}</p>
-                    <p className="text-gray-500 text-sm mb-4">{speaker.company}</p>
-                    
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 mb-2">Speaking Topic:</h4>
-                      <p className="text-gray-600 text-sm italic">"{speaker.topic}"</p>
+                <div className={`${tool.bgColor} rounded-2xl p-6 lg:p-8 border ${tool.borderColor} shadow-sm hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 h-full`}>
+                  <div className="text-center">
+                    {/* Logo Container - Significantly Increased Size */}
+                    <div className="w-32 lg:w-40 h-32 lg:h-40 mx-auto mb-4 lg:mb-6 rounded-xl bg-white shadow-sm flex items-center justify-center p-4 lg:p-6 group-hover:scale-110 transition-transform duration-300">
+                      <img
+                        src={tool.logo}
+                        alt={`${tool.name} logo`}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
-                    
-                    <button 
-                      onClick={() => toggleSpeaker(index)}
-                      className="flex items-center justify-between w-full text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
-                    >
-                      <span>Learn More</span>
-                      {expandedSpeaker === index ? 
-                        <ChevronUp className="w-4 h-4" /> : 
-                        <ChevronDown className="w-4 h-4" />
-                      }
-                    </button>
-                    
-                    {expandedSpeaker === index && (
-                      <div className="mt-4 pt-4 border-t border-gray-100">
-                        <p className="text-gray-600 text-sm leading-relaxed">{speaker.bio}</p>
-                      </div>
-                    )}
+                    <h3 className="text-lg lg:text-xl font-bold text-gray-900">
+                      {tool.name}
+                    </h3>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
+                Ready to Master These Tools?
+              </h3>
+              <p className="text-gray-600 mb-6 text-sm lg:text-base">
+                Join us to explore hands-on tutorials and real-world applications of these powerful AI development platforms.
+              </p>
+              <button
+                onClick={() => scrollToSection('registration')}
+                className="group bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
+              >
+                <Sparkles className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
+                <span>Join the Conference</span>
+                <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Agenda Section */}
-      <section id="agenda" className="py-20 bg-gray-50">
+      {/* Enhanced Sponsors Section */}
+      <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Conference Agenda</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A full day of insights, workshops, and networking opportunities designed to advance your AI agent expertise
+          <div className="text-center mb-12 lg:mb-16">
+            <div className="inline-flex items-center justify-center w-12 lg:w-16 h-12 lg:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mb-6">
+              <Handshake className="w-6 lg:w-8 h-6 lg:h-8 text-white" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              Partner With Us
+            </h2>
+            <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+              Join leading companies in supporting the future of AI agent technology and connect with the next generation of innovators.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-4">
-              {agenda.map((item, index) => (
-                <div key={index} className={`flex items-start space-x-6 p-6 rounded-xl transition-all duration-200 hover:shadow-md ${
-                  item.type === 'keynote' ? 'bg-gradient-to-r from-blue-50 to-teal-50 border-l-4 border-blue-500' :
-                  item.type === 'break' ? 'bg-gray-100' :
-                  item.type === 'workshop' ? 'bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-purple-500' :
-                  item.type === 'panel' ? 'bg-gradient-to-r from-teal-50 to-green-50 border-l-4 border-teal-500' :
-                  'bg-white border border-gray-200'
-                }`}>
-                  <div className="flex-shrink-0">
-                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-                      item.type === 'keynote' ? 'bg-blue-100' :
-                      item.type === 'break' ? 'bg-gray-200' :
-                      item.type === 'workshop' ? 'bg-purple-100' :
-                      item.type === 'panel' ? 'bg-teal-100' :
-                      'bg-gray-100'
-                    }`}>
-                      {item.type === 'keynote' && <Star className="w-6 h-6 text-blue-600" />}
-                      {item.type === 'break' && <Clock className="w-6 h-6 text-gray-600" />}
-                      {item.type === 'workshop' && <Users className="w-6 h-6 text-purple-600" />}
-                      {item.type === 'panel' && <Users className="w-6 h-6 text-teal-600" />}
-                      {(item.type === 'talk' || item.type === 'closing') && <Play className="w-6 h-6 text-gray-600" />}
+          {/* Title Sponsorship - Exclusive Section */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-3xl p-1 shadow-2xl">
+              <div className="bg-white rounded-3xl p-8 lg:p-12">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center justify-center w-16 lg:w-20 h-16 lg:h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl mb-6 shadow-lg">
+                    <Crown className="w-8 lg:w-10 h-8 lg:h-10 text-white" />
+                  </div>
+                  <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-yellow-100 to-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                    <Sparkles className="w-4 h-4" />
+                    <span>EXCLUSIVE OPPORTUNITY</span>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Title Sponsorship
+                  </h3>
+                  <div className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600 mb-6">
+                    $5,000
+                  </div>
+                  <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
+                    Become the exclusive title sponsor and maximize your brand exposure to our massive global audience
+                  </p>
+                </div>
+
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+                  {/* Left: Exclusive Benefits */}
+                  <div>
+                    <h4 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6 flex items-center space-x-2">
+                      <Star className="w-6 h-6 text-yellow-500" />
+                      <span>Exclusive Benefits</span>
+                    </h4>
+                    <div className="space-y-4">
+                      {[
+                        {
+                          icon: <Mail className="w-5 h-5 text-orange-600" />,
+                          title: "Newsletter Reach",
+                          description: "Exclusive newsletter to 765,000 C# Corner subscribers"
+                        },
+                        {
+                          icon: <TrendingUp className="w-5 h-5 text-orange-600" />,
+                          title: "Social Media Promotion",
+                          description: "Weekly promotion across all C# Corner social channels (1.4M+ total reach)"
+                        },
+                        {
+                          icon: <Calendar className="w-5 h-5 text-orange-600" />,
+                          title: "Extended Campaign",
+                          description: "Pre and post conference promotional campaigns"
+                        }
+                      ].map((benefit, index) => (
+                        <div key={index} className="flex space-x-4 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border border-yellow-200">
+                          <div className="flex-shrink-0">
+                            <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                              {benefit.icon}
+                            </div>
+                          </div>
+                          <div>
+                            <h5 className="font-semibold text-gray-900 mb-1">{benefit.title}</h5>
+                            <p className="text-gray-600 text-sm">{benefit.description}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  
-                  <div className="flex-grow">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                      <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
-                      <span className="text-sm font-medium text-gray-500 mt-1 sm:mt-0">{item.time}</span>
+
+                  {/* Right: Social Media Stats */}
+                  <div>
+                    <h4 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6 flex items-center space-x-2">
+                      <Network className="w-6 h-6 text-yellow-500" />
+                      <span>Massive Reach</span>
+                    </h4>
+                    <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 mb-6">
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        <div className="text-center p-4 bg-white rounded-xl shadow-sm">
+                          <div className="text-2xl lg:text-3xl font-bold text-blue-600">1.1M</div>
+                          <div className="text-sm text-gray-600">Facebook</div>
+                        </div>
+                        <div className="text-center p-4 bg-white rounded-xl shadow-sm">
+                          <div className="text-2xl lg:text-3xl font-bold text-blue-400">250K</div>
+                          <div className="text-sm text-gray-600">Twitter</div>
+                        </div>
+                        <div className="text-center p-4 bg-white rounded-xl shadow-sm">
+                          <div className="text-2xl lg:text-3xl font-bold text-blue-700">70K</div>
+                          <div className="text-sm text-gray-600">LinkedIn</div>
+                        </div>
+                        <div className="text-center p-4 bg-white rounded-xl shadow-sm">
+                          <div className="text-2xl lg:text-3xl font-bold text-purple-600">765K</div>
+                          <div className="text-sm text-gray-600">Newsletter</div>
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                          2M+ Total Reach
+                        </div>
+                        <p className="text-gray-600 text-sm mt-2">Combined audience across all platforms</p>
+                      </div>
                     </div>
-                    {item.speaker && (
-                      <p className="text-gray-600">
-                        <span className="font-medium">Speaker:</span> {item.speaker}
+                    
+                    <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-4 border border-green-200">
+                      <div className="flex items-center space-x-2 text-green-700 mb-2">
+                        <CheckCircle className="w-5 h-5" />
+                        <span className="font-semibold">Plus Everything in Platinum</span>
+                      </div>
+                      <p className="text-green-600 text-sm">
+                        All Platinum sponsor benefits included: keynote speaking, top website placement, weekly mentions, and more
                       </p>
-                    )}
-                    {item.type === 'keynote' && (
-                      <div className="mt-2">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                          Keynote Session
-                        </span>
-                      </div>
-                    )}
-                    {item.type === 'workshop' && (
-                      <div className="mt-2">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
-                          Hands-on Workshop
-                        </span>
-                      </div>
-                    )}
+                    </div>
                   </div>
+                </div>
+
+                <div className="text-center mt-8">
+                  <a
+                    href="mailto:stephen.simon@csharp.com?subject=Title%20Sponsorship%20Inquiry%20-%20AI%20Agents%20Conference%202025&body=Hi%2C%0A%0AI'm%20interested%20in%20the%20Title%20Sponsorship%20opportunity%20for%20the%20AI%20Agents%20Conference%202025.%20Please%20send%20me%20more%20information%20about%20this%20exclusive%20package.%0A%0AThank%20you%21"
+                    className="group inline-flex items-center space-x-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
+                  >
+                    <Crown className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                    <span>Claim Title Sponsorship</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </a>
+                  <p className="text-sm text-gray-500 mt-4">
+                    Limited to one exclusive title sponsor only
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-16">
+            {/* Left Content */}
+            <div>
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+                Why Sponsor AI Agents Conference?
+              </h3>
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: <Eye className="w-5 lg:w-6 h-5 lg:h-6 text-purple-600" />,
+                    title: "Brand Visibility",
+                    description: "Showcase your brand to 8,000+ AI professionals, developers, and decision-makers"
+                  },
+                  {
+                    icon: <Network className="w-5 lg:w-6 h-5 lg:h-6 text-purple-600" />,
+                    title: "Thought Leadership",
+                    description: "Position your company as a leader in the AI and automation space"
+                  },
+                  {
+                    icon: <Target className="w-5 lg:w-6 h-5 lg:h-6 text-purple-600" />,
+                    title: "Targeted Audience",
+                    description: "Connect directly with your ideal customers and potential partners"
+                  },
+                  {
+                    icon: <Building2 className="w-5 lg:w-6 h-5 lg:h-6 text-purple-600" />,
+                    title: "Community Impact",
+                    description: "Support the growth of the AI development community and innovation"
+                  }
+                ].map((benefit, index) => (
+                  <div key={index} className="flex space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 lg:w-12 h-10 lg:h-12 bg-purple-50 rounded-lg flex items-center justify-center">
+                        {benefit.icon}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">{benefit.title}</h4>
+                      <p className="text-gray-600 text-sm lg:text-base">{benefit.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Content - Sponsorship Tiers */}
+            <div>
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+                Sponsorship Packages
+              </h3>
+              
+              {/* Comparison Table */}
+              <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+                {/* Header */}
+                <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4">
+                  <div className="grid grid-cols-4 gap-4 items-center">
+                    <div className="text-sm font-semibold">Features</div>
+                    {sponsorshipTiers.map((tier, index) => (
+                      <div key={index} className="text-center">
+                        <div className="flex items-center justify-center space-x-2 mb-1">
+                          <div className="w-6 h-6 bg-white/20 rounded-lg flex items-center justify-center">
+                            {React.cloneElement(tier.icon, { className: "w-4 h-4 text-white" })}
+                          </div>
+                        </div>
+                        <div className="text-xs font-bold">{tier.name}</div>
+                        <div className="text-xs font-semibold text-purple-200">{tier.price}</div>
+                        {tier.premium && (
+                          <div className="text-xs bg-yellow-400 text-yellow-900 px-2 py-0.5 rounded-full mt-1 inline-block">
+                            PREMIUM
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Features Comparison */}
+                <div className="divide-y divide-gray-100">
+                  {sponsorshipTiers[0].features.map((_, featureIndex) => (
+                    <div key={featureIndex} className="grid grid-cols-4 gap-4 items-center p-4 hover:bg-gray-50 transition-colors duration-200">
+                      <div className="text-sm font-medium text-gray-900">
+                        {sponsorshipTiers[0].features[featureIndex].name}
+                      </div>
+                      {sponsorshipTiers.map((tier, tierIndex) => (
+                        <div key={tierIndex} className="text-center">
+                          <div className="flex items-center justify-center space-x-2">
+                            {tier.features[featureIndex].included ? (
+                              <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                                <Check className="w-4 h-4 text-green-600" />
+                              </div>
+                            ) : (
+                              <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
+                                <Minus className="w-4 h-4 text-gray-400" />
+                              </div>
+                            )}
+                          </div>
+                          {tier.features[featureIndex].detail && (
+                            <div className="text-xs text-gray-500 mt-1">
+                              {tier.features[featureIndex].detail}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Disclaimer */}
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <p className="text-xs text-gray-600">
+                  <strong>Note:</strong> All sponsorship packages include logo placement, event day recognition, and networking opportunities.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 lg:p-12 text-white">
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+                Ready to Partner With Us?
+              </h3>
+              <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+                Join us in shaping the future of AI agent technology. Let's discuss how we can create a customized sponsorship package that meets your goals.
+              </p>
+              <a
+                href="mailto:stephen.simon@csharp.com?subject=AI%20Agents%20Conference%20Sponsorship%20Inquiry&body=Hi%2C%0A%0AI'm%20interested%20in%20sponsoring%20the%20AI%20Agents%20Conference%202025.%20Please%20send%20me%20more%20information%20about%20sponsorship%20packages%20and%20opportunities.%0A%0AThank%20you%21"
+                className="group inline-flex items-center space-x-3 bg-white text-purple-600 px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:bg-purple-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <Mail className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
+                <span>Apply for Sponsorship</span>
+                <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </a>
+              <p className="text-sm text-purple-200 mt-4">
+                Contact us at stephen.simon@csharp.com for custom sponsorship packages
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Apply to Speak Section - Improved Design */}
+      <section className="py-16 lg:py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+            <div className="grid lg:grid-cols-2 gap-0">
+              {/* Left Content */}
+              <div className="p-8 lg:p-16">
+                <div className="mb-8">
+                  <div className="inline-flex items-center justify-center w-12 lg:w-16 h-12 lg:h-16 bg-blue-100 rounded-2xl mb-6">
+                    <Mic className="w-6 lg:w-8 h-6 lg:h-8 text-blue-600" />
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                    Share Your Expertise
+                  </h2>
+                  <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
+                    Join our lineup of distinguished speakers and share your insights with the global AI community. 
+                    We're looking for innovative thinkers and practitioners.
+                  </p>
+                </div>
+
+                {/* Benefits */}
+                <div className="space-y-4 mb-8">
+                  {[
+                    {
+                      icon: <Award className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />,
+                      text: "Showcase your expertise to 8,000+ AI professionals"
+                    },
+                    {
+                      icon: <Target className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />,
+                      text: "Build your personal brand in the AI community"
+                    },
+                    {
+                      icon: <Users className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />,
+                      text: "Network with industry leaders and researchers"
+                    }
+                  ].map((benefit, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-6 lg:w-8 h-6 lg:h-8 bg-blue-50 rounded-lg flex items-center justify-center">
+                        {benefit.icon}
+                      </div>
+                      <span className="text-gray-700 text-sm lg:text-base">{benefit.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <a
+                  href="https://forms.office.com/r/4Xmg7AzHSU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
+                >
+                  <Sparkles className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <span>Apply to Speak</span>
+                  <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </a>
+              </div>
+
+              {/* Right Visual */}
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 lg:p-16 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="relative">
+                    <div className="w-24 lg:w-32 h-24 lg:h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl">
+                      <Mic className="w-12 lg:w-16 h-12 lg:h-16 text-white" />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-6 lg:w-8 h-6 lg:h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                      <Sparkles className="w-3 lg:w-4 h-3 lg:h-4 text-yellow-800" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
+                    Your Voice Matters
+                  </h3>
+                  <p className="text-gray-600 max-w-sm text-sm lg:text-base">
+                    Share your unique perspective and help shape the future of AI agent technology
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Registration Section */}
+      <section id="registration" className="py-16 lg:py-20 bg-gradient-to-br from-blue-600 to-teal-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6">
+            Ready to Join Us?
+          </h2>
+          <p className="text-lg lg:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Don't miss this opportunity to be part of the AI agent revolution. 
+            Register now and secure your spot at this exclusive virtual event.
+          </p>
+          
+          <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-xl">
+            <div className="mb-8">
+              <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+                Secure Your Spot
+              </div>
+              <p className="text-gray-600">
+                Limited seats available • All sessions included
+              </p>
+            </div>
+            
+            <div className="space-y-4 mb-8">
+              {[
+                "Access to all sessions and presentations",
+                "Interactive Q&A with speakers",
+                "Virtual networking opportunities",
+                "Conference recordings available for 30 days",
+                "Exclusive resources and materials"
+              ].map((benefit, index) => (
+                <div key={index} className="flex items-center justify-center space-x-3">
+                  <CheckCircle className="w-4 lg:w-5 h-4 lg:h-5 text-teal-600" />
+                  <span className="text-gray-700 text-sm lg:text-base">{benefit}</span>
                 </div>
               ))}
             </div>
+            
+            <a
+              href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center space-x-2"
+            >
+              <span>Claim Your Spot</span>
+              <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5" />
+            </a>
+            
+            <p className="text-xs lg:text-sm text-gray-500 mt-4">
+              By registering, you agree to receive conference updates and materials.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Sponsorship Section */}
-      <section id="sponsors" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Sponsorship Packages</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Partner with us to reach 8,000+ AI developers and industry professionals
+      {/* Conference Organizer Section */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="mb-8">
+            <div className="w-48 lg:w-64 h-20 lg:h-28 mx-auto mb-8 flex items-center justify-center">
+              <img
+                src="/logo 3.png"
+                alt="C# Corner logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              Join C# Corner - Your Premier AI-Powered Learning Community
+            </h2>
+            <p className="text-lg lg:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              C# Corner is a leading upskilling and growth platform that empowers developers through AI-driven learning experiences.
             </p>
           </div>
-
-          {/* Sponsorship Comparison Table */}
-          <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-gradient-to-r from-gray-100 to-gray-50">
-                    <th className="px-6 py-4 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
-                      Features
-                    </th>
-                    <th className="px-6 py-4 text-center border-l border-gray-200">
-                      <div className="flex flex-col items-center space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center">
-                            <Crown className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="font-bold text-gray-900">Title</div>
-                            <div className="text-2xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">$5,000</div>
-                          </div>
-                        </div>
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                          EXCLUSIVE
-                        </span>
-                      </div>
-                    </th>
-                    <th className="px-6 py-4 text-center border-l border-gray-200">
-                      <div className="flex flex-col items-center space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
-                            <Crown className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="font-bold text-gray-900">Platinum</div>
-                            <div className="text-2xl font-bold text-purple-600">$1,500</div>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th className="px-6 py-4 text-center border-l border-gray-200">
-                      <div className="flex flex-col items-center space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
-                            <Award className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="font-bold text-gray-900">Gold</div>
-                            <div className="text-2xl font-bold text-yellow-600">$1,000</div>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th className="px-6 py-4 text-center border-l border-gray-200">
-                      <div className="flex flex-col items-center space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-8 h-8 bg-gradient-to-br from-gray-400 to-gray-500 rounded-lg flex items-center justify-center">
-                            <Shield className="w-5 h-5 text-white" />
-                          </div>
-                          <div>
-                            <div className="font-bold text-gray-900">Silver</div>
-                            <div className="text-2xl font-bold text-gray-600">$500</div>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                  <tr className="hover:bg-gray-50 transition-colors duration-200">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      Logo on Website
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">Top + Exclusive Banner</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">Top Placement</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">Mid Placement</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">Footer</div>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50 transition-colors duration-200">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      Speaking Slot
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">Keynote or Panel</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">Keynote or Panel</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">Breakout Talk</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">Panel</div>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50 transition-colors duration-200">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      Social Media Mentions
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">Weekly</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">Weekly</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">2-times a month</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">Monthly</div>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50 transition-colors duration-200">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      Event Day Recognition
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50 transition-colors duration-200">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      Webinar/Demo
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                          <Minus className="w-4 h-4 text-gray-400" />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50 transition-colors duration-200">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      Recorded Session
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                          <Minus className="w-4 h-4 text-gray-400" />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  {/* Title Sponsor Exclusive Features */}
-                  <tr className="bg-gradient-to-r from-yellow-50 to-orange-50 hover:from-yellow-100 hover:to-orange-100 transition-colors duration-200">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      C# Corner Newsletter
-                      <div className="text-xs text-gray-500">765K subscribers</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-yellow-600 mt-1 font-medium">Exclusive</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                          <Minus className="w-4 h-4 text-gray-400" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                          <Minus className="w-4 h-4 text-gray-400" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                          <Minus className="w-4 h-4 text-gray-400" />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-gradient-to-r from-yellow-50 to-orange-50 hover:from-yellow-100 hover:to-orange-100 transition-colors duration-200">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      C# Corner Social Media
-                      <div className="text-xs text-gray-500">2M+ combined reach</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-yellow-600 mt-1 font-medium">Weekly</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                          <Minus className="w-4 h-4 text-gray-400" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                          <Minus className="w-4 h-4 text-gray-400" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                          <Minus className="w-4 h-4 text-gray-400" />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="bg-gradient-to-r from-yellow-50 to-orange-50 hover:from-yellow-100 hover:to-orange-100 transition-colors duration-200">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      Pre & Post Conference Promotions
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 text-green-600" />
-                        </div>
-                      </div>
-                      <div className="text-xs text-yellow-600 mt-1 font-medium">Exclusive</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                          <Minus className="w-4 h-4 text-gray-400" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                          <Minus className="w-4 h-4 text-gray-400" />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center border-l border-gray-200">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                          <Minus className="w-4 h-4 text-gray-400" />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div className="mt-8 text-center">
-            <p className="text-sm text-gray-500 mb-6">
-              * Title Sponsorship is limited to one sponsor only. All packages include event day recognition and professional networking opportunities.
+          
+          <div className="mb-8">
+            <p className="text-base lg:text-lg text-gray-700 mb-6">
+              Ready to accelerate your development journey?
             </p>
             <a
-              href="mailto:stephen.simon@csharp.com?subject=AI Agent Conference Sponsorship Inquiry&body=Hi, I'm interested in learning more about sponsorship opportunities for the AI Agent Conference. Please send me more details."
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              href="https://www.csharp.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              <Mail className="w-5 h-5" />
-              <span>Become a Sponsor</span>
-              <ExternalLink className="w-4 h-4" />
+              <TrendingUp className="w-4 lg:w-5 h-4 lg:h-5" />
+              <span>Join Now</span>
+              <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5" />
             </a>
           </div>
         </div>
       </section>
 
-      {/* Current Sponsors */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Sponsors</h2>
-            <p className="text-lg text-gray-600">
-              Thank you to our amazing sponsors who make this conference possible
-            </p>
-          </div>
-
-          {/* Title Sponsors */}
-          <div className="mb-12">
-            <h3 className="text-xl font-semibold text-gray-900 text-center mb-6">Title Sponsor</h3>
-            <div className="flex justify-center">
-              {sponsors.filter(sponsor => sponsor.tier === 'title').map((sponsor, index) => (
-                <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-yellow-200">
-                  <img 
-                    src={sponsor.logo} 
-                    alt={sponsor.name}
-                    className="h-16 w-auto mx-auto filter hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Platinum Sponsors */}
-          <div className="mb-12">
-            <h3 className="text-lg font-semibold text-gray-900 text-center mb-6">Platinum Sponsors</h3>
-            <div className="flex justify-center">
-              {sponsors.filter(sponsor => sponsor.tier === 'platinum').map((sponsor, index) => (
-                <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-purple-200">
-                  <img 
-                    src={sponsor.logo} 
-                    alt={sponsor.name}
-                    className="h-12 w-auto mx-auto filter hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Gold Sponsors */}
-          <div className="mb-12">
-            <h3 className="text-lg font-semibold text-gray-900 text-center mb-6">Gold Sponsors</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
-              {sponsors.filter(sponsor => sponsor.tier === 'gold').map((sponsor, index) => (
-                <div key={index} className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-yellow-200">
-                  <img 
-                    src={sponsor.logo} 
-                    alt={sponsor.name}
-                    className="h-10 w-auto mx-auto filter hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Silver Sponsors */}
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 text-center mb-6">Silver Sponsors</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-              {sponsors.filter(sponsor => sponsor.tier === 'silver').map((sponsor, index) => (
-                <div key={index} className="bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200">
-                  <img 
-                    src={sponsor.logo} 
-                    alt={sponsor.name}
-                    className="h-8 w-auto mx-auto filter hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-gray-900 text-white py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="md:col-span-2">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="sm:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
                   <Users className="w-5 h-5 text-white" />
                 </div>
-                <span className="font-bold text-xl">AI Agent Conference</span>
+                <span className="font-bold text-xl">AI Agents Conference</span>
               </div>
-              <p className="text-gray-400 mb-6 max-w-md">
-                Join the premier virtual conference exploring the cutting-edge of AI agent technology. 
-                Connect with industry leaders and shape the future of autonomous systems.
+              <p className="text-gray-400 mb-6 max-w-md text-sm lg:text-base">
+                The premier virtual event for AI agent technology, bringing together innovators, 
+                researchers, and practitioners from around the world.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  <Twitter className="w-5 h-5" />
+                <a href="https://x.com/CSharpDotTV" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors duration-200">
+                  <X className="w-4 h-4" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  <Linkedin className="w-5 h-5" />
+                <a href="https://www.linkedin.com/company/csharpdottv" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors duration-200">
+                  <Linkedin className="w-4 h-4" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  <Facebook className="w-5 h-5" />
+                <a href="https://www.youtube.com/@CSharpDotTV" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors duration-200">
+                  <Youtube className="w-5 h-5" />
                 </a>
               </div>
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#speakers" className="hover:text-white transition-colors duration-200">Speakers</a></li>
-                <li><a href="#agenda" className="hover:text-white transition-colors duration-200">Agenda</a></li>
-                <li><a href="#sponsors" className="hover:text-white transition-colors duration-200">Sponsors</a></li>
-                <li><Link to="/code-of-conduct" className="hover:text-white transition-colors duration-200">Code of Conduct</Link></li>
-              </ul>
+              <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+              <div className="space-y-2">
+                <button
+                  onClick={() => scrollToSection('about')}
+                  className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
+                >
+                  About
+                </button>
+                <button
+                  onClick={() => scrollToSection('registration')}
+                  className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
+                >
+                  Registration
+                </button>
+                <Link
+                  to="/code-of-conduct"
+                  className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
+                >
+                  Code of Conduct
+                </Link>
+              </div>
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Contact</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center space-x-2">
+              <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-2 text-gray-400 text-sm lg:text-base">
                   <Mail className="w-4 h-4" />
                   <span>stephen.simon@csharp.com</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <MapPin className="w-4 h-4" />
-                  <span>Virtual Event</span>
-                </li>
-              </ul>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-400 text-sm lg:text-base">
+                  <Globe className="w-4 h-4" />
+                  <span>www.aiagentsconference.live</span>
+                </div>
+              </div>
             </div>
           </div>
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 AI Agent Conference. All rights reserved. Organized by C# Corner.</p>
+            <p>&copy; 2025 AI Agents Conference. All rights reserved.</p>
           </div>
         </div>
       </footer>
