@@ -7,7 +7,6 @@ import {
   ArrowRight, 
   CheckCircle, 
   Mail, 
-  Twitter, 
   Linkedin, 
   Youtube,
   Menu,
@@ -15,7 +14,6 @@ import {
   MapPin,
   Star,
   Mic,
-  Code,
   Zap,
   Play,
   Sparkles,
@@ -28,10 +26,7 @@ import {
   Eye,
   Network,
   Crown,
-  Shield,
-  Heart,
-  Check,
-  Minus
+  Share2
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -137,56 +132,7 @@ function App() {
     }
   ];
 
-  const sponsorshipTiers = [
-    {
-      name: "Title Sponsor",
-      icon: <Crown className="w-6 h-6 text-yellow-600" />,
-      bgColor: "bg-gradient-to-br from-yellow-50 to-orange-50",
-      borderColor: "border-yellow-200",
-      accentColor: "text-yellow-600",
-      features: [
-        { name: "Logo on Website", included: true, detail: "Top Placement", highlight: true },
-        { name: "Speaking Slot", included: true, detail: "Keynote or Panel", highlight: true },
-        { name: "Social Media Mentions", included: true, detail: "All time Mention", highlight: true },
-        { name: "Featured in Newsletter", included: true, detail: "", highlight: false },
-        { name: "Event Day Recognition", included: true, detail: "", highlight: false },
-        { name: "Attendee List Access*", included: true, detail: "Opt-in Only", highlight: true }
-      ],
-      premium: true
-    },
-    {
-      name: "Partner Sponsor",
-      icon: <Shield className="w-6 h-6 text-blue-600" />,
-      bgColor: "bg-gradient-to-br from-blue-50 to-indigo-50",
-      borderColor: "border-blue-200",
-      accentColor: "text-blue-600",
-      features: [
-        { name: "Logo on Website", included: true, detail: "Mid Placement", highlight: false },
-        { name: "Speaking Slot", included: true, detail: "Breakout Talk", highlight: true },
-        { name: "Social Media Mentions", included: true, detail: "6 Mentions", highlight: false },
-        { name: "Featured in Newsletter", included: true, detail: "", highlight: false },
-        { name: "Event Day Recognition", included: true, detail: "", highlight: false },
-        { name: "Attendee List Access*", included: false, detail: "", highlight: false }
-      ],
-      premium: false
-    },
-    {
-      name: "Community Sponsor",
-      icon: <Heart className="w-6 h-6 text-purple-600" />,
-      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
-      borderColor: "border-purple-200",
-      accentColor: "text-purple-600",
-      features: [
-        { name: "Logo on Website", included: true, detail: "Footer", highlight: false },
-        { name: "Speaking Slot", included: false, detail: "", highlight: false },
-        { name: "Social Media Mentions", included: true, detail: "3 Mentions", highlight: false },
-        { name: "Featured in Newsletter", included: false, detail: "", highlight: false },
-        { name: "Event Day Recognition", included: true, detail: "", highlight: false },
-        { name: "Attendee List Access*", included: false, detail: "", highlight: false }
-      ],
-      premium: false
-    }
-  ];
+  
 
   return (
     <div className="min-h-screen bg-white">
@@ -294,33 +240,37 @@ function App() {
 
             {/* Enhanced Event Details Cards */}
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-8 mb-12">
-              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-4 lg:px-6 py-3 rounded-xl shadow-lg border border-white/20">
-                <div className="w-8 lg:w-10 h-8 lg:h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+              <div className="flex items-center space-x-3 px-2 lg:px-4 py-2">
+                <div className="w-6 lg:w-8 h-6 lg:h-8 bg-blue-500/10 rounded-full flex items-center justify-center">
                   <Calendar className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-900 text-sm lg:text-base">October 6 -9, 2025</div>
-                  <div className="text-xs lg:text-sm text-gray-600">Save the date</div>
+                  <div className="font-semibold text-gray-800 text-sm lg:text-base">October 1-3, 2025</div>
+                  <div className="text-xs lg:text-sm text-gray-500">Save the date</div>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-4 lg:px-6 py-3 rounded-xl shadow-lg border border-white/20">
-                <div className="w-8 lg:w-10 h-8 lg:h-10 bg-teal-100 rounded-lg flex items-center justify-center">
+              <div className="hidden sm:block w-px h-8 bg-gray-300/50"></div>
+              
+              <div className="flex items-center space-x-3 px-2 lg:px-4 py-2">
+                <div className="w-6 lg:w-8 h-6 lg:h-8 bg-teal-500/10 rounded-full flex items-center justify-center">
                   <Clock className="w-4 lg:w-5 h-4 lg:h-5 text-teal-600" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-900 text-sm lg:text-base">9:00 AM - 3:00 PM EST</div>
-                  <div className="text-xs lg:text-sm text-gray-600">24 hours of content</div>
+                  <div className="font-semibold text-gray-800 text-sm lg:text-base">9:00 AM - 3:00 PM EST</div>
+                  <div className="text-xs lg:text-sm text-gray-500">3 days of content</div>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-3 bg-white/80 backdrop-blur-sm px-4 lg:px-6 py-3 rounded-xl shadow-lg border border-white/20">
-                <div className="w-8 lg:w-10 h-8 lg:h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+              <div className="hidden sm:block w-px h-8 bg-gray-300/50"></div>
+              
+              <div className="flex items-center space-x-3 px-2 lg:px-4 py-2">
+                <div className="w-6 lg:w-8 h-6 lg:h-8 bg-purple-500/10 rounded-full flex items-center justify-center">
                   <Globe className="w-4 lg:w-5 h-4 lg:h-5 text-purple-600" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-900 text-sm lg:text-base">Virtual Event</div>
-                  <div className="text-xs lg:text-sm text-gray-600">Join from anywhere</div>
+                  <div className="font-semibold text-gray-800 text-sm lg:text-base">Virtual Event</div>
+                  <div className="text-xs lg:text-sm text-gray-500">Join from anywhere</div>
                 </div>
               </div>
             </div>
@@ -328,7 +278,7 @@ function App() {
             {/* Stats Section */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 mb-12 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-blue-600">30+</div>
+                <div className="text-2xl lg:text-3xl font-bold text-blue-600">20+</div>
                 <div className="text-xs lg:text-sm text-gray-600">Expert Speakers</div>
               </div>
               <div className="text-center">
@@ -336,7 +286,7 @@ function App() {
                 <div className="text-xs lg:text-sm text-gray-600">Attendees</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-purple-600">40+</div>
+                <div className="text-2xl lg:text-3xl font-bold text-purple-600">25+</div>
                 <div className="text-xs lg:text-sm text-gray-600">Sessions</div>
               </div>
               <div className="text-center">
@@ -527,12 +477,14 @@ function App() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-16">
+          
+
+          <div className="grid grid-cols-1 gap-8 items-start mb-16">
             {/* Left Content */}
             <div>
-              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
                 Why Sponsor AI Agents Conference?
-              </h3>
+              </h2>
               <div className="space-y-6">
                 {[
                   {
@@ -563,7 +515,7 @@ function App() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">{benefit.title}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-2">{benefit.title}</h3>
                       <p className="text-gray-600 text-sm lg:text-base">{benefit.description}</p>
                     </div>
                   </div>
@@ -573,70 +525,251 @@ function App() {
 
             {/* Right Content - Sponsorship Tiers */}
             <div>
-              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
                 Sponsorship Packages
-              </h3>
+              </h2>
               
               {/* Comparison Table */}
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-                {/* Header */}
-                <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4">
-                  <div className="grid grid-cols-4 gap-4 items-center">
-                    <div className="text-sm font-semibold">Features</div>
-                    {sponsorshipTiers.map((tier, index) => (
-                      <div key={index} className="text-center">
-                        <div className="flex items-center justify-center space-x-2 mb-1">
-                          <div className="w-6 h-6 bg-white/20 rounded-lg flex items-center justify-center">
-                            {React.cloneElement(tier.icon, { className: "w-4 h-4 text-white" })}
-                          </div>
-                        </div>
-                        <div className="text-xs font-bold">{tier.name}</div>
-                        {tier.premium && (
-                          <div className="text-xs bg-yellow-400 text-yellow-900 px-2 py-0.5 rounded-full mt-1 inline-block">
-                            PREMIUM
-                          </div>
-                        )}
-                      </div>
-                    ))}
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="overflow-x-auto">
+                  <div className="inline-block min-w-full">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="bg-gray-50">
+                          <th className="px-6 py-4 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                            Features
+                          </th>
+                          <th className="px-6 py-4 text-center bg-gradient-to-br from-yellow-50 to-orange-50 border-l border-yellow-200">
+                            <div className="flex flex-col items-center space-y-2">
+                              <div className="flex items-center space-x-2">
+                                <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                                  <Crown className="w-4 h-4 text-white" />
+                                </div>
+                                <div>
+                                  <div className="text-lg font-bold text-gray-900">Title</div>
+                                  <div className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">EXCLUSIVE</div>
+                                </div>
+                              </div>
+                              <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600 mt-2">
+                                $5,000
+                              </div>
+                            </div>
+                          </th>
+                          <th className="px-6 py-4 text-center bg-gradient-to-br from-purple-50 to-blue-50 border-l border-purple-200">
+                            <div className="flex flex-col items-center space-y-2">
+                              <div className="flex items-center space-x-2">
+                                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center">
+                                  <Award className="w-4 h-4 text-white" />
+                                </div>
+                                <div>
+                                  <div className="text-lg font-bold text-gray-900">Platinum</div>
+                                </div>
+                              </div>
+                              <div className="text-2xl font-bold text-purple-600">$1,500</div>
+                            </div>
+                          </th>
+                          <th className="px-6 py-4 text-center bg-gradient-to-br from-yellow-50 to-orange-50 border-l border-yellow-200">
+                            <div className="flex flex-col items-center space-y-2">
+                              <div className="flex items-center space-x-2">
+                                <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                                  <Star className="w-4 h-4 text-white" />
+                                </div>
+                                <div>
+                                  <div className="text-lg font-bold text-gray-900">Gold</div>
+                                </div>
+                              </div>
+                              <div className="text-2xl font-bold text-yellow-600">$1,000</div>
+                            </div>
+                          </th>
+                          <th className="px-6 py-4 text-center bg-gradient-to-br from-gray-50 to-slate-50 border-l border-gray-200">
+                            <div className="flex flex-col items-center space-y-2">
+                              <div className="flex items-center space-x-2">
+                                <div className="w-8 h-8 bg-gradient-to-br from-gray-400 to-slate-500 rounded-full flex items-center justify-center">
+                                  <Users className="w-4 h-4 text-white" />
+                                </div>
+                                <div>
+                                  <div className="text-lg font-bold text-gray-900">Silver</div>
+                                </div>
+                              </div>
+                              <div className="text-2xl font-bold text-gray-600">$500</div>
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white divide-y divide-gray-200">
+                        <tr>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Logo on Website</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                            <div className="flex items-center justify-center space-x-1">
+                              <Crown className="w-4 h-4 text-yellow-600" />
+                              <span className="font-medium">Top + Exclusive Banner</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
+                            <div className="flex items-center justify-center space-x-1">
+                              <MapPin className="w-4 h-4 text-purple-600" />
+                              <span className="font-medium">Top Placement</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                            <div className="flex items-center justify-center space-x-1">
+                              <MapPin className="w-4 h-4 text-yellow-600" />
+                              <span className="font-medium">Mid Placement</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
+                            <div className="flex items-center justify-center space-x-1">
+                              <MapPin className="w-4 h-4 text-gray-600" />
+                              <span className="font-medium">Footer</span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr className="bg-gray-50">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Speaking Slot</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                            <div className="flex items-center justify-center space-x-1">
+                              <Mic className="w-4 h-4 text-yellow-600" />
+                              <span className="font-medium">Keynote or Panel</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
+                            <div className="flex items-center justify-center space-x-1">
+                              <Mic className="w-4 h-4 text-purple-600" />
+                              <span className="font-medium">Keynote or Panel</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                            <div className="flex items-center justify-center space-x-1">
+                              <Mic className="w-4 h-4 text-yellow-600" />
+                              <span className="font-medium">Breakout Talk</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
+                            <div className="flex items-center justify-center space-x-1">
+                              <Mic className="w-4 h-4 text-gray-600" />
+                              <span className="font-medium">Panel</span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Social Media Mentions</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                            <div className="flex items-center justify-center space-x-1">
+                              <Share2 className="w-4 h-4 text-yellow-600" />
+                              <span className="font-medium">Weekly</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
+                            <div className="flex items-center justify-center space-x-1">
+                              <Share2 className="w-4 h-4 text-purple-600" />
+                              <span className="font-medium">Weekly</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                            <div className="flex items-center justify-center space-x-1">
+                              <Share2 className="w-4 h-4 text-yellow-600" />
+                              <span className="font-medium">2-times a month</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
+                            <div className="flex items-center justify-center space-x-1">
+                              <Share2 className="w-4 h-4 text-gray-600" />
+                              <span className="font-medium">Monthly</span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr className="bg-gray-50">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Event Day Recognition</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                            <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
+                            <CheckCircle className="w-5 h-5 text-purple-600 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                            <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
+                            <CheckCircle className="w-5 h-5 text-gray-600 mx-auto" />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Webinar/Demo</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                            <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
+                            <CheckCircle className="w-5 h-5 text-purple-600 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                            <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
+                            <X className="w-5 h-5 text-gray-400 mx-auto" />
+                          </td>
+                        </tr>
+                        <tr className="bg-gray-50">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Recorded Session</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                            <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-purple-50 border-l border-purple-200">
+                            <CheckCircle className="w-5 h-5 text-purple-600 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-50 border-l border-yellow-200">
+                            <CheckCircle className="w-5 h-5 text-yellow-600 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900">
+                            <X className="w-5 h-5 text-gray-400 mx-auto" />
+                          </td>
+                        </tr>
+                        
+                        {/* Title Sponsorship Exclusive Features */}
+                        <tr className="bg-yellow-100">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">C# Corner Newsletter</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                            <div className="flex items-center justify-center space-x-1">
+                              <Mail className="w-4 h-4 text-yellow-600" />
+                              <span className="font-medium">765K Subscribers</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                            <X className="w-5 h-5 text-gray-400 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                            <X className="w-5 h-5 text-gray-400 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100">
+                            <X className="w-5 h-5 text-gray-400 mx-auto" />
+                          </td>
+                        </tr>
+                        <tr className="bg-yellow-100">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Pre & Post Conference Promotions</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                            <div className="flex items-center justify-center space-x-1">
+                              <Share2 className="w-4 h-4 text-yellow-600" />
+                              <span className="font-medium">Weekly (2M+ Reach)</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                            <X className="w-5 h-5 text-gray-400 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100 border-l border-yellow-200">
+                            <X className="w-5 h-5 text-gray-400 mx-auto" />
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-900 bg-yellow-100">
+                            <X className="w-5 h-5 text-gray-400 mx-auto" />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-
-                {/* Features Comparison */}
-                <div className="divide-y divide-gray-100">
-                  {sponsorshipTiers[0].features.map((_, featureIndex) => (
-                    <div key={featureIndex} className="grid grid-cols-4 gap-4 items-center p-4 hover:bg-gray-50 transition-colors duration-200">
-                      <div className="text-sm font-medium text-gray-900">
-                        {sponsorshipTiers[0].features[featureIndex].name}
-                      </div>
-                      {sponsorshipTiers.map((tier, tierIndex) => (
-                        <div key={tierIndex} className="text-center">
-                          <div className="flex items-center justify-center space-x-2">
-                            {tier.features[featureIndex].included ? (
-                              <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                                <Check className="w-4 h-4 text-green-600" />
-                              </div>
-                            ) : (
-                              <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
-                                <Minus className="w-4 h-4 text-gray-400" />
-                              </div>
-                            )}
-                          </div>
-                          {tier.features[featureIndex].detail && (
-                            <div className="text-xs text-gray-500 mt-1">
-                              {tier.features[featureIndex].detail}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
               </div>
-              
-              {/* Disclaimer */}
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <p className="text-xs text-gray-600">
-                  <strong>*Attendee List Access:</strong> Only available for Title Sponsors and strictly limited to opt-in participants who have explicitly consented to share their contact information with sponsors.
+                  * Title Sponsorship is limited to one sponsor only and includes exclusive C# Corner benefits. All packages include event day recognition and networking opportunities.
                 </p>
               </div>
             </div>
@@ -649,15 +782,15 @@ function App() {
                 Ready to Partner With Us?
               </h3>
               <p className="text-lg lg:text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                Join us in shaping the future of AI agent technology. Let's discuss how we can create a customized sponsorship package that meets your goals.
+                Join leading companies in supporting the future of AI agent technology and connect with the next generation of innovators.
               </p>
               <a
                 href="mailto:stephen.simon@csharp.com?subject=AI%20Agents%20Conference%20Sponsorship%20Inquiry&body=Hi%2C%0A%0AI'm%20interested%20in%20sponsoring%20the%20AI%20Agents%20Conference%202025.%20Please%20send%20me%20more%20information%20about%20sponsorship%20packages%20and%20opportunities.%0A%0AThank%20you%21"
-                className="group inline-flex items-center space-x-3 bg-white text-purple-600 px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:bg-purple-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:from-blue-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
               >
-                <Mail className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
-                <span>Apply for Sponsorship</span>
-                <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <Mail className="w-6 h-6" />
+                <span>Contact Us for Sponsorship</span>
+                <ArrowRight className="w-5 h-5" />
               </a>
               <p className="text-sm text-purple-200 mt-4">
                 Contact us at stephen.simon@csharp.com for custom sponsorship packages
@@ -785,12 +918,12 @@ function App() {
             </div>
             
             <a
-              href="https://www.townscript.com/e/ai-agents-conference-032034"
+              href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 inline-flex items-center justify-center space-x-2"
             >
-              <span>Register Now - $9</span>
+              <span>Claim Your Spot</span>
               <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5" />
             </a>
             
