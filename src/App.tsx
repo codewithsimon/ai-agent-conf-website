@@ -597,6 +597,7 @@ function App() {
                 </div>
               </div>
             </div>
+          </section>
          </section>
 
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-16">
