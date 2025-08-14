@@ -7,7 +7,6 @@ import {
   ArrowRight, 
   CheckCircle, 
   Mail, 
-  Twitter, 
   Linkedin, 
   Youtube,
   Menu,
@@ -15,7 +14,6 @@ import {
   MapPin,
   Star,
   Mic,
-  Code,
   Zap,
   Play,
   Sparkles,
@@ -28,10 +26,6 @@ import {
   Eye,
   Network,
   Crown,
-  Shield,
-  Heart,
-  Check,
-  Minus,
   Share2
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -138,59 +132,7 @@ function App() {
     }
   ];
 
-  const sponsorshipTiers = [
-    {
-      name: "Platinum",
-      price: "$1,500",
-      icon: <Crown className="w-6 h-6 text-purple-600" />,
-      bgColor: "bg-gradient-to-br from-purple-50 to-indigo-50",
-      borderColor: "border-purple-200",
-      accentColor: "text-purple-600",
-      features: [
-        { name: "Logo on Website", included: true, detail: "Top Placement", highlight: true },
-        { name: "Speaking Slot", included: true, detail: "Keynote or Panel", highlight: true },
-        { name: "Social Media Mentions", included: true, detail: "Weekly", highlight: true },
-        { name: "Event Day Recognition", included: true, detail: "", highlight: false },
-        { name: "Webinar/Demo", included: true, detail: "", highlight: false },
-        { name: "Recorded Session", included: true, detail: "", highlight: false }
-      ],
-      premium: true
-    },
-    {
-      name: "Gold",
-      price: "$1,000",
-      icon: <Award className="w-6 h-6 text-yellow-600" />,
-      bgColor: "bg-gradient-to-br from-yellow-50 to-orange-50",
-      borderColor: "border-yellow-200",
-      accentColor: "text-yellow-600",
-      features: [
-        { name: "Logo on Website", included: true, detail: "Mid Placement", highlight: false },
-        { name: "Speaking Slot", included: true, detail: "Breakout Talk", highlight: true },
-        { name: "Social Media Mentions", included: true, detail: "2-times a month", highlight: false },
-        { name: "Event Day Recognition", included: true, detail: "", highlight: false },
-        { name: "Webinar/Demo", included: true, detail: "", highlight: false },
-        { name: "Recorded Session", included: true, detail: "", highlight: false }
-      ],
-      premium: false
-    },
-    {
-      name: "Silver",
-      price: "$500",
-      icon: <Shield className="w-6 h-6 text-gray-600" />,
-      bgColor: "bg-gradient-to-br from-gray-50 to-slate-50",
-      borderColor: "border-gray-200",
-      accentColor: "text-gray-600",
-      features: [
-        { name: "Logo on Website", included: true, detail: "Footer", highlight: false },
-        { name: "Speaking Slot", included: true, detail: "Panel", highlight: false },
-        { name: "Social Media Mentions", included: true, detail: "Monthly", highlight: false },
-        { name: "Event Day Recognition", included: true, detail: "", highlight: false },
-        { name: "Webinar/Demo", included: false, detail: "", highlight: false },
-        { name: "Recorded Session", included: false, detail: "", highlight: false }
-      ],
-      premium: false
-    }
-  ];
+  
 
   return (
     <div className="min-h-screen bg-white">
@@ -535,137 +477,14 @@ function App() {
             </p>
           </div>
 
-          {/* Title Sponsorship - Exclusive Section */}
-          <div className="mb-16">
-            <div className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-3xl p-1 shadow-2xl">
-              <div className="bg-white rounded-3xl p-8 lg:p-12">
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center justify-center w-16 lg:w-20 h-16 lg:h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl mb-6 shadow-lg">
-                    <Crown className="w-8 lg:w-10 h-8 lg:h-10 text-white" />
-                  </div>
-                  <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-yellow-100 to-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-bold mb-4">
-                    <Sparkles className="w-4 h-4" />
-                    <span>EXCLUSIVE OPPORTUNITY</span>
-                  </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                    Title Sponsorship
-                  </h3>
-                  <div className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600 mb-6">
-                    $5,000
-                  </div>
-                  <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
-                    Become the exclusive title sponsor and maximize your brand exposure to our massive global audience
-                  </p>
-                </div>
+          
 
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-                  {/* Left: Exclusive Benefits */}
-                  <div>
-                    <h4 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6 flex items-center space-x-2">
-                      <Star className="w-6 h-6 text-yellow-500" />
-                      <span>Exclusive Benefits</span>
-                    </h4>
-                    <div className="space-y-4">
-                      {[
-                        {
-                          icon: <Mail className="w-5 h-5 text-orange-600" />,
-                          title: "Newsletter Reach",
-                          description: "Exclusive newsletter to 765,000 C# Corner subscribers"
-                        },
-                        {
-                          icon: <TrendingUp className="w-5 h-5 text-orange-600" />,
-                          title: "Social Media Promotion",
-                          description: "Weekly promotion across all C# Corner social channels (1.4M+ total reach)"
-                        },
-                        {
-                          icon: <Calendar className="w-5 h-5 text-orange-600" />,
-                          title: "Extended Campaign",
-                          description: "Pre and post conference promotional campaigns"
-                        }
-                      ].map((benefit, index) => (
-                        <div key={index} className="flex space-x-4 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border border-yellow-200">
-                          <div className="flex-shrink-0">
-                            <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                              {benefit.icon}
-                            </div>
-                          </div>
-                          <div>
-                            <h5 className="font-semibold text-gray-900 mb-1">{benefit.title}</h5>
-                            <p className="text-gray-600 text-sm">{benefit.description}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Right: Social Media Stats */}
-                  <div>
-                    <h4 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6 flex items-center space-x-2">
-                      <Network className="w-6 h-6 text-yellow-500" />
-                      <span>Massive Reach</span>
-                    </h4>
-                    <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 mb-6">
-                      <div className="grid grid-cols-2 gap-4 mb-6">
-                        <div className="text-center p-4 bg-white rounded-xl shadow-sm">
-                          <div className="text-2xl lg:text-3xl font-bold text-blue-600">1.1M</div>
-                          <div className="text-sm text-gray-600">Facebook</div>
-                        </div>
-                        <div className="text-center p-4 bg-white rounded-xl shadow-sm">
-                          <div className="text-2xl lg:text-3xl font-bold text-blue-400">250K</div>
-                          <div className="text-sm text-gray-600">Twitter</div>
-                        </div>
-                        <div className="text-center p-4 bg-white rounded-xl shadow-sm">
-                          <div className="text-2xl lg:text-3xl font-bold text-blue-700">70K</div>
-                          <div className="text-sm text-gray-600">LinkedIn</div>
-                        </div>
-                        <div className="text-center p-4 bg-white rounded-xl shadow-sm">
-                          <div className="text-2xl lg:text-3xl font-bold text-purple-600">765K</div>
-                          <div className="text-sm text-gray-600">Newsletter</div>
-                        </div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                          2M+ Total Reach
-                        </div>
-                        <p className="text-gray-600 text-sm mt-2">Combined audience across all platforms</p>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-4 border border-green-200">
-                      <div className="flex items-center space-x-2 text-green-700 mb-2">
-                        <CheckCircle className="w-5 h-5" />
-                        <span className="font-semibold">Plus Everything in Platinum</span>
-                      </div>
-                      <p className="text-green-600 text-sm">
-                        All Platinum sponsor benefits included: keynote speaking, top website placement, weekly mentions, and more
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center mt-8">
-                  <a
-                    href="mailto:stephen.simon@csharp.com?subject=Title%20Sponsorship%20Inquiry%20-%20AI%20Agents%20Conference%202025&body=Hi%2C%0A%0AI'm%20interested%20in%20the%20Title%20Sponsorship%20opportunity%20for%20the%20AI%20Agents%20Conference%202025.%20Please%20send%20me%20more%20information%20about%20this%20exclusive%20package.%0A%0AThank%20you%21"
-                    className="group inline-flex items-center space-x-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
-                  >
-                    <Crown className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                    <span>Claim Title Sponsorship</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </a>
-                  <p className="text-sm text-gray-500 mt-4">
-                    Limited to one exclusive title sponsor only
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-16">
+          <div className="grid grid-cols-1 gap-8 items-start mb-16">
             {/* Left Content */}
             <div>
-              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
                 Why Sponsor AI Agents Conference?
-              </h3>
+              </h2>
               <div className="space-y-6">
                 {[
                   {
@@ -696,7 +515,7 @@ function App() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">{benefit.title}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-2">{benefit.title}</h3>
                       <p className="text-gray-600 text-sm lg:text-base">{benefit.description}</p>
                     </div>
                   </div>
@@ -706,9 +525,9 @@ function App() {
 
             {/* Right Content - Sponsorship Tiers */}
             <div>
-              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
                 Sponsorship Packages
-              </h3>
+              </h2>
               
               {/* Comparison Table */}
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
