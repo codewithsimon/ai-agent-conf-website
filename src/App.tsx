@@ -427,15 +427,12 @@ function App() {
                     <div className="w-32 lg:w-40 h-32 lg:h-40 mx-auto mb-4 lg:mb-6 rounded-xl bg-white shadow-sm flex items-center justify-center p-4 lg:p-6 group-hover:scale-110 transition-transform duration-300">
                       <img
                         src={tool.logo}
-                        alt={`${tool.name} logo`}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <h3 className="text-lg lg:text-xl font-bold text-gray-900">
-                      {tool.name}
-                    </h3>
-                  </div>
-                </div>
+              <div key={index} className="flex items-center justify-center">
+                <img 
+                  src={tool.logo} 
+                  alt={tool.name}
+                  className="w-20 h-20 object-contain hover:scale-110 transition-transform duration-300"
+                />
               </div>
             ))}
           </div>
