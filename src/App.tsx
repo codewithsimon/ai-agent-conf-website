@@ -427,7 +427,7 @@ function App() {
                     <div className="w-32 lg:w-40 h-32 lg:h-40 mx-auto mb-4 lg:mb-6 flex items-center justify-center transition-transform duration-300">
                       <img
                         src={tool.logo}
-                        alt={`${tool.name} logo`}
+                        alt={tool.name}
                         className="w-full h-full object-contain"
                       />
                     </div>
