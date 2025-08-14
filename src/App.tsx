@@ -479,12 +479,12 @@ function App() {
 
           
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-16">
+          <div className="grid grid-cols-1 gap-8 items-start mb-16">
             {/* Left Content */}
             <div>
-              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
                 Why Sponsor AI Agents Conference?
-              </h3>
+              </h2>
               <div className="space-y-6">
                 {[
                   {
@@ -515,7 +515,7 @@ function App() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">{benefit.title}</h4>
+                      <h3 className="font-semibold text-gray-900 mb-2">{benefit.title}</h3>
                       <p className="text-gray-600 text-sm lg:text-base">{benefit.description}</p>
                     </div>
                   </div>
@@ -525,9 +525,9 @@ function App() {
 
             {/* Right Content - Sponsorship Tiers */}
             <div>
-              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
                 Sponsorship Packages
-              </h3>
+              </h2>
               
               {/* Comparison Table */}
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
