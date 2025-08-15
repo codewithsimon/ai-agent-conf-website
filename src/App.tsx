@@ -424,16 +424,14 @@ function App() {
                 <div className={`${tool.bgColor} rounded-2xl p-6 lg:p-8 border ${tool.borderColor} shadow-sm hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 h-full`}>
                   <div className="text-center">
                     {/* Logo Container - Significantly Increased Size */}
-                    <div className="w-32 lg:w-40 h-32 lg:h-40 mx-auto mb-4 lg:mb-6 rounded-xl bg-white shadow-sm flex items-center justify-center p-4 lg:p-6 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-32 lg:w-40 h-32 lg:h-40 mx-auto mb-4 lg:mb-6 flex items-center justify-center transition-transform duration-300">
                       <img
                         src={tool.logo}
                         alt={tool.name}
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    
-                    {/* Tool Name */}
-                    <h3 className={`font-bold text-base lg:text-lg ${tool.textColor} mb-2`}>
+                    <h3 className={`text-lg lg:text-xl font-bold hidden ${tool.textColor}`}>
                       {tool.name}
                     </h3>
                   </div>
