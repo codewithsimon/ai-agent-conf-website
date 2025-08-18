@@ -245,7 +245,7 @@ function App() {
                   <Calendar className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-800 text-sm lg:text-base">October 1-3, 2025</div>
+                  <div className="font-semibold text-gray-800 text-sm lg:text-base">October 29-30, 2025</div>
                   <div className="text-xs lg:text-sm text-gray-500">Save the date</div>
                 </div>
               </div>
