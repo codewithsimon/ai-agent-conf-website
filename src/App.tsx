@@ -1070,6 +1070,12 @@ function App() {
                 >
                   Code of Conduct
                 </Link>
+                <Link
+                  to="/sponsorship"
+                  className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
+                >
+                  Sponsorship
+                </Link>
               </div>
             </div>
             
