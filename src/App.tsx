@@ -422,7 +422,7 @@ function App() {
               },
               {
                 name: "Stephen Simon",
-                title: "Senior Software Engineer, Microsoft",
+                title: "Cloud and AI Advocate",
                 image: "/Stephen SIMON.jpg",
                 bio: "Expert in AI agent development and machine learning systems, leading Microsoft's enterprise AI initiatives."
               },
