@@ -402,6 +402,56 @@ function App() {
         </div>
       </section>
 
+      {/* Speakers Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Meet Our Expert Speakers</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Learn from industry leaders and AI pioneers who are shaping the future of artificial intelligence
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Mahesh Chand",
+                title: "Founder, C# Corner",
+                image: "/Mahesh Chand.jpg",
+                bio: "Microsoft MVP and renowned technology leader with 25+ years of experience in software development and AI innovation."
+              },
+              {
+                name: "Stephen Simon",
+                title: "Cloud and AI Advocate",
+                image: "/Stephen SIMON.jpg",
+                bio: "Expert in AI agent development and machine learning systems, leading enterprise AI initiatives."
+              },
+              {
+                name: "Allen O'Neill",
+                title: "AI Research Director",
+                image: "/allen-oneill.jpg",
+                bio: "Pioneer in autonomous agent systems with extensive experience in multi-agent architectures and distributed AI."
+              }
+            ].map((speaker, index) => (
+              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="aspect-w-3 aspect-h-4">
+                  <img 
+                    src={speaker.image} 
+                    alt={speaker.name}
+                    className="w-full h-80 object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{speaker.name}</h3>
+                  <p className="text-blue-600 font-medium mb-3">{speaker.title}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{speaker.bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* AI Tools Section */}
       <section className="py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
