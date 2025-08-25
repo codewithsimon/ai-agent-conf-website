@@ -431,6 +431,12 @@ function App() {
                 title: "AI Research Director",
                 image: "/allen-oneill.jpg",
                 bio: "Pioneer in autonomous agent systems with extensive experience in multi-agent architectures and distributed AI."
+              },
+              {
+                name: "Harsha Gaddipati",
+                title: "COO at slashy.ai",
+                image: "/Harsha Gaddipati.jpg",
+                bio: "Chief Operating Officer at slashy.ai, driving operational excellence and strategic growth in AI-powered solutions."
               }
             ].map((speaker, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
