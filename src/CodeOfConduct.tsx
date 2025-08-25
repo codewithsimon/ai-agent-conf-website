@@ -4,21 +4,21 @@ import { Link } from 'react-router-dom';
 
 function CodeOfConduct() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-900">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-100">
+      <nav className="bg-gray-800 border-b border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
                 <Users className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold text-xl text-gray-900">AI Agent Conference</span>
+              <span className="font-bold text-xl text-white">AI Agent Conference</span>
             </Link>
             
             <Link
               to="/"
-              className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors duration-200"
+              className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Conference</span>
@@ -28,38 +28,38 @@ function CodeOfConduct() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      <section className="relative py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl"></div>
         </div>
         
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-6">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-900/50 rounded-2xl mb-6">
             <Shield className="w-8 h-8 text-blue-600" />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
             Code of Conduct
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Creating a safe, inclusive, and respectful environment for all participants at the AI Agent Conference
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Our Commitment */}
           <div className="mb-16">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-blue-900/50 rounded-lg flex items-center justify-center">
                 <Heart className="w-5 h-5 text-blue-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Our Commitment</h2>
+              <h2 className="text-2xl font-bold text-white">Our Commitment</h2>
             </div>
-            <div className="prose prose-lg max-w-none text-gray-700">
+            <div className="prose prose-lg max-w-none text-gray-300">
               <p className="mb-4">
                 The AI Agent Conference is dedicated to providing a harassment-free conference experience for everyone, 
                 regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, 
@@ -75,10 +75,10 @@ function CodeOfConduct() {
           {/* Expected Behavior */}
           <div className="mb-16">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-green-900/50 rounded-lg flex items-center justify-center">
                 <CheckCircle className="w-5 h-5 text-green-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Expected Behavior</h2>
+              <h2 className="text-2xl font-bold text-white">Expected Behavior</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {[
@@ -107,9 +107,9 @@ function CodeOfConduct() {
                   description: "Work together to create a positive learning environment for all participants."
                 }
               ].map((behavior, index) => (
-                <div key={index} className="bg-green-50 p-6 rounded-xl border border-green-100">
-                  <h3 className="font-semibold text-gray-900 mb-2">{behavior.title}</h3>
-                  <p className="text-gray-600">{behavior.description}</p>
+                <div key={index} className="bg-green-900/20 p-6 rounded-xl border border-green-800">
+                  <h3 className="font-semibold text-white mb-2">{behavior.title}</h3>
+                  <p className="text-gray-300">{behavior.description}</p>
                 </div>
               ))}
             </div>
@@ -118,16 +118,16 @@ function CodeOfConduct() {
           {/* Unacceptable Behavior */}
           <div className="mb-16">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-red-900/50 rounded-lg flex items-center justify-center">
                 <AlertTriangle className="w-5 h-5 text-red-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Unacceptable Behavior</h2>
+              <h2 className="text-2xl font-bold text-white">Unacceptable Behavior</h2>
             </div>
-            <div className="bg-red-50 p-8 rounded-xl border border-red-100">
-              <p className="text-gray-700 mb-4">
+            <div className="bg-red-900/20 p-8 rounded-xl border border-red-800">
+              <p className="text-gray-300 mb-4">
                 The following behaviors are considered harassment and are unacceptable:
               </p>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start space-x-2">
                   <span className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 flex-shrink-0"></span>
                   <span>Verbal or written abuse, threats, or discriminatory language</span>
@@ -159,18 +159,18 @@ function CodeOfConduct() {
           {/* Consequences */}
           <div className="mb-16">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-orange-900/50 rounded-lg flex items-center justify-center">
                 <Shield className="w-5 h-5 text-orange-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Consequences</h2>
+              <h2 className="text-2xl font-bold text-white">Consequences</h2>
             </div>
-            <div className="bg-orange-50 p-8 rounded-xl border border-orange-100">
-              <p className="text-gray-700 mb-4">
+            <div className="bg-orange-900/20 p-8 rounded-xl border border-orange-800">
+              <p className="text-gray-300 mb-4">
                 Participants asked to stop any harassing behavior are expected to comply immediately. 
                 If a participant engages in harassing behavior, the conference organizers may take any action 
                 they deem appropriate, including:
               </p>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start space-x-2">
                   <span className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></span>
                   <span>Warning the offender</span>
@@ -194,24 +194,24 @@ function CodeOfConduct() {
           {/* Reporting */}
           <div className="mb-16">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-purple-900/50 rounded-lg flex items-center justify-center">
                 <HandHeart className="w-5 h-5 text-purple-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Reporting Incidents</h2>
+              <h2 className="text-2xl font-bold text-white">Reporting Incidents</h2>
             </div>
-            <div className="bg-purple-50 p-8 rounded-xl border border-purple-100">
-              <p className="text-gray-700 mb-6">
+            <div className="bg-purple-900/20 p-8 rounded-xl border border-purple-800">
+              <p className="text-gray-300 mb-6">
                 If you are being harassed, notice that someone else is being harassed, or have any other concerns, 
                 please contact a member of conference staff immediately. Conference staff can be identified by their 
                 special badges and will be introduced at the beginning of the event.
               </p>
-              <div className="bg-white p-6 rounded-lg border border-purple-200">
-                <h3 className="font-semibold text-gray-900 mb-4">Contact Information</h3>
-                <div className="flex items-center space-x-3 text-gray-700">
+              <div className="bg-gray-800 p-6 rounded-lg border border-purple-700">
+                <h3 className="font-semibold text-white mb-4">Contact Information</h3>
+                <div className="flex items-center space-x-3 text-gray-300">
                   <Mail className="w-5 h-5 text-purple-600" />
                   <span>stephen.simon@csharp.com</span>
                 </div>
-                <p className="text-sm text-gray-600 mt-4">
+                <p className="text-sm text-gray-400 mt-4">
                   All reports will be handled with discretion and confidentiality.
                 </p>
               </div>
@@ -220,8 +220,8 @@ function CodeOfConduct() {
 
           {/* Scope */}
           <div className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Scope</h2>
-            <div className="prose prose-lg max-w-none text-gray-700">
+            <h2 className="text-2xl font-bold text-white mb-6">Scope</h2>
+            <div className="prose prose-lg max-w-none text-gray-300">
               <p className="mb-4">
                 This Code of Conduct applies to all conference participants, including attendees, speakers, sponsors, 
                 volunteers, and staff, in all conference venues and conference-related social events.
@@ -234,13 +234,13 @@ function CodeOfConduct() {
           </div>
 
           {/* Acknowledgment */}
-          <div className="bg-gradient-to-r from-blue-50 to-teal-50 p-8 rounded-2xl border border-blue-100">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Acknowledgment</h2>
-            <p className="text-gray-700 mb-4">
+          <div className="bg-gradient-to-r from-blue-900/30 to-teal-900/30 p-8 rounded-2xl border border-blue-800">
+            <h2 className="text-2xl font-bold text-white mb-4">Acknowledgment</h2>
+            <p className="text-gray-300 mb-4">
               This Code of Conduct is adapted from the Conference Code of Conduct and other community guidelines. 
               We are committed to making the AI Agent Conference a welcoming and safe space for all participants.
             </p>
-            <p className="text-gray-700">
+            <p className="text-gray-300">
               By participating in the AI Agent Conference, you agree to abide by this Code of Conduct.
             </p>
           </div>
@@ -249,7 +249,7 @@ function CodeOfConduct() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-black text-white py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
