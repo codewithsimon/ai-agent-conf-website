@@ -245,7 +245,7 @@ function App() {
                   <Calendar className="w-4 lg:w-5 h-4 lg:h-5 text-blue-600" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-800 text-sm lg:text-base">October 29-30, 2025</div>
+                  <div className="font-semibold text-gray-800 text-sm lg:text-base">October 29-31, 2025</div>
                   <div className="text-xs lg:text-sm text-gray-500">Save the date</div>
                 </div>
               </div>
@@ -278,11 +278,11 @@ function App() {
             {/* Stats Section */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 mb-12 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-blue-600">20+</div>
+                <div className="text-2xl lg:text-3xl font-bold text-blue-600">30+</div>
                 <div className="text-xs lg:text-sm text-gray-600">Expert Speakers</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-teal-600">8,000 +</div>
+                <div className="text-2xl lg:text-3xl font-bold text-teal-600">10,000 +</div>
                 <div className="text-xs lg:text-sm text-gray-600">Attendees</div>
               </div>
               <div className="text-center">
