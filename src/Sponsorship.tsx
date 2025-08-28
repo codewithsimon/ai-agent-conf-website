@@ -4,21 +4,21 @@ import { Link } from 'react-router-dom';
 
 function Sponsorship() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
-      <nav className="bg-gray-800 border-b border-gray-700">
+      <nav className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
                 <Users className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold text-xl text-white">AI Agent Conference</span>
+              <span className="font-bold text-xl text-gray-900">AI Agent Conference</span>
             </Link>
             
             <Link
               to="/"
-              className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200"
+              className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors duration-200"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Conference</span>
@@ -28,38 +28,38 @@ function Sponsorship() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-teal-50">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal-200/30 rounded-full blur-3xl"></div>
         </div>
         
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-900/50 rounded-2xl mb-6">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-6">
             <Crown className="w-8 h-8 text-blue-600" />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Sponsorship Opportunities
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Partner with us to reach thousands of AI professionals and showcase your brand to the global AI community
           </p>
         </div>
       </section>
 
       {/* Sponsorship Packages */}
-      <section className="py-20 bg-gray-800">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Sponsorship Packages</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Sponsorship Packages</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Choose the perfect sponsorship tier to maximize your brand exposure and connect with AI professionals worldwide
             </p>
           </div>
 
           <div className="overflow-x-auto">
             <div className="inline-block min-w-full">
-              <table className="w-full border-collapse bg-gray-900 rounded-2xl shadow-xl overflow-hidden border border-gray-700">
+              <table className="w-full border-collapse bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
                 <thead>
                   <tr>
                     <th className="p-6 text-left bg-gradient-to-br from-yellow-400 to-orange-500 text-white">
@@ -94,20 +94,20 @@ function Sponsorship() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-gray-700 hover:bg-gray-800/50 transition-colors">
-                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50">
+                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Globe className="w-4 h-4 text-yellow-600" />
                         <span className="font-medium">Top + Exclusive Banner</span>
                       </div>
                     </td>
-                    <td className="p-4 bg-gradient-to-r from-purple-50 to-purple-100">
+                    <td className="p-4 bg-gradient-to-r from-purple-50 to-purple-100 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Globe className="w-4 h-4 text-purple-600" />
                         <span>Top of website</span>
                       </div>
                     </td>
-                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-yellow-100">
+                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-yellow-100 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Globe className="w-4 h-4 text-yellow-600" />
                         <span>Middle of website</span>
@@ -120,20 +120,20 @@ function Sponsorship() {
                       </div>
                     </td>
                   </tr>
-                  <tr className="border-b border-gray-700 hover:bg-gray-800/50 transition-colors">
-                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50">
+                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Mic className="w-4 h-4 text-yellow-600" />
                         <span className="font-medium">Keynote or Panel</span>
                       </div>
                     </td>
-                    <td className="p-4 bg-gradient-to-r from-purple-50 to-purple-100">
+                    <td className="p-4 bg-gradient-to-r from-purple-50 to-purple-100 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Mic className="w-4 h-4 text-purple-600" />
                         <span>30-minute slot</span>
                       </div>
                     </td>
-                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-yellow-100">
+                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-yellow-100 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Mic className="w-4 h-4 text-yellow-600" />
                         <span>20-minute slot</span>
@@ -146,20 +146,20 @@ function Sponsorship() {
                       </div>
                     </td>
                   </tr>
-                  <tr className="border-b border-gray-700 hover:bg-gray-800/50 transition-colors">
-                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50">
+                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Share2 className="w-4 h-4 text-yellow-600" />
                         <span className="font-medium">Weekly</span>
                       </div>
                     </td>
-                    <td className="p-4 bg-gradient-to-r from-purple-50 to-purple-100">
+                    <td className="p-4 bg-gradient-to-r from-purple-50 to-purple-100 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Share2 className="w-4 h-4 text-purple-600" />
                         <span>5 posts</span>
                       </div>
                     </td>
-                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-yellow-100">
+                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-yellow-100 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Share2 className="w-4 h-4 text-yellow-600" />
                         <span>3 posts</span>
@@ -172,20 +172,20 @@ function Sponsorship() {
                       </div>
                     </td>
                   </tr>
-                  <tr className="border-b border-gray-700 hover:bg-gray-800/50 transition-colors">
-                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50">
+                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Trophy className="w-4 h-4 text-yellow-600" />
                         <span className="font-medium">✓</span>
                       </div>
                     </td>
-                    <td className="p-4 bg-gradient-to-r from-purple-50 to-purple-100">
+                    <td className="p-4 bg-gradient-to-r from-purple-50 to-purple-100 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Trophy className="w-4 h-4 text-purple-600" />
                         <span>✓</span>
                       </div>
                     </td>
-                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-yellow-100">
+                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-yellow-100 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Trophy className="w-4 h-4 text-yellow-600" />
                         <span>✓</span>
@@ -198,20 +198,20 @@ function Sponsorship() {
                       </div>
                     </td>
                   </tr>
-                  <tr className="border-b border-gray-700 hover:bg-gray-800/50 transition-colors">
-                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50">
+                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Video className="w-4 h-4 text-yellow-600" />
                         <span className="font-medium">✓</span>
                       </div>
                     </td>
-                    <td className="p-4 bg-gradient-to-r from-purple-50 to-purple-100">
+                    <td className="p-4 bg-gradient-to-r from-purple-50 to-purple-100 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Video className="w-4 h-4 text-purple-600" />
                         <span>✓</span>
                       </div>
                     </td>
-                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-yellow-100">
+                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-yellow-100 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Video className="w-4 h-4 text-yellow-600" />
                         <span>✓</span>
@@ -224,20 +224,20 @@ function Sponsorship() {
                       </div>
                     </td>
                   </tr>
-                  <tr className="border-b border-gray-700 hover:bg-gray-800/50 transition-colors">
-                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50">
+                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Play className="w-4 h-4 text-yellow-600" />
                         <span className="font-medium">✓</span>
                       </div>
                     </td>
-                    <td className="p-4 bg-gradient-to-r from-purple-50 to-purple-100">
+                    <td className="p-4 bg-gradient-to-r from-purple-50 to-purple-100 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Play className="w-4 h-4 text-purple-600" />
                         <span>✓</span>
                       </div>
                     </td>
-                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-yellow-100">
+                    <td className="p-4 bg-gradient-to-r from-yellow-50 to-yellow-100 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Play className="w-4 h-4 text-yellow-600" />
                         <span>✓</span>
@@ -251,40 +251,40 @@ function Sponsorship() {
                     </td>
                   </tr>
                   {/* Title Exclusive Features */}
-                  <tr className="border-b border-gray-700 hover:bg-gray-800/50 transition-colors bg-gradient-to-r from-yellow-100 to-orange-100">
-                    <td className="p-4 bg-gradient-to-r from-yellow-200 to-orange-200">
+                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-gradient-to-r from-yellow-100 to-orange-100">
+                    <td className="p-4 bg-gradient-to-r from-yellow-200 to-orange-200 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Mail className="w-4 h-4 text-yellow-700" />
                         <span className="font-bold text-yellow-800">765K Subscribers</span>
                         <span className="bg-yellow-600 text-white px-2 py-1 rounded-full text-xs">EXCLUSIVE</span>
                       </div>
                     </td>
-                    <td className="p-4 text-center text-gray-500 font-medium">No</td>
-                    <td className="p-4 text-center text-gray-500 font-medium">No</td>
+                    <td className="p-4 text-center text-gray-500 font-medium border-r border-gray-200">No</td>
+                    <td className="p-4 text-center text-gray-500 font-medium border-r border-gray-200">No</td>
                     <td className="p-4 text-center text-gray-500 font-medium">No</td>
                   </tr>
-                  <tr className="border-b border-gray-700 hover:bg-gray-800/50 transition-colors bg-gradient-to-r from-yellow-100 to-orange-100">
-                    <td className="p-4 bg-gradient-to-r from-yellow-200 to-orange-200">
+                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-gradient-to-r from-yellow-100 to-orange-100">
+                    <td className="p-4 bg-gradient-to-r from-yellow-200 to-orange-200 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Share2 className="w-4 h-4 text-yellow-700" />
                         <span className="font-bold text-yellow-800">Weekly, 2M+ Reach</span>
                         <span className="bg-yellow-600 text-white px-2 py-1 rounded-full text-xs">EXCLUSIVE</span>
                       </div>
                     </td>
-                    <td className="p-4 text-center text-gray-500 font-medium">No</td>
-                    <td className="p-4 text-center text-gray-500 font-medium">No</td>
+                    <td className="p-4 text-center text-gray-500 font-medium border-r border-gray-200">No</td>
+                    <td className="p-4 text-center text-gray-500 font-medium border-r border-gray-200">No</td>
                     <td className="p-4 text-center text-gray-500 font-medium">No</td>
                   </tr>
-                  <tr className="border-b border-gray-700 hover:bg-gray-800/50 transition-colors bg-gradient-to-r from-yellow-100 to-orange-100">
-                    <td className="p-4 bg-gradient-to-r from-yellow-200 to-orange-200">
+                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors bg-gradient-to-r from-yellow-100 to-orange-100">
+                    <td className="p-4 bg-gradient-to-r from-yellow-200 to-orange-200 border-r border-gray-200">
                       <div className="flex items-center space-x-2">
                         <Trophy className="w-4 h-4 text-yellow-700" />
                         <span className="font-bold text-yellow-800">Extended Campaign</span>
                         <span className="bg-yellow-600 text-white px-2 py-1 rounded-full text-xs">EXCLUSIVE</span>
                       </div>
                     </td>
-                    <td className="p-4 text-center text-gray-500 font-medium">No</td>
-                    <td className="p-4 text-center text-gray-500 font-medium">No</td>
+                    <td className="p-4 text-center text-gray-500 font-medium border-r border-gray-200">No</td>
+                    <td className="p-4 text-center text-gray-500 font-medium border-r border-gray-200">No</td>
                     <td className="p-4 text-center text-gray-500 font-medium">No</td>
                   </tr>
                 </tbody>
@@ -308,11 +308,11 @@ function Sponsorship() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Why Sponsor Our Conference?</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Sponsor Our Conference?</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Connect with thousands of AI professionals and showcase your brand to the global AI community
             </p>
           </div>
@@ -350,12 +350,12 @@ function Sponsorship() {
                 description: "Exclusive newsletter access to our engaged subscriber base"
               }
             ].map((benefit, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-900/30 to-teal-900/30 p-8 rounded-2xl border border-blue-800 hover:shadow-lg transition-all duration-300">
+              <div key={index} className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-teal-600 rounded-xl flex items-center justify-center mb-6">
                   <benefit.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                <p className="text-gray-300">{benefit.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -363,7 +363,7 @@ function Sponsorship() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-12">
+      <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
