@@ -218,7 +218,7 @@ function App() {
               <p className="text-sm text-gray-600 mb-4 font-medium">Brought to you by</p>
               <div className="flex items-center justify-center space-x-8 mb-8">
                 <img
-                  src="/AI Circle.png"
+                  src="/AI-Circle.png"
                   alt="AI Circle"
                   className="h-12 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
                 />
