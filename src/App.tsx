@@ -662,6 +662,79 @@ function App() {
         </div>
       </section>
 
+      {/* Partners and Sponsors Section */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <div className="inline-flex items-center justify-center w-12 lg:w-16 h-12 lg:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mb-6">
+              <Handshake className="w-6 lg:w-8 h-6 lg:h-8 text-white" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              Partners & Sponsors
+            </h2>
+            <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+              We're proud to partner with innovative companies that are shaping the future of AI technology
+            </p>
+          </div>
+
+          {/* Partners Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {[
+              {
+                name: "Ergo",
+                logo: "/Ergo.jpg"
+              },
+              {
+                name: "Onlook",
+                logo: "/Onlook.jpg"
+              },
+              {
+                name: "Pickle AI",
+                logo: "/Pickle AI.jpg"
+              },
+              {
+                name: "TraceRoot AI",
+                logo: "/TraceRoot AI.jpg"
+              }
+            ].map((partner, index) => (
+              <div key={index} className="group">
+                <div className="bg-gray-50 rounded-2xl p-8 lg:p-10 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 lg:w-24 h-20 lg:h-24 mx-auto mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="w-full h-full object-contain rounded-lg"
+                      />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">{partner.name}</h3>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-12 lg:mt-16">
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 lg:p-8 border border-purple-100 max-w-2xl mx-auto">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
+                Interested in Partnering?
+              </h3>
+              <p className="text-gray-600 mb-6 text-sm lg:text-base">
+                Join our growing community of partners and sponsors to showcase your brand to thousands of AI professionals.
+              </p>
+              <Link
+                to="/sponsorship"
+                className="group bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
+              >
+                <Crown className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
+                <span>Learn About Sponsorship</span>
+                <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Apply to Speak Section - Improved Design */}
       <section className="py-16 lg:py-20 bg-gray-50">
