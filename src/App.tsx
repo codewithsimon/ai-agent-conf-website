@@ -700,13 +700,14 @@ function App() {
               <div key={index} className="group">
                 <div className="bg-gray-50 rounded-2xl p-8 lg:p-10 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 h-full flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-32 lg:w-40 h-32 lg:h-40 mx-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                    <div className="w-20 lg:w-24 h-20 lg:h-24 mx-auto mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                       <img
                         src={partner.logo}
                         alt={partner.name}
                         className="w-full h-full object-contain rounded-lg"
                       />
                     </div>
+                    <h3 className="text-lg font-semibold text-gray-900">{partner.name}</h3>
                   </div>
                 </div>
               </div>
