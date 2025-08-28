@@ -402,6 +402,153 @@ function App() {
         </div>
       </section>
 
+      {/* Conference Tracks Section */}
+      <section className="py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <div className="inline-flex items-center justify-center w-12 lg:w-16 h-12 lg:h-16 bg-gradient-to-br from-blue-500 to-teal-500 rounded-2xl mb-6">
+              <Target className="w-6 lg:w-8 h-6 lg:h-8 text-white" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              Conference Tracks
+            </h2>
+            <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore four comprehensive tracks covering the full spectrum of AI agent technology and applications
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            {/* Track 1 */}
+            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 lg:w-12 h-10 lg:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg lg:text-xl">🎛️</span>
+                </div>
+                <div>
+                  <h3 className="text-lg lg:text-xl font-bold text-gray-900">Track 1: Agent Architectures & Infrastructure</h3>
+                </div>
+              </div>
+              <div className="space-y-3 text-gray-600">
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">Frameworks, orchestration, and platforms (LangChain, AutoGen, Azure AI Foundry, etc.)</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">Memory, reasoning, and planning in agents</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">Evaluation, benchmarking, and reliability at scale</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Track 2 */}
+            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 lg:w-12 h-10 lg:h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg lg:text-xl">💡</span>
+                </div>
+                <div>
+                  <h3 className="text-lg lg:text-xl font-bold text-gray-900">Track 2: Applied AI Agents</h3>
+                </div>
+              </div>
+              <div className="space-y-3 text-gray-600">
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">Enterprise & industry use-cases (healthcare, finance, education, law, robotics)</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">Developer productivity & DevOps agents</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">Multi-agent collaboration and workflows</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Track 3 */}
+            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 lg:w-12 h-10 lg:h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg lg:text-xl">🤝</span>
+                </div>
+                <div>
+                  <h3 className="text-lg lg:text-xl font-bold text-gray-900">Track 3: Human-Centered AI</h3>
+                </div>
+              </div>
+              <div className="space-y-3 text-gray-600">
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">Human-AI collaboration and augmentation</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">Trust, safety, and alignment in autonomous systems</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">Policy, governance, and ethical frameworks</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Track 4 */}
+            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 lg:w-12 h-10 lg:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg lg:text-xl">🚀</span>
+                </div>
+                <div>
+                  <h3 className="text-lg lg:text-xl font-bold text-gray-900">Track 4: The Future of Agents</h3>
+                </div>
+              </div>
+              <div className="space-y-3 text-gray-600">
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">Autonomous discovery, research, and innovation agents</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">The future of work and organizational impact</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">Beyond LLMs: multimodal, reinforcement, and hybrid agent systems</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-sm lg:text-base">Open source & community-driven agents</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-12 lg:mt-16">
+            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
+                Ready to Explore All Tracks?
+              </h3>
+              <p className="text-gray-600 mb-6 text-sm lg:text-base">
+                Join us for comprehensive coverage across all four tracks and discover the full potential of AI agent technology.
+              </p>
+              <button
+                onClick={() => scrollToSection('registration')}
+                className="group bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
+              >
+                <Target className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
+                <span>Register for All Tracks</span>
+                <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Speakers Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
