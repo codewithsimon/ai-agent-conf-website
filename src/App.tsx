@@ -518,6 +518,7 @@ function App() {
         </div>
       </section>
 
+      /*
       {/* Enhanced Sponsors Section */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -855,6 +856,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      */
 
       {/* Apply to Speak Section - Improved Design */}
       <section className="py-16 lg:py-20 bg-gray-50">
