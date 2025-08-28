@@ -213,6 +213,23 @@ function App() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
+            {/* Brought to you by section */}
+            <div className="mb-8">
+              <p className="text-sm text-gray-600 mb-4 font-medium">Brought to you by</p>
+              <div className="flex items-center justify-center space-x-8 mb-8">
+                <img
+                  src="/AI Circle.png"
+                  alt="AI Circle"
+                  className="h-12 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+                />
+                <img
+                  src="/CSharp Corner.png"
+                  alt="C# Corner"
+                  className="h-12 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            </div>
+
             <div className="mb-8">
               {/* Enhanced Badge */}
               <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-100 to-blue-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-green-200/50 backdrop-blur-sm">
