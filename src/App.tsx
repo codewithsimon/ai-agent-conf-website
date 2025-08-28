@@ -525,28 +525,7 @@ function App() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-12 lg:mt-16">
-            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
-              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
-                Ready to Explore All Tracks?
-              </h3>
-              <p className="text-gray-600 mb-6 text-sm lg:text-base">
-                Join us for comprehensive coverage across all four tracks and discover the full potential of AI agent technology.
-              </p>
-              <button
-                onClick={() => scrollToSection('registration')}
-                className="group bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
-              >
-                <Target className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
-                <span>Register for All Tracks</span>
-                <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
-            </div>
-          </div>
-        </div>
+          </div>         
       </section>
 
       {/* Speakers Section */}
