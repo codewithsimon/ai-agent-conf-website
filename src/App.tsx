@@ -663,7 +663,7 @@ function App() {
       </section>
 
       {/* Partners and Sponsors Section */}
-      <section className="py-16 lg:py-20 bg-white">
+      {/* <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <div className="inline-flex items-center justify-center w-12 lg:w-16 h-12 lg:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mb-6">
@@ -678,7 +678,7 @@ function App() {
           </div>
 
           {/* Partners Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {[
               {
                 name: "Ergo",
@@ -712,7 +712,7 @@ function App() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Call to Action */}
           {/* Call to Action - Hidden */}
@@ -734,8 +734,8 @@ function App() {
               </Link>
             </div>
           </div> */}
-        </div>
-      </section>
+        {/* </div>
+      </section> */}
 
       {/* Speakers Section - Hidden */}
       {/* <section className="py-20 bg-white">
@@ -837,36 +837,81 @@ function App() {
                 </div>
 
                 <a
-                  href="https://forms.office.com/r/4Xmg7AzHSU"
+                  href="https://forms.gle/your-speaker-application-form"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
+                  className="group bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
                 >
-                  <Sparkles className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <Mic className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
                   <span>Apply to Speak</span>
                   <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 lg:p-16 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="relative">
-                    <div className="w-24 lg:w-32 h-24 lg:h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl">
-                      <Mic className="w-12 lg:w-16 h-12 lg:h-16 text-white" />
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-6 lg:w-8 h-6 lg:h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-                      <Sparkles className="w-3 lg:w-4 h-3 lg:h-4 text-yellow-800" />
+              <div className="bg-gradient-to-br from-blue-50 to-teal-50 p-8 lg:p-16 flex items-center">
+                <div className="w-full">
+                  <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
+                    <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+                      What We're Looking For
+                    </h3>
+                    <div className="space-y-4">
+                      {[
+                        "Practical AI agent implementations",
+                        "Novel research and breakthrough findings",
+                        "Industry case studies and lessons learned",
+                        "Technical deep-dives and tutorials",
+                        "Ethical AI and responsible development",
+                        "Future trends and emerging technologies"
+                      ].map((topic, index) => (
+                        <div key={index} className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm lg:text-base">{topic}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
-                    Your Voice Matters
-                  </h3>
-                  <p className="text-gray-600 max-w-sm text-sm lg:text-base">
-                    Share your unique perspective and help shape the future of AI agent technology
-                  </p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* Partners & Sponsors Section */}
+      {/* <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center space-x-3 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                <Handshake className="w-6 h-6 text-white" />
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900">Partners & Sponsors</h2>
+            </div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We're proud to partner with innovative companies leading the AI revolution
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            {[
+              { name: 'Ergo', logo: '/Ergo.jpg' },
+              { name: 'Onlook', logo: '/Onlook.jpg' },
+              { name: 'Pickle AI', logo: '/Pickle AI.jpg' },
+              { name: 'TraceRoot AI', logo: '/TraceRoot AI.jpg' }
+            ].map((partner, index) => (
+              <div key={index} className="group">
+                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-24 h-24 lg:w-24 lg:h-24 mx-auto mb-4 overflow-hidden rounded-xl">
+                    <img 
+                      src={partner.logo} 
+                      alt={`${partner.name} logo`}
+                      className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 text-center">{partner.name}</h3>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section> */}
