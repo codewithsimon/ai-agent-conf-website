@@ -301,7 +301,7 @@ function App() {
                 <div className="text-xs lg:text-sm text-gray-600">Expert Speakers</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-teal-600">10,000 +</div>
+                <div className="text-2xl lg:text-3xl font-bold text-teal-600">2,000 +</div>
                 <div className="text-xs lg:text-sm text-gray-600">Attendees</div>
               </div>
               <div className="text-center">
