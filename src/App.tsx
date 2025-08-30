@@ -239,6 +239,7 @@ function App() {
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <Sparkles className="w-4 h-4" />
                 <span>Live Virtual Conference</span>
+              </div>
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                 AI Agents
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 animate-gradient-x">
