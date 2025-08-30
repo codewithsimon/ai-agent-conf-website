@@ -663,7 +663,7 @@ function App() {
       </section>
 
       {/* Partners and Sponsors Section */}
-      <section className="py-16 lg:py-20 bg-white">
+      {/* <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 lg:mb-16">
             <div className="inline-flex items-center justify-center w-12 lg:w-16 h-12 lg:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mb-6">
@@ -712,7 +712,7 @@ function App() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> 
 
           {/* Call to Action */}
           {/* Call to Action - Hidden */}
@@ -735,7 +735,7 @@ function App() {
             </div>
           </div> */}
         </div>
-      </section>
+      </section> */}
 
       {/* Speakers Section - Hidden */}
       {/* <section className="py-20 bg-white">
