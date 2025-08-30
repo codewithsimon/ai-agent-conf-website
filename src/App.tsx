@@ -546,8 +546,8 @@ function App() {
         </div>
       </section>
 
-      {/* Speakers Section */}
-      <section className="py-20 bg-white">
+      {/* Speakers Section - Hidden */}
+      {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Meet Our Expert Speakers</h2>
@@ -600,7 +600,7 @@ function App() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* AI Tools Section */}
       <section className="py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -715,7 +715,8 @@ function App() {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-12 lg:mt-16">
+          {/* Call to Action - Hidden */}
+          {/* <div className="text-center mt-12 lg:mt-16">
             <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 lg:p-8 border border-purple-100 max-w-2xl mx-auto">
               <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
                 Interested in Partnering?
@@ -732,16 +733,71 @@ function App() {
                 <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
-      {/* Apply to Speak Section - Improved Design */}
-      <section className="py-16 lg:py-20 bg-gray-50">
+      {/* Speakers Section - Hidden */}
+      {/* <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Meet Our Expert Speakers</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Learn from industry leaders and AI pioneers who are shaping the future of artificial intelligence
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Mahesh Chand",
+                title: "Founder, C# Corner",
+                image: "/Mahesh Chand.jpg",
+                bio: "Microsoft MVP and renowned technology leader with 25+ years of experience in software development and AI innovation."
+              },
+              {
+                name: "Stephen Simon",
+                title: "Cloud and AI Advocate",
+                image: "/Stephen SIMON.jpg",
+                bio: "Expert in AI agent development and machine learning systems, leading enterprise AI initiatives."
+              },
+              {
+                name: "Allen O'Neill",
+                title: "AI Research Director",
+                image: "/allen-oneill.jpg",
+                bio: "Pioneer in autonomous agent systems with extensive experience in multi-agent architectures and distributed AI."
+              },
+              {
+                name: "Harsha Gaddipati",
+                title: "COO at slashy.ai",
+                image: "/Harsha Gaddipati.jpg",
+                bio: "Chief Operating Officer at slashy.ai, driving operational excellence and strategic growth in AI-powered solutions."
+              }
+            ].map((speaker, index) => (
+              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="aspect-w-3 aspect-h-4">
+                  <img 
+                    src={speaker.image} 
+                    alt={speaker.name}
+                    className="w-full h-80 object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{speaker.name}</h3>
+                  <p className="text-blue-600 font-medium mb-3">{speaker.title}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{speaker.bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
+      {/* Apply to Speak Section - Hidden */}
+      {/* <section className="py-16 lg:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-0">
-              {/* Left Content */}
               <div className="p-8 lg:p-16">
                 <div className="mb-8">
                   <div className="inline-flex items-center justify-center w-12 lg:w-16 h-12 lg:h-16 bg-blue-100 rounded-2xl mb-6">
@@ -756,7 +812,6 @@ function App() {
                   </p>
                 </div>
 
-                {/* Benefits */}
                 <div className="space-y-4 mb-8">
                   {[
                     {
@@ -793,7 +848,6 @@ function App() {
                 </a>
               </div>
 
-              {/* Right Visual */}
               <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 lg:p-16 flex items-center justify-center">
                 <div className="text-center">
                   <div className="relative">
@@ -815,8 +869,7 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
-
+      </section> */}
       {/* Registration Section */}
       <section id="registration" className="py-16 lg:py-20 bg-gradient-to-br from-blue-600 to-teal-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
