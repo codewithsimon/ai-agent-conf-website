@@ -232,13 +232,13 @@ function App() {
 
             <div className="mb-8">
               {/* Enhanced Badge */}
+              <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+                <span className="text-white font-medium">Live Virtual Conference</span>
+              </div>
               <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-100 to-blue-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-green-200/50 backdrop-blur-sm">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <Sparkles className="w-4 h-4" />
                 <span>Live Virtual Conference</span>
-              </div>
-              
-              {/* Enhanced Main Heading */}
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                 AI Agents
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 animate-gradient-x">
