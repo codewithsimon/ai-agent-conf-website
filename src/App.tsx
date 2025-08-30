@@ -678,7 +678,7 @@ function App() {
           </div>
 
           {/* Partners Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {[
               {
                 name: "Ergo",
@@ -712,7 +712,7 @@ function App() {
                 </div>
               </div>
             ))}
-          </div> 
+          </div> */}
 
           {/* Call to Action */}
           {/* Call to Action - Hidden */}
@@ -734,7 +734,7 @@ function App() {
               </Link>
             </div>
           </div> */}
-        </div>
+        {/* </div>
       </section> */}
 
       {/* Speakers Section - Hidden */}
@@ -831,6 +831,52 @@ function App() {
                       <div className="flex-shrink-0 w-6 lg:w-8 h-6 lg:h-8 bg-blue-50 rounded-lg flex items-center justify-center">
                         {benefit.icon}
                       </div>
+                      <span className="text-gray-700 text-sm lg:text-base">{benefit.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <a
+                  href="https://forms.gle/your-speaker-application-form"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
+                >
+                  <Mic className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <span>Apply to Speak</span>
+                  <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </a>
+              </div>
+
+              <div className="bg-gradient-to-br from-blue-50 to-teal-50 p-8 lg:p-16 flex items-center">
+                <div className="w-full">
+                  <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg">
+                    <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6">
+                      What We're Looking For
+                    </h3>
+                    <div className="space-y-4">
+                      {[
+                        "Practical AI agent implementations",
+                        "Novel research and breakthrough findings",
+                        "Industry case studies and lessons learned",
+                        "Technical deep-dives and tutorials",
+                        "Ethical AI and responsible development",
+                        "Future trends and emerging technologies"
+                      ].map((topic, index) => (
+                        <div key={index} className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm lg:text-base">{topic}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
       {/* Partners & Sponsors Section */}
       {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
