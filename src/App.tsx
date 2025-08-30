@@ -213,7 +213,15 @@ function App() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            {/* Brought to you by section */}
+            {/* Live Virtual Conference Badge */}
+            <div className="mb-6">
+              <span className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                Live Virtual Conference
+              </span>
+            </div>
+            
+            {/*Live Virtual Conference */}
             <div className="mb-8">
               <p className="text-sm text-gray-600 mb-4 font-medium">Brought to you by</p>
               <div className="flex items-center justify-center space-x-8 mb-8">
@@ -232,13 +240,7 @@ function App() {
 
             <div className="mb-8">
               {/* Enhanced Badge */}
-              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-100 to-blue-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-green-200/50 backdrop-blur-sm">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <Sparkles className="w-4 h-4" />
-                <span>Live Virtual Conference</span>
-              </div>
-              
-              {/* Enhanced Main Heading */}
+          
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                 AI Agents
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 animate-gradient-x">
@@ -1078,8 +1080,10 @@ function App() {
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 AI Agents Conference. All rights reserved.</p>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p className="text-gray-400 text-sm">
+              © 2025 AI Agents Conference. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
