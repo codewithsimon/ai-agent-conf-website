@@ -213,7 +213,7 @@ function App() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            {/* Brought to you by section */}
+            {/*Live Virtual Conference */}
             <div className="mb-8">
               <p className="text-sm text-gray-600 mb-4 font-medium">Brought to you by</p>
               <div className="flex items-center justify-center space-x-8 mb-8">
