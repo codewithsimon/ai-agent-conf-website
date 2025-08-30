@@ -213,6 +213,14 @@ function App() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
+            {/* Live Virtual Conference Badge */}
+            <div className="mb-6">
+              <span className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                Live Virtual Conference
+              </span>
+            </div>
+            
             {/*Live Virtual Conference */}
             <div className="mb-8">
               <p className="text-sm text-gray-600 mb-4 font-medium">Brought to you by</p>
