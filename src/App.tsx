@@ -159,12 +159,14 @@ function App() {
               >
                 About
               </button>
-              <button
-                onClick={() => scrollToSection('registration')}
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
+              <a
+                href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-4 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-200 transform hover:scale-105"
               >
                 Register Now
-              </button>
+              </a>
             </div>
 
             {/* Mobile menu button */}
