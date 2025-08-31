@@ -830,19 +830,10 @@ function App() {
                       <span className="text-gray-700 text-sm lg:text-base">{benefit.text}</span>
                     </div>
                   ))}
-                </div>
-
-                <a
-                  href="https://forms.gle/your-speaker-application-form"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
-                >
-                  <Mic className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
-                  <span>Apply to Speak</span>
-                  <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </a>
-              </div>
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">10,000k</div>
+              <div className="text-gray-600">Live Viewers</div>
+            </div>
 
               <div className="bg-gradient-to-br from-blue-50 to-teal-50 p-8 lg:p-16 flex items-center">
                 <div className="w-full">
