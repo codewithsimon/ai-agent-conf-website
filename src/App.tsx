@@ -314,8 +314,10 @@ function App() {
 
             {/* Enhanced CTA Buttons */}
             <div className="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center mb-16">
-              <button
-                onClick={() => scrollToSection('registration')}
+              <a
+                href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative w-full sm:w-auto bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
