@@ -640,6 +640,7 @@ function App() {
           </div>
 
 
+          </div>
       </section>
 
       {/* Partners and Sponsors Section */}
