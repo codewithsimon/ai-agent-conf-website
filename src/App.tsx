@@ -314,8 +314,15 @@ function App() {
                 <div className="text-xs lg:text-sm text-gray-600">Sessions</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-orange-600">Claim</div>
-                <div className="text-xs lg:text-sm text-gray-600">Your Spot</div>
+                <a 
+                  href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-orange-600 transition-colors duration-200"
+                >
+                  <div className="text-orange-600 font-semibold">Claim</div>
+                  <div className="text-sm">Your Spot</div>
+                </a>
               </div>
             </div>
 
