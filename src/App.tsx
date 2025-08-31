@@ -159,12 +159,14 @@ function App() {
               >
                 About
               </button>
-              <button
-                onClick={() => scrollToSection('registration')}
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
+              <a
+                href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-4 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-200 transform hover:scale-105"
               >
                 Register Now
-              </button>
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -187,12 +189,14 @@ function App() {
               >
                 About
               </button>
-              <button
-                onClick={() => scrollToSection('registration')}
-                className="w-full bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
+              <a
+                href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-lg text-sm lg:text-base font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Register Now
-              </button>
+              </a>
             </div>
           </div>
         )}
@@ -242,10 +246,7 @@ function App() {
               {/* Enhanced Badge */}
           
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                AI Agents
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 animate-gradient-x">
-                  Conference 2025
-                </span>
+                AI Agents                
               </h1>
               
               {/* Enhanced Subtitle */}
@@ -301,7 +302,7 @@ function App() {
                 <div className="text-xs lg:text-sm text-gray-600">Expert Speakers</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-teal-600">10,000 +</div>
+                <div className="text-2xl lg:text-3xl font-bold text-teal-600">2,000 +</div>
                 <div className="text-xs lg:text-sm text-gray-600">Attendees</div>
               </div>
               <div className="text-center">
@@ -309,29 +310,25 @@ function App() {
                 <div className="text-xs lg:text-sm text-gray-600">Sessions</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-orange-600">Claim</div>
-                <div className="text-xs lg:text-sm text-gray-600">Your Spot</div>
+                <div className="text-2xl lg:text-3xl font-bold text-purple-600">10,000+</div>
+                <div className="text-xs lg:text-sm text-gray-600">Live Viewers</div>
               </div>
+              
             </div>
 
             {/* Enhanced CTA Buttons */}
             <div className="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center mb-16">
-              <button
-                onClick={() => scrollToSection('registration')}
+              <a
+                href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative w-full sm:w-auto bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 <span className="relative">Register Now</span>
                 <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 relative group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
-              
-              <button
-                onClick={() => scrollToSection('about')}
-                className="w-full sm:w-auto bg-white/80 backdrop-blur-sm border-2 border-gray-200 text-gray-700 px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:bg-white hover:border-gray-300 hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
-              >
-                <Play className="w-4 lg:w-5 h-4 lg:h-5" />
-                <span>Learn More</span>
-              </button>
+              </a>
+            
             </div>
 
             {/* Scroll Indicator */}
@@ -836,19 +833,10 @@ function App() {
                       <span className="text-gray-700 text-sm lg:text-base">{benefit.text}</span>
                     </div>
                   ))}
-                </div>
-
-                <a
-                  href="https://forms.gle/your-speaker-application-form"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
-                >
-                  <Mic className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
-                  <span>Apply to Speak</span>
-                  <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </a>
-              </div>
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">10,000k</div>
+              <div className="text-gray-600">Live Viewers</div>
+            </div>
 
               <div className="bg-gradient-to-br from-blue-50 to-teal-50 p-8 lg:p-16 flex items-center">
                 <div className="w-full">
@@ -1000,7 +988,7 @@ function App() {
               className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <TrendingUp className="w-4 lg:w-5 h-4 lg:h-5" />
-              <span>Join Now</span>
+              <span>Join C# Corner Today</span>
               <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5" />
             </a>
           </div>
@@ -1055,13 +1043,7 @@ function App() {
                   className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
                 >
                   Code of Conduct
-                </Link>
-                <Link
-                  to="/sponsorship"
-                  className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm lg:text-base"
-                >
-                  Sponsorship
-                </Link>
+                </Link>                
               </div>
             </div>
             
