@@ -988,7 +988,7 @@ function App() {
               className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <TrendingUp className="w-4 lg:w-5 h-4 lg:h-5" />
-              <span>Join Now</span>
+              <span>Join C# Corner Today</span>
               <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5" />
             </a>
           </div>
