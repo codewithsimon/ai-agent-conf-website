@@ -305,6 +305,10 @@ function App() {
                 <div className="text-2xl lg:text-3xl font-bold text-purple-600">25+</div>
                 <div className="text-xs lg:text-sm text-gray-600">Sessions</div>
               </div>
+              <div className="text-center">
+                <div className="text-2xl lg:text-3xl font-bold text-purple-600">10,000+</div>
+                <div className="text-xs lg:text-sm text-gray-600">Live Viewers</div>
+              </div>
               
             </div>
 
