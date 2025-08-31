@@ -323,7 +323,7 @@ function App() {
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 <span className="relative">Register Now</span>
                 <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 relative group-hover:translate-x-1 transition-transform duration-200" />
-              </button>             
+              </a>
             
             </div>
 
