@@ -639,26 +639,7 @@ function App() {
             ))}
           </div>
 
-          {/* Call to Action */}
-          <div className="text-center">
-            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
-              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
-                Ready to Master These Tools?
-              </h3>
-              <p className="text-gray-600 mb-6 text-sm lg:text-base">
-                Join us to explore hands-on tutorials and real-world applications of these powerful AI development platforms.
-              </p>
-              <button
-                onClick={() => scrollToSection('registration')}
-                className="group bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
-              >
-                <Sparkles className="w-4 lg:w-5 h-4 lg:h-5 group-hover:rotate-12 transition-transform duration-300" />
-                <span>Join the Conference</span>
-                <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
-            </div>
-          </div>
-        </div>
+
       </section>
 
       {/* Partners and Sponsors Section */}
