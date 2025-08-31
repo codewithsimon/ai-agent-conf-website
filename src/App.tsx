@@ -321,15 +321,8 @@ function App() {
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 <span className="relative">Register Now</span>
                 <ArrowRight className="w-4 lg:w-5 h-4 lg:h-5 relative group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
-              
-              <button
-                onClick={() => scrollToSection('about')}
-                className="w-full sm:w-auto bg-white/80 backdrop-blur-sm border-2 border-gray-200 text-gray-700 px-6 lg:px-8 py-3 lg:py-4 rounded-xl text-base lg:text-lg font-semibold hover:bg-white hover:border-gray-300 hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
-              >
-                <Play className="w-4 lg:w-5 h-4 lg:h-5" />
-                <span>Learn More</span>
-              </button>
+              </button>             
+            
             </div>
 
             {/* Scroll Indicator */}
