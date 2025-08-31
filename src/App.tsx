@@ -242,14 +242,7 @@ function App() {
               {/* Enhanced Badge */}
           
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                AI Agents
-                <a 
-                  href="https://www.c-sharpcorner.com/events/ai-agent-conference-2025"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-gradient-to-r from-green-400 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold text-lg hover:from-green-500 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  Claim Your Spot
+                AI Agents                
                 </a>
               </h1>
               
