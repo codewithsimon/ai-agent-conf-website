@@ -964,7 +964,7 @@ function App() {
               Ready to accelerate your development journey?
             </p>
             <a
-              href="https://www.csharp.com/"
+              href="https://www.c-sharpcorner.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
@@ -1034,7 +1034,7 @@ function App() {
               <div className="space-y-3">
                 <div className="flex items-center space-x-2 text-gray-400 text-sm lg:text-base">
                   <Mail className="w-4 h-4" />
-                  <span>stephen.simon@csharp.com</span>
+                  <span>contact@aiagentsconference.live</span>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-400 text-sm lg:text-base">
                   <Globe className="w-4 h-4" />
