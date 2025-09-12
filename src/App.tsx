@@ -232,12 +232,12 @@ function App() {
                 <img
                   src="/AI-Circle.png"
                   alt="AI Circle"
-                  className="h-8 sm:h-10 md:h-12 max-w-[120px] sm:max-w-none object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+                  className="h-5 sm:h-6 md:h-8 lg:h-10 max-w-[80px] sm:max-w-[100px] md:max-w-none object-contain flex-shrink-0"
                 />
                 <img
                   src="/CSharp Corner.png"
                   alt="C# Corner"
-                  className="h-8 sm:h-10 md:h-12 max-w-[120px] sm:max-w-none object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+                  className="h-5 sm:h-6 md:h-8 lg:h-10 max-w-[80px] sm:max-w-[100px] md:max-w-none object-contain flex-shrink-0"
                 />
               </div>
             </div>
