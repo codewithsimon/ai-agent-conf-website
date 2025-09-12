@@ -232,12 +232,12 @@ function App() {
                 <img
                   src="/AI-Circle.png"
                   alt="AI Circle"
-                  className="h-5 sm:h-6 md:h-8 lg:h-10 max-w-[80px] sm:max-w-[100px] md:max-w-none object-contain flex-shrink-0"
+                  className="h-8 sm:h-10 md:h-12 max-w-[120px] sm:max-w-none object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
                 />
                 <img
                   src="/CSharp Corner.png"
                   alt="C# Corner"
-                  className="h-5 sm:h-6 md:h-8 lg:h-10 max-w-[80px] sm:max-w-[100px] md:max-w-none object-contain flex-shrink-0"
+                  className="h-8 sm:h-10 md:h-12 max-w-[120px] sm:max-w-none object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             </div>
@@ -302,8 +302,8 @@ function App() {
                 <div className="text-xs lg:text-sm text-gray-600">Expert Speakers</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-teal-600">2,000</div>
-                <div className="text-xs lg:text-sm text-gray-600">Registered Attendees</div>
+                <div className="text-2xl lg:text-3xl font-bold text-teal-600">2,000 +</div>
+                <div className="text-xs lg:text-sm text-gray-600">Attendees</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-purple-600">25+</div>
@@ -311,7 +311,7 @@ function App() {
               </div>
               <div className="text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-purple-600">10,000+</div>
-                <div className="text-xs lg:text-sm text-gray-600">Live Stream Viewers</div>
+                <div className="text-xs lg:text-sm text-gray-600">Live Viewers</div>
               </div>
               
             </div>
