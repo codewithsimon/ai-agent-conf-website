@@ -246,7 +246,7 @@ function App() {
               {/* Enhanced Badge */}
           
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                AI Agents                
+                AI Agents Conf                
               </h1>
               
               {/* Enhanced Subtitle */}
