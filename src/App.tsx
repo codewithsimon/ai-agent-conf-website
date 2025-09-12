@@ -246,7 +246,7 @@ function App() {
               {/* Enhanced Badge */}
           
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                AI Agents                
+                AI Agents Conference                
               </h1>
               
               {/* Enhanced Subtitle */}
@@ -302,7 +302,7 @@ function App() {
                 <div className="text-xs lg:text-sm text-gray-600">Expert Speakers</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-teal-600">2,000 +</div>
+                <div className="text-2xl lg:text-3xl font-bold text-teal-600">2,000</div>
                 <div className="text-xs lg:text-sm text-gray-600">Registered Attendees</div>
               </div>
               <div className="text-center">
